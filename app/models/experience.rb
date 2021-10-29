@@ -16,5 +16,7 @@
 #  updated_at  :datetime         not null
 #
 class Experience < ApplicationRecord
+    validates :title, :company, :curent, presence: true
 
+    belongs_to :user
 end
