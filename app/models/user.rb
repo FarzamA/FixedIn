@@ -15,14 +15,32 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-    validates :email, :password_digest, :session_token, :first_name, :last_name, :location, :industry, presence: true
-    validates :email, :session_token, uniqueness: true
-    validates :password, length { minimum: 6, allow_nil: true }
+    # validates :email, :password_digest, :session_token, :first_name, :last_name, :location, :industry, presence: true
+    # validates :email, :session_token, uniqueness: true
+    # validates :password, length { minimum: 6, allow_nil: true }
 
-    # after_initialize COME BACK TO THIS
+    # # after_initialize COME BACK TO THIS
 
-    attr_reader :password
+    # attr_reader :password
 
-    has_many :posts, dependent: :destroy
+    # has_many :posts, dependent: :destroy
+
+    # has_many :comments, dependent: :destroy 
+
+    # has_many :likes, dependent: :destroy
+
+    # has_many :experiences, depndent: :destroy 
+
+    # has_many :educations, depndent: :destroy
+
+    # has_many :sent_connects, 
+    #     class_name: 
+    #     foreign_key: :connector_id
+
+    # has_many :rec_connects, 
+    #     class_name: 
+    #     foreign_key: :connectee_id
+
+    
 
 end
