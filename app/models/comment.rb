@@ -10,6 +10,8 @@
 #  updated_at :datetime         not null
 #
 class Comment < ApplicationRecord
+    validates :body, :like_count, :user_id, :post_id, presence: true
+
     belongs_to :user 
 
     belongs_to :post 
