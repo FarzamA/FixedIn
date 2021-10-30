@@ -924,3 +924,268 @@ post12 = Post.create(
     user_id: user10.id,
     like_count: 2
 )
+
+comment1 = Comment.create(
+    body: Faker::Quote.famous_last_words,
+    user_id: user1.id,
+    post_id: post1.id,
+    like_count: 0
+)
+
+comment2 = Comment.create(
+    body: Faker::Quote.famous_last_words,
+    user_id: user1.id,
+    post_id: post2.id,
+    like_count: 0
+)
+
+comment3 = Comment.create(
+    body: Faker::Quote.famous_last_words,
+    user_id: user1.id,
+    post_id: post3.id,
+    like_count: 1
+)
+
+comment4 = Comment.create(
+    body: Faker::Quote.famous_last_words,
+    user_id: demo_user.id,
+    post_id: post4.id,
+    like_count: 1
+)
+
+comment5 = Comment.create(
+    body: Faker::Quote.famous_last_words,
+    user_id: user2.id,
+    post_id: post1.id,
+    like_count: 0
+)
+
+comment6 = Comment.create(
+    body: Faker::Quote.famous_last_words,
+    user_id: user3.id,
+    post_id: post5.id,
+    like_count: 2
+)
+
+comment7 = Comment.create(
+    body: Faker::Quote.famous_last_words,
+    user_id: user4.id,
+    post_id: post7.id,
+    like_count: 1
+)
+
+like1 = Like.create(
+    user_id: demo_user.id,
+    likeable_type: "Post",
+    likeable_id: post1.id
+)
+
+like2 = Like.create(
+    user_id: user1.id,
+    likeable_type: "Post",
+    likeable_id: post1.id
+)
+
+like3 = Like.create(
+    user_id: user2.id,
+    likeable_type: "Post",
+    likeable_id: post1.id
+)
+
+like4 = Like.create(
+    user_id: demo_user.id,
+    likeable_type: "Post",
+    likeable_id: post2.id
+)
+
+like5 = Like.create(
+    user_id: user1.id,
+    likeable_type: "Post",
+    likeable_id: post3.id
+)
+
+like6 = Like.create(
+    user_id: user2.id,
+    likeable_type: "Post",
+    likeable_id: post4.id
+)
+
+like7 = Like.create(
+    user_id: user1.id,
+    likeable_type: "Post",
+    likeable_id: post4.id
+)
+
+like8 = Like.create(
+    user_id: user3.id,
+    likeable_type: "Post",
+    likeable_id: post5.id
+)
+
+like9 = Like.create(
+    user_id: user5.id,
+    likeable_type: "Post",
+    likeable_id: post7.id
+)
+
+like10 = Like.create(
+    user_id: user6.id,
+    likeable_type: "Post",
+    likeable_id: post8.id
+)
+
+like11 = Like.create(
+    user_id: user7.id,
+    likeable_type: "Post",
+    likeable_id: post9.id
+)
+
+like12 = Like.create(
+    user_id: user1.id,
+    likeable_type: "Post",
+    likeable_id: post9.id
+)
+
+like13 = Like.create(
+    user_id: user8.id,
+    likeable_type: "Post",
+    likeable_id: post9.id
+)
+
+like14 = Like.create(
+    user_id: user9.id,
+    likeable_type: "Post",
+    likeable_id: post9.id
+)
+
+like15 = Like.create(
+    user_id: user8.id,
+    likeable_type: "Post",
+    likeable_id: post10.id
+)
+
+like16 = Like.create(
+    user_id: user9.id,
+    likeable_type: "Post",
+    likeable_id: post11.id
+)
+
+like17 = Like.create(
+    user_id: user10.id,
+    likeable_type: "Post",
+    likeable_id: post11.id
+)
+
+like18 = Like.create(
+    user_id: user10.id,
+    likeable_type: "Post",
+    likeable_id: post12.id
+)
+
+like19 = Like.create(
+    user_id: user11.id,
+    likeable_type: "Post",
+    likeable_id: post12.id
+)
+
+like20 = Like.create(
+    user_id: user1.id,
+    likeable_type: "Comment",
+    likeable_id: comment3.id
+)
+
+like21 = Like.create(
+    user_id: user8.id,
+    likeable_type: "Comment",
+    likeable_id: comment4.id
+)
+
+like22 = Like.create(
+    user_id: user3.id,
+    likeable_type: "Comment",
+    likeable_id: comment6.id
+)
+
+like23 = Like.create(
+    user_id: user7.id,
+    likeable_type: "Comment",
+    likeable_id: comment6.id
+)
+
+like24 = Like.create(
+    user_id: user4.id,
+    likeable_type: "Comment",
+    likeable_id: comment7.id
+)
+
+Connection.create(
+    connector_id: demo_user.id,
+    connectee_id: user1.id,
+    accepted: true
+)
+
+Connection.create(
+    connector_id: demo_user.id,
+    connectee_id: user2.id,
+    accepted: true
+)
+
+Connection.create(
+    connector_id: demo_user.id,
+    connectee_id: user3.id,
+    accepted: false
+)
+
+Connection.create(
+    connector_id: demo_user.id,
+    connectee_id: user4.id,
+    accepted: true
+)
+
+Connection.create(
+    connector_id: demo_user.id,
+    connectee_id: user5.id,
+    accepted: false
+)
+
+Connection.create(
+    connector_id: demo_user.id,
+    connectee_id: user6.id,
+    accepted: true
+)
+
+Connection.create(
+    connector_id: user7.id,
+    connectee_id: user8.id,
+    accepted: true
+)
+
+Connection.create(
+    connector_id: user7.id,
+    connectee_id: user3.id,
+    accepted: true
+)
+
+Connection.create(
+    connector_id: user7.id,
+    connectee_id: user6.id,
+    accepted: true
+)
+
+Connection.create(
+    connector_id: user7.id,
+    connectee_id: user10.id,
+    accepted: false
+)
+
+Connection.create(
+    connector_id: user12.id,
+    connectee_id: user1.id,
+    accepted: false
+)
+
+Connection.create(
+    connector_id: user12.id,
+    connectee_id: user11.id,
+    accepted: true
+)
