@@ -271,7 +271,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -300,7 +300,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -329,7 +329,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -358,7 +358,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -387,7 +387,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -416,7 +416,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -445,7 +445,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -474,7 +474,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -503,7 +503,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -532,7 +532,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -561,7 +561,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -590,7 +590,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -619,7 +619,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -648,7 +648,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -677,7 +677,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -706,7 +706,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -735,7 +735,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -764,7 +764,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -793,7 +793,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 Experience.create(
     user_id: user19.id,
@@ -821,7 +821,7 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
 Experience.create(
@@ -850,11 +850,11 @@ Education.create(
     start_year: Faker::Date.in_date_period(year: 2012, month: 8),
     end_year: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
-    gpa: Faker::Number.decimal(l_digits: 1, r_digits: 1)
+    gpa: Faker::Number.decimal(from: 0.0, to: 4.0).round(1)
 )
 
-post1 = Post.create(
-    body: Faker::Quote.matz,
-    user_id: demo_user.id,
-    like_count: 3
-)
+# post1 = Post.create(
+#     body: Faker::Quote.matz,
+#     user_id: demo_user.id,
+#     like_count: 3
+# )
