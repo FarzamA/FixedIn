@@ -29,9 +29,9 @@ class User < ApplicationRecord
 
     has_many :likes, dependent: :destroy
 
-    has_many :experiences, depndent: :destroy 
+    has_many :experiences, dependent: :destroy 
 
-    has_many :educations, depndent: :destroy
+    has_many :educations, dependent: :destroy
 
     has_many :sent_connects, 
         class_name: :Connection,
