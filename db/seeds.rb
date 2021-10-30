@@ -853,8 +853,74 @@ Education.create(
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
 
-# post1 = Post.create(
-#     body: Faker::Quote.matz,
-#     user_id: demo_user.id,
-#     like_count: 3
-# )
+post1 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id,
+    like_count: 3
+)
+
+post2 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id,
+    like_count: 1
+)
+
+post3 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user1.id,
+    like_count: 1
+)
+
+post4 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user2.id,
+    like_count: 2
+)
+
+post5 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user3.id,
+    like_count: 1
+)
+
+post6 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user4.id,
+    like_count: 0
+)
+
+post7 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user5.id,
+    like_count: 1
+)
+
+post8 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user6.id,
+    like_count: 1
+)
+
+post9 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user7.id,
+    like_count: 4
+)
+
+post10 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user8.id,
+    like_count: 1
+)
+
+post11 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user9.id,
+    like_count: 2
+)
+
+post12 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: user10.id,
+    like_count: 2
+)
