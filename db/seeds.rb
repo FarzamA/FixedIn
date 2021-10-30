@@ -268,8 +268,8 @@ Education.create(
     user_id: demo_user.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -297,8 +297,8 @@ Education.create(
     user_id: user1.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -326,8 +326,8 @@ Education.create(
     user_id: user2.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -355,8 +355,8 @@ Education.create(
     user_id: user3.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -384,8 +384,8 @@ Education.create(
     user_id: user4.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -413,8 +413,8 @@ Education.create(
     user_id: user5.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -442,8 +442,8 @@ Education.create(
     user_id: user6.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -471,8 +471,8 @@ Education.create(
     user_id: user7.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -500,8 +500,8 @@ Education.create(
     user_id: user8.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -529,8 +529,8 @@ Education.create(
     user_id: user9.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -558,8 +558,8 @@ Education.create(
     user_id: user10.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -587,8 +587,8 @@ Education.create(
     user_id: user11.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -616,8 +616,8 @@ Education.create(
     user_id: user12.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -645,8 +645,8 @@ Education.create(
     user_id: user13.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -674,8 +674,8 @@ Education.create(
     user_id: user14.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -703,8 +703,8 @@ Education.create(
     user_id: user15.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -732,8 +732,8 @@ Education.create(
     user_id: user16.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -761,8 +761,8 @@ Education.create(
     user_id: user17.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -790,8 +790,8 @@ Education.create(
     user_id: user18.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -818,8 +818,8 @@ Education.create(
     user_id: user19.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
@@ -847,8 +847,8 @@ Education.create(
     user_id: user20.id,
     school: Faker::Educator.university,
     degree: Faker::Educator.degree,
-    start_year: Faker::Date.in_date_period(year: 2012, month: 8),
-    end_year: Faker::Date.in_date_period(year: 2016, month: 5),
+    start_date: Faker::Date.in_date_period(year: 2012, month: 8),
+    end_date: Faker::Date.in_date_period(year: 2016, month: 5),
     field: Faker::Educator.subject,
     gpa: Faker::Number.between(from: 0.0, to: 4.0).round(1)
 )
