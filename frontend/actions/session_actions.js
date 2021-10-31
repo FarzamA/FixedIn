@@ -12,10 +12,36 @@ export const receiveCurrentUser = payload => ({
     educations: payload.educations
 })
 
+export const receiveUser = payload => ({
+    type: RECEIVE_USER,
+    USER: payload.user,
+    experiences: payload.experiences,
+    educations: payload.education
+});
+
+export const logoutCurrentUser = () => ({
+    type: LOGOUT_CURRENT_USER
+});
+
+export const receiveSessionErrors = errors => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors
+});
+// might need to clear errors was having trouble with that on benchbnb 
+
+
+
 export const loginUser = user => dispatch => (
     SessionAPI.loginUser(user).then(
         user => dispatch(receiveCurrentUser(user)),
         // still needs to be written and imported from reducers
         errors => dispatch(receiveSessionErrors(errors.responseJSON))
+    )
+);
+
+export const logoutUser = () => dispatch => (
+    SessionAPI.logoutUser().then(
+        () => dispatch(logoutCurrentUser),
+        error => dispatch(receiveSessionErrors(errors.responseJSON))
     )
 );
