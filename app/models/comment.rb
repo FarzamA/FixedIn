@@ -8,6 +8,7 @@
 #  post_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  like_count :integer          not null
 #
 class Comment < ApplicationRecord
     validates :body, :like_count, :user_id, :post_id, presence: true
@@ -16,5 +17,5 @@ class Comment < ApplicationRecord
 
     belongs_to :post 
 
-    has_many :likes, dependent: :destroy
+    has_many :likes, as: :likeable, dependent: :destroy
 end

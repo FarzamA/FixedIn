@@ -250,7 +250,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -259,7 +259,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -279,7 +279,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -288,7 +288,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -308,7 +308,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -317,7 +317,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -337,7 +337,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -346,7 +346,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -366,7 +366,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -375,7 +375,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -395,7 +395,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -404,7 +404,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -424,7 +424,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -433,7 +433,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Part-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -453,7 +453,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -462,7 +462,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -482,7 +482,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -491,7 +491,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Internship',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -511,7 +511,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -520,7 +520,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Part-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -540,7 +540,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Seasonal',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -549,7 +549,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -569,7 +569,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -578,7 +578,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Internship',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -598,7 +598,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Part-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -607,7 +607,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -627,7 +627,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -636,7 +636,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -656,7 +656,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -665,7 +665,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -685,7 +685,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -694,7 +694,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Apprenticeship',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -714,7 +714,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Part-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -723,7 +723,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -743,7 +743,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Contract',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -752,7 +752,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Seasonal',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -772,7 +772,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Internship',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -781,7 +781,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -800,7 +800,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Self-employed',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -809,7 +809,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Part-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
@@ -829,7 +829,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: true,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2019-09-23', to: '2021-09-25')
 )
 
@@ -838,7 +838,7 @@ Experience.create(
     title: Faker::Job.title,
     company: Faker::Company.name,
     location: "#{Faker::Address.city}, #{Faker::Address.state}",
-    current: false,
+    employment_type: 'Full-time',
     start_date: Faker::Date.between(from: '2017-09-23', to: '2019-09-20'),
     end_date: '2019-09-22'
 )
