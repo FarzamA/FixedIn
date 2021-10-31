@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-    #To deal w search bar later
+    #To deal w search bar later written in user model
     def index 
         @users = User.search(params[:query])
     end
@@ -25,8 +25,11 @@ class Api::UsersController < ApplicationController
     end 
 
     def show
-        @user = User.find(params[:id])
-        render :show
+        @user = User.includes(:education)
+                    .includes(:experiences)
+                    .includes(:sent_connects)
+                    .includes(:rec_connects)
+                    .find(params[:id])
     end
 
     def update

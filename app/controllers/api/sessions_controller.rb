@@ -7,7 +7,8 @@ class Api::SessionsController < ApplicationController
         
         if @user 
             login!(@user)
-            render '/api/users/show'
+            # render '/api/users/show'
+            redirect_to api_user_url(@user)
         else   
             #need to define login_errors method to be used in the model for the user
             render json: User.login_errors(user_params), status: 401

@@ -47,10 +47,52 @@ class User < ApplicationRecord
         nil 
     end
 
-    def self.login_errors(params)
-
+    def self.search(query)
+        User.where("concat_ws('', first_name, last_name) LIKE #{query}")
+            .limit(10)
     end
-    
+
+
+    def self.login_errors(params)
+        errors = {
+            email: nil,
+            password: nil
+        }
+
+        email = params[:email]
+        password = params[:password]
+
+        # email check
+        unless email.empty? 
+            emailArr = email.split('@')
+            unless emailArr.length == 2 && emailArr[1] && emailArr[1].split('.').length == 2
+                errors[:email] = 'Please enter a valid email'
+            end
+        else  
+            errors[:email] = 'Please enter an email address'
+        end
+        
+        # password check
+        unless password.empty?
+            if password.length < 6
+                errors[:password] = 'The password needs to be at least 6 characters long'
+            end
+        else  
+            errors[:password] = 'Please enter a password'
+        end
+
+        # neither the password or email check triggered
+        if errors.values.all?(nil)
+            if User.find_by(email: email)
+                errors[:password] = 'Incorrect password'
+            else 
+                errors[:email] = 'Email not found, have you signed up?'
+            end
+        end
+
+        errors.values
+    end
+
 
     def password=(password)
         @password = password 
