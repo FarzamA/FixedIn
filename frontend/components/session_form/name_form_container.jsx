@@ -45,7 +45,40 @@ class NameForm extends React.Component {
 
         if (!this.handleErrors()) {
             this.props.receiveUserName(this.state);
-            this.props.history.push('/signup/location')
+            this.props.history.push('/signup/location');
         }
+    };
+
+    render() {
+        const { firstNameError, lastNameError } = this.state;
+
+        return (
+            <div className='signup-form'>
+                <h2>Make the most out of your professional life</h2>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <label>First name
+                        <input type='text' value={this.state.firstName} className={firstNameError ? 'input-error' : ''} onChange={this.handleInput('firstName')} />
+                        {firstNameError ? <p className='error-msg'>Please enter your first name</p> : null}
+                    </label>
+                    <label>Last name
+                        <input type='text' value={this.state.lastName} className={lastNameError ? 'input-error' : ''} onChange={this.handleInput('lastName')} />
+                        {lastNameError ? <p className='error-msg'>Please enter your last name</p> : null}
+                    </label>
+                    <button type='submit' className='form-button' >Continue</button>
+                </form>
+            </div>
+        )
     }
 }
+
+const mSTP = ({session: { signUp }}) => ({
+    user: signUp
+});
+
+const mDTP = dispatch => ({
+    receiveUserName: name => dispatch(receiveUserName(name))
+});
+
+const NameFormContainer = connect(mSTP, mDTP)(NameForm);
+
+export default NameFormContainer
