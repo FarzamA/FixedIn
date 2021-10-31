@@ -9,19 +9,19 @@ json.user do
     end
 end
 
-# json.experiences do 
-#     @user.experiences.each do |experience|
-#         json.set! experience.id do 
-#             json.partial! # grab info from the experience partial
-#         end
-#     end
-# end
+json.experiences do 
+    @user.experiences.each do |experience|
+        json.set! experience.id do 
+            json.partial! '/api/experiences/experience', expeirence: expeirence # grab info from the experience partial
+        end
+    end
+end
 
-# json.educations do 
-#     @user.educations.each do |education|
-#         json.set! education.id do 
-#             json.partial! #grab info from the education partial
-#         end
-#     end
-# end 
+json.educations do 
+    @user.educations.each do |education|
+        json.set! education.id do 
+            json.partial! '/api/educations/education', education: education #grab info from the education partial
+        end
+    end
+end 
 
