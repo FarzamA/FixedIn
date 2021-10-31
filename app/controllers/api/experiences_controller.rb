@@ -32,6 +32,6 @@ class Api::ExperiencesController < ApplicationController
 
     private 
     def experience_params
-        params.require(:experience).permit(:user_id, :title, :company, :location, :current, :start_dat, :end_date, :industry, :description)
+        params.require(:experience).permit(:user_id, :title, :company, :location, :current, :start_date, :end_date, :industry, :description)
     end
 end
