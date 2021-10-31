@@ -5,6 +5,7 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 
+
 // in order to handle sign up actions
 export const RECEIVE_USER_EMAIL = 'RECEIVE_USER_EMAIL';
 export const RECEIVE_USER_NAME = 'RECEIVE_USER_NAME';

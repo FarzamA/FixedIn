@@ -22,7 +22,7 @@ class EmailForm extends React.Component {
             pw: 'Password must be at least 6 characters'
         }
         
-        this.handleInput.bind(this);
+        // this.handleInput.bind(this);
     };
 
     handleInput(field) {
@@ -32,6 +32,8 @@ class EmailForm extends React.Component {
     handleErrors() {
         const {email, password} = this.state;
         let errorSwitch = false;
+
+        const emailArr = email.split('@');
 
         if (password.length < 6) {
             this.setState({ pwErr: true });
@@ -43,10 +45,75 @@ class EmailForm extends React.Component {
             this.errors.email = 'Please enter an email address';
             this.setState({ emailErr: true });
             errorSwitch = true;
+        //provide different errors based on different inputs
+        } else if(!(emailArr.length === 2 && emailArr[1] && emailArr[1].split('.').length === 2)) {
+            this.setState({ emailErr: true });
+            errorSwitch = true;
         } else {
-            //provide different errors based on different inputs
+            //check if email has already been registered
+            this.props.checkEmail(this.state).then(user => {
+                if (user) {
+                    errorBool = true;
+                    this.errors.email = 'Email already exists';
 
+                    this.setState({ emailErr: true });
+                }
+
+                if (!errorSwitch) {
+                    this.props.receiveUserEmail(this.state);
+                    this.props.history.push('/signup/name');
+                }
+            })
         }
+
+        return errorSwitch;
+    };
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.setState({
+            pwErr: false, 
+            emailErr: false
+        });
+
+        this.errors.email = 'Please enter a valid email';
+
+        this.handleErrors();
+    };
+
+    handleDemo(e) {
+        e.preventDefault();
+
+        this.props.loginUser({
+            email: 'farzam@mazraf.com',
+            password: 'password'
+        })
+    };
+
+    render() {
+        const { emailErr, pwErr } = this.state;
+
+        return(
+            <div>
+                <h2>Make the most out of your professional life</h2>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <label>Email
+                        <input type="text" value={this.state.email} className={emailErr ? 'input-error' : ''} onChange={this.handleInput('email')} />
+                    </label>
+                    {emailErr ? <p className='error-msg'>{this.errors.email}</p> : null}
+
+                    <label>Password (6 or more characters)
+                        <input type="password" value={this.state.password} className={pwErr ? 'input-error' : ''} onChange={this.handleInput('password')} />
+                    </label>
+                    {pwErr ? <p className='error-msg'>{this.errors.pw}</p> : null}
+
+                    <button type='submit' className='form-button' >Join FixedIn</button>
+                    <button className='form-button' onClick={this.handleDemo.bind(this)} >Demo User</button>
+
+                    <p>Already on FixedIn? <Link to="/login">Sign In</Link> </p>
+                </form>
+            </div>
+        )
     }
 
 

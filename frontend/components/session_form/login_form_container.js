@@ -11,8 +11,8 @@ class LoginForm extends React.Component {
             email: '',
             password: ''
         };
-        this.handleSubmit.bind(this);  
-        this.handleDemo.bind(this);     
+        this.handleSubmit = this.handleSubmit.bind(this);  
+        this.handleDemo = this.handleDemo.bind(this);     
     };
 
     handleInput(field) {
@@ -21,6 +21,8 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger
+        // console.log(this.props);
         this.props.loginUser({
             email: this.state.email.trim(),
             password: this.state.password
@@ -29,22 +31,33 @@ class LoginForm extends React.Component {
 
     handleDemo(e) {
         e.preventDefault();
-        loginUser({
+        this.props.loginUser({
             email: "farzam@mazraf.com",
             password: "password"
         })
     }
 
     render() {
+        return (
         <div className='login-section'>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
-                <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+                <label>Email
+                    <br />
+                    <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
+                </label>
+                    <br />
+                <label>Password
+                    <br />
+                    <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+                </label>
+                    <br />
                 <button type="submit">Sign In</button>
+                    <br />
                 <button onClick={this.handleDemo}>Demo User</button>
                 <p>New to FixedIn? <Link to="/signup">Sign Up</Link></p>
             </form>
         </div>
+        )
     }
 };
 
