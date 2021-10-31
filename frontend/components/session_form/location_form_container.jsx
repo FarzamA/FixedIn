@@ -50,7 +50,8 @@ class LocationForm extends React.Component {
 
         return (
             <div className='signup-form'>
-                <h2>Make the most out of your professional life</h2>
+                <label>Where are you located?</label>
+                <h2>We’ll recommend posts and people near you to help you excel.</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>City *
                         <input type='text' value={this.state.city} className={cityError ? 'input-error' : ''} onChange={this.handleInput('city')} />

@@ -12,8 +12,75 @@ class JobForm extends React.Component {
 
         this.state = {
             title: user.title || '',
-            
+            employment_type: user.employment_type || 'Full-time',
+            company: user.company || ''
         }
+    };
+
+    handleInput(type) {
+        return e => this.setState({ [type]: e.target.value });
+    };
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const {
+            receiveUserJob,
+            createUser,
+            createExperience,
+            user,
+            dispatch,
+            receiveCurrentUser
+        } = this.props;
+
+        const job = {
+            headline: this.state.title + 'at' + this.state.company,
+            industry: this.state.company,
+            ...this.state
+        };
+
+        receiveUserJob({ ...job });
+
+        createUser({ ...user, ...job }).then(payload => {
+            dispatch(receiveCurrentUser(payload));
+            createExperience({
+                ...job,
+                user_id: Object.keys(payload.user)[0]
+            });
+        });
+    };
+
+    render() {
+        const employmentTypes = [
+            'Full-time',
+            'Part-time',
+            'Self-employed',
+            'Freelance',
+            'Contract',
+            'Internship',
+            'Apprenticeship',
+            'Seasonal'
+        ];
+
+        return(
+            <div className='signup-form'>
+                <h1>What's your most recent experience</h1>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <label>Most recent job title *
+                        <input type="text" value={this.state.title} onChange={this.handleInput('title')}/>
+                    </label>
+                    <select onChange={this.handleInput('employment_type')}>
+                        {employmentTypes.map((type, i) => (
+                            <option key={i}>{type}</option>
+                        ))}
+                    <label>Most recent company *
+                        <input type="text" value={this.state.company} onChange={this.handleInput('company')}/>
+                    </label>
+                    <Link to='/signup/student' className='job-student-form'>I'm a student</Link>
+                    <button type='submit' className='form-button' >Finish</button>
+                    </select>
+                </form>
+            </div>
+        )
     }
 }
 

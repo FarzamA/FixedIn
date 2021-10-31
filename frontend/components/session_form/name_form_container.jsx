@@ -54,7 +54,7 @@ class NameForm extends React.Component {
 
         return (
             <div className='signup-form'>
-                <h2>Make the most out of your professional life</h2>
+                <h2>Make the most of your professional life</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>First name
                         <input type='text' value={this.state.firstName} className={firstNameError ? 'input-error' : ''} onChange={this.handleInput('firstName')} />
