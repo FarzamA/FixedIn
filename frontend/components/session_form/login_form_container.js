@@ -38,31 +38,47 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        const { splash } = this.props;
+        const loginPage= (
+            <div>
+                <h2>Sign In</h2>
+                <p>Stay updated on your professional world</p>
+            </div>
+        );
+
+        const logo = splash ? null : <Link to='/' className='login-logo'><img src={window.logo} className='main-logo'/></Link>
+
+
         return (
         <div className='login-section'>
-            <form onSubmit={this.handleSubmit}>
-                <label>Email
-                    <br />
-                    <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
-                </label>
-                    <br />
-                <label>Password
-                    <br />
-                    <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
-                </label>
-                    <br />
-                <button type="submit">Sign In</button>
-                    <br />
-                <button onClick={this.handleDemo}>Demo User</button>
-                <p>New to FixedIn? <Link to="/signup">Sign Up</Link></p>
-            </form>
+            {logo}
+            <div className='login-form-div'>
+                <form onSubmit={this.handleSubmit}>
+                    {splash ? null : loginPage}
+                    <label>Email
+                        <br />
+                        <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
+                    </label>
+                        <br />
+                    <label>Password
+                        <br />
+                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+                    </label>
+                        <br />
+                    <button type="submit">Sign In</button>
+                        <br />
+                    <button onClick={this.handleDemo}>Demo User</button>
+                    <p>New to FixedIn? <Link to="/signup">Join now</Link></p>
+                </form>
+            </div>
         </div>
         )
     }
 };
 
-const mSTP = ({ errors: { session } }) => ({
-    errors: session
+const mSTP = ({ errors: { session } }, ownProps) => ({
+    errors: session,
+    splash: ownProps.location.pathname === '/'
 });
 
 const mDTP = dispatch => ({
