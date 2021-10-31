@@ -29,7 +29,18 @@ export const receiveSessionErrors = errors => ({
 });
 // might need to clear errors was having trouble with that on benchbnb 
 
+export const createUser = user => dispatch => (
+    SessionAPI.createUser(user).then(
+        user => dispatch(receiveCurrentUser(user)),
+        errors => dispatch(receiveSessionErrors(errors.responseJSON))
+    )
+);
 
+export const updateUser = user => dispatch => (
+    SessionAPI.updateUser(user).then(
+        user => dispatch(receiveUser(user))
+    )
+);
 
 export const loginUser = user => dispatch => (
     SessionAPI.loginUser(user).then(
@@ -42,6 +53,6 @@ export const loginUser = user => dispatch => (
 export const logoutUser = () => dispatch => (
     SessionAPI.logoutUser().then(
         () => dispatch(logoutCurrentUser),
-        error => dispatch(receiveSessionErrors(errors.responseJSON))
+        errors => dispatch(receiveSessionErrors(errors.responseJSON))
     )
 );
