@@ -47,6 +47,11 @@ class User < ApplicationRecord
         nil 
     end
 
+    def self.login_errors(params)
+
+    end
+    
+
     def password=(password)
         @password = password 
         self.password_digest = BCrypt::Password.create(password)

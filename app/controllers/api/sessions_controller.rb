@@ -9,6 +9,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render '/api/users/show'
         else   
+            #need to define login_errors method to be used in the model for the user
             render json: User.login_errors(user_params), status: 401
         end
     end
@@ -18,7 +19,7 @@ class Api::SessionsController < ApplicationController
             logout! 
             render json: {}
         else   
-            render json: ['No one is logged in'], status: 
+            render json: ['No one is logged in'], status: 401
         end
     end
 end
