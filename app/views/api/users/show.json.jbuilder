@@ -12,7 +12,7 @@ end
 json.experiences do 
     @user.experiences.each do |experience|
         json.set! experience.id do 
-            json.partial! '/api/experiences/experience', expeirence: expeirence # grab info from the experience partial
+            json.partial! '/api/experiences/experience', experience: experience # grab info from the experience partial
         end
     end
 end

@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
     end 
 
     def show
-        @user = User.includes(:education)
+        @user = User.includes(:educations)
                     .includes(:experiences)
                     .includes(:sent_connects)
                     .includes(:rec_connects)
