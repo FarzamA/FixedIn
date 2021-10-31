@@ -1,0 +1,1 @@
+json.parial! '/api/experiences/experience', experience: @expereince
