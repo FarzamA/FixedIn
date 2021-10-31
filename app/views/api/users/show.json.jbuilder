@@ -1,6 +1,6 @@
 json.user do 
     json.set! @user.id do 
-        json.partial! '/api/users/user', user: @user 
+        json.partial! '/api/users/user', user: @user #grab info from the user partial
         json.connections (
             @user.rec_connects.where(connections: {accepted: true}).count
         ) + (
