@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { receiveUserEmail, loginUser } from '../../actions/session_actions';
+import { checkEmail } from '../../util/session_api_util';
 
 class EmailForm extends React.Component {
     constructor(props) {
@@ -44,9 +45,23 @@ class EmailForm extends React.Component {
             errorSwitch = true;
         } else {
             //provide different errors based on different inputs
-            
+
         }
     }
 
 
-}
+};
+
+const mSTP = ({ session: { signUp }}) => ({
+    user: signUp
+});
+
+const mDTP = dispatch => ({
+    receiveUserEmail: email => dispatch(receiveUserEmail(email)),
+    loginUser: user => dispatch(loginUser(user)),
+    checkEmail: user => checkEmail(user)
+});
+
+const EmailFormContainer = connect(mSTP, mDTP)(EmailForm);
+
+export default EmailFormContainer;
