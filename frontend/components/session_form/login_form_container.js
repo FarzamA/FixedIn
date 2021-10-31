@@ -58,4 +58,4 @@ const mDTP = dispatch => ({
 
 const LoginFormContainer = withRouter(connect(mSTP, mDTP)(LoginForm));
 
-export default LoginFormContainer
+export default LoginFormContainer;
