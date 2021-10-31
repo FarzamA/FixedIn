@@ -21,8 +21,13 @@ const sessionReducer = (state = _nullSession, action) => {
             payloadUser = Object.values(action.user)[0];
             return { currentUser: payloadUser.id, userConnections: payloadUser.connections };
         case RECEIVE_USER:
-            
+            payloadUser = Object.values(action.user)[0];
+            return { ...state, userConnections: payloadUser.connections };
+        case LOGOUT_CURRENT_USER:
+            return _nullSession;
         default: 
             return state;
     }
-}
+};
+
+export default sessionReducer;
