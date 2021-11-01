@@ -88,3 +88,9 @@ export const logoutUser = () => dispatch => (
         errors => dispatch(receiveSessionErrors(errors.responseJSON))
     )
 );
+
+export const fetchUser = userId => dispatch => (
+    SessionAPI.fetchUser(userId).then(
+        user => dispatch(receiveUser(user))
+    )
+);
