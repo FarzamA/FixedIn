@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
 
         return (
         <div className='login-section'>
-            {logo}
+            {/* {logo} */}
             <div className='login-form-div'>
                 <form onSubmit={this.handleSubmit}>
                     {splash ? null : loginPage}
