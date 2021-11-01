@@ -33,7 +33,7 @@ class JobForm extends React.Component {
         } = this.props;
 
         const job = {
-            headline: this.state.title + ' at' + this.state.company,
+            headline: this.state.title + ' at ' + this.state.company,
             industry: this.state.company,
             ...this.state
         };
