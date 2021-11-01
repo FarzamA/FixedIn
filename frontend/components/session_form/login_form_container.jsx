@@ -22,7 +22,9 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger
-        // console.log(this.props);
+        console.log(this.state.email);
+        console.log(this.state.password);
+
         this.props.loginUser({
             email: this.state.email.trim(),
             password: this.state.password
@@ -38,6 +40,7 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        const [errorOne, errorTwo] = this.props.errors;
         const { splash } = this.props;
         const loginPage= (
             <div>
@@ -58,11 +61,15 @@ class LoginForm extends React.Component {
                     <label>Email
                         <br />
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
+                        <br />
+                        {errorOne ? <p className='error-msg'>{errorOne}</p> : null}
                     </label>
                         <br />
                     <label>Password
                         <br />
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+                        <br />
+                        {errorTwo ? <p className='error-msg'>{errorTwo}</p> : null}
                     </label>
                         <br />
                     <button type="submit">Sign In</button>

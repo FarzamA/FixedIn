@@ -71,7 +71,7 @@ class LocationForm extends React.Component {
 };
 
 const mSTP = ({ session: { signUp }}) => ({
-    firstName = signUp.firstName,
+    firstName: signUp.firstName,
     user: signUp
 });
 

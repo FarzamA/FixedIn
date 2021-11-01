@@ -98,18 +98,25 @@ class EmailForm extends React.Component {
                 <h2>Make the most out of your professional life</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>Email
+                        <br/>
                         <input type="text" value={this.state.email} className={emailErr ? 'input-error' : ''} onChange={this.handleInput('email')} />
                     </label>
+                    <br/>
+
                     {emailErr ? <p className='error-msg'>{this.errors.email}</p> : null}
+                    <br/>
 
                     <label>Password (6 or more characters)
+                    <br/>
                         <input type="password" value={this.state.password} className={pwErr ? 'input-error' : ''} onChange={this.handleInput('password')} />
                     </label>
+                    <br/>
                     {pwErr ? <p className='error-msg'>{this.errors.pw}</p> : null}
-
+                    <br/>
                     <button type='submit' className='form-button' >Join FixedIn</button>
+                    <br/>
                     <button className='form-button' onClick={this.handleDemo.bind(this)} >Demo User</button>
-
+                    <br/>
                     <p>Already on FixedIn? <Link to="/login">Sign In</Link> </p>
                 </form>
             </div>

@@ -25,10 +25,11 @@ class Api::UsersController < ApplicationController
     end 
 
     def show
+        # debugger
         @user = User.includes(:educations)
                     .includes(:experiences)
-                    .includes(:sent_connects)
                     .includes(:rec_connects)
+                    .includes(:sent_connects)
                     .find(params[:id])
     end
 

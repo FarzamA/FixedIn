@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { receiveUserName } from '../../../actions/session_actions';
+import { receiveUserName } from '../../actions/session_actions';
 
 class NameForm extends React.Component {
     constructor(props) {
