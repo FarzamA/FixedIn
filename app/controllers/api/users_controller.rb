@@ -42,6 +42,16 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def email 
+        @user = User.find_by(email: params[:user][:email])
+
+        if @user 
+            render :show 
+        else 
+            render json: 0
+        end
+    end
+
     private 
     def user_params
         params.require(:user).permit(:email, :password, :first_name, :last_name, :headline, :location, :industry)
