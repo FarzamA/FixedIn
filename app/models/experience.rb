@@ -7,7 +7,7 @@
 #  title           :string           not null
 #  company         :string           not null
 #  location        :string
-#  start_date      :date             not null
+#  start_date      :date
 #  end_date        :date
 #  industry        :string
 #  description     :text

@@ -24,7 +24,7 @@ class Api::ExperiencesController < ApplicationController
     end
 
     def destroy
-        @expereince = Expereince.find(parama[:id])
+        @expereince = Expereince.find(params[:id])
 
         @expereince.destroy 
         render :show
@@ -32,6 +32,6 @@ class Api::ExperiencesController < ApplicationController
 
     private 
     def experience_params
-        params.require(:experience).permit(:user_id, :title, :company, :location, :current, :start_date, :end_date, :industry, :description)
+        params.require(:experience).permit(:user_id, :title, :company, :location, :employment_type, :start_date, :end_date, :industry, :description)
     end
 end

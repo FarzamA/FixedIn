@@ -52,19 +52,23 @@ class StudentForm extends React.Component {
             <div className='signup-form'>
                 <h2>Your profile helps you discover new people and opportunities</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                    <label>School or College/University *
+                    <label>School or College/University*
+                        <br />
                         <input type="text" value={this.state.school} onChange={this.handleInput('school')}/>
                     </label>
-
+                        <br />
                     <label>Degree 
+                        <br />
                         <input type="text" value={this.state.degree} onChange={this.handleInput('degree')}/>
                     </label>
-
+                        <br />
                     <label>Field 
+                        <br />
                         <input type="text" value={this.state.field} onChange={this.handleInput('field')}/>
                     </label>
-
+                        <br />
                     <Link to='/signup/job' className='job-student-form'>I'm not a student</Link>
+                        <br />
                     <button type='submit' className='form-button' >Finish</button>
                 </form>
             </div>

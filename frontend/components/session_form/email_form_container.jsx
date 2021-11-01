@@ -53,7 +53,7 @@ class EmailForm extends React.Component {
             //check if email has already been registered
             this.props.checkEmail(this.state).then(user => {
                 if (user) {
-                    errorBool = true;
+                    errorSwitch = true;
                     this.errors.email = 'Email already exists';
 
                     this.setState({ emailErr: true });

@@ -1,1 +1,1 @@
-json.parial! '/api/experiences/experience', experience: @expereince
+json.partial! '/api/experiences/experience', experience: @experience

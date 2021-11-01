@@ -9,12 +9,12 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save 
-            # demo_user = User.find_by(email: 'farzam@mazraf.com')
-            # Connection.create(
-            #     connector_id: demo_user.id,
-            #     connectee_id: @user.id,
-            #     accepted: true
-            # )
+            demo_user = User.find_by(email: 'farzam@mazraf.com')
+            Connection.create(
+                connector_id: demo_user.id,
+                connectee_id: @user.id,
+                accepted: true
+            )
 
             login!(@user)
             render :show
