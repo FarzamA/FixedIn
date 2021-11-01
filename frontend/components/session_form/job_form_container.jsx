@@ -33,7 +33,7 @@ class JobForm extends React.Component {
         } = this.props;
 
         const job = {
-            headline: this.state.title + 'at' + this.state.company,
+            headline: this.state.title + ' at' + this.state.company,
             industry: this.state.company,
             ...this.state
         };
@@ -66,18 +66,24 @@ class JobForm extends React.Component {
                 <h1>What's your most recent experience</h1>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>Most recent job title *
+                        <br/>
                         <input type="text" value={this.state.title} onChange={this.handleInput('title')}/>
                     </label>
+                    <br/>
                     <select onChange={this.handleInput('employment_type')}>
                         {employmentTypes.map((type, i) => (
                             <option key={i}>{type}</option>
                         ))}
+                    </select>
+                    <br/>
                     <label>Most recent company *
+                        <br/>
                         <input type="text" value={this.state.company} onChange={this.handleInput('company')}/>
                     </label>
+                    <br/>
                     <Link to='/signup/student' className='job-student-form'>I'm a student</Link>
+                    <br/>
                     <button type='submit' className='form-button' >Finish</button>
-                    </select>
                 </form>
             </div>
         )

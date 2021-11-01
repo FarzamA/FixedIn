@@ -54,13 +54,19 @@ class LocationForm extends React.Component {
                 <h2>We’ll recommend posts and people near you to help you excel.</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>City *
+                        <br/>
                         <input type='text' value={this.state.city} className={cityError ? 'input-error' : ''} onChange={this.handleInput('city')} />
+                        <br/>
                         {cityError ? <p className='error-msg'>Please enter a city</p> : null}
                     </label>
+                    <br/>
                     <label>State *
+                        <br/>
                         <input type='text' value={this.state.state} className={stateError ? 'input-error' : ''} onChange={this.handleInput('state')} />
+                        <br/>
                         {stateError ? <p className='error-msg'>Please enter a state</p> : null}
                     </label>
+                    <br/>
                     <button type='submit' className='form-button' >Continue</button>
                 </form>
             </div>

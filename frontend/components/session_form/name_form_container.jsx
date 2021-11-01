@@ -8,8 +8,8 @@ class NameForm extends React.Component {
         const user = this.props.user
 
         this.state = {
-            firstName: user.firstName || '',
-            lastName: user.lastName || '',
+            first_name: user.firstName || '',
+            last_name: user.lastName || '',
             firstNameError: false,
             lastNameError: false
         };
@@ -20,15 +20,15 @@ class NameForm extends React.Component {
     };
 
     handleErrors() {
-        const { firstName, lastName } = this.state; 
+        const { first_name, last_name } = this.state; 
         let errorSwitch = false;
 
-        if (!firstName.length) {
+        if (!first_name.length) {
             this.setState({ firstNameError: true });
             errorSwitch = true;
         }
 
-        if (!lastName.length) {
+        if (!last_name.length) {
             this.setState({ lastNameError: true });
             errorSwitch = true;
         };
@@ -57,13 +57,19 @@ class NameForm extends React.Component {
                 <h2>Make the most of your professional life</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>First name
-                        <input type='text' value={this.state.firstName} className={firstNameError ? 'input-error' : ''} onChange={this.handleInput('firstName')} />
+                        <br/>
+                        <input type='text' value={this.state.first_name} className={firstNameError ? 'input-error' : ''} onChange={this.handleInput('first_name')} />
+                        <br/>
                         {firstNameError ? <p className='error-msg'>Please enter your first name</p> : null}
                     </label>
+                    <br/>
                     <label>Last name
-                        <input type='text' value={this.state.lastName} className={lastNameError ? 'input-error' : ''} onChange={this.handleInput('lastName')} />
+                        <br/>
+                        <input type='text' value={this.state.last_name} className={lastNameError ? 'input-error' : ''} onChange={this.handleInput('last_name')} />
+                        <br/>
                         {lastNameError ? <p className='error-msg'>Please enter your last name</p> : null}
                     </label>
+                    <br/>
                     <button type='submit' className='form-button' >Continue</button>
                 </form>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AuthRoute } from "../../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../../util/route_util";
 import EmailFormContainer from "./email_form_container";
 import LocationFormContainer from "./location_form_container";
 import NameFormContainer from "./name_form_container";
