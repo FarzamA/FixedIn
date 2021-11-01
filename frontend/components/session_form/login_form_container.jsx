@@ -22,10 +22,11 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger
-        console.log(this.state.email);
-        console.log(this.state.password);
+        // console.log(this.state.email);
+        // console.log(this.state.password);
 
         this.props.loginUser({
+            //remove any whitespace
             email: this.state.email.trim(),
             password: this.state.password
         });

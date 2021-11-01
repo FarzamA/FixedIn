@@ -74,9 +74,7 @@ class User < ApplicationRecord
         
         # password check
         unless password.empty?
-            if password.length < 6
-                errors[:password] = 'The password needs to be at least 6 characters long'
-            end
+            errors[:password] = 'The password you provided must have at least 6 characters' if password.length < 6
         else  
             errors[:password] = 'Please enter a password'
         end
@@ -95,12 +93,12 @@ class User < ApplicationRecord
 
 
     def password=(password)
-        @password = password 
         self.password_digest = BCrypt::Password.create(password)
+        @password = password 
     end
 
     def is_password?(password)
-        BCrypt::Password.new(self.password_digest)
+        BCrypt::Password.new(self.password_digest) == password
     end
 
     def generate_session_token
