@@ -34,6 +34,7 @@ class LoggedIn extends React.Component {
                 <nav className='right-nav-bar'>
                     <div className='nav-icon'>
                         <i className='fas fa-home'></i>
+                        <p>Home</p>
                     </div>
                     <div className='nav-icon'>
                         <i className="fas fa-user-friends"></i>
