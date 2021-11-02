@@ -22,7 +22,7 @@ export const receiveCurrentUser = payload => ({
 
 export const receiveUser = payload => ({
     type: RECEIVE_USER,
-    USER: payload.user,
+    user: payload.user,
     experiences: payload.experiences,
     educations: payload.education
 });

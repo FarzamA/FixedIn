@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import LoginFormContainer from "./session_form/login_form_container";
 import { SignUpForms } from "./session_form/signup_form_container";
@@ -18,4 +19,15 @@ const App = () => (
   </div>
 );
 
-export default App;
+const mapSTP = (state, ownProps) => {
+  const path = ownProps.location.pathname;
+  return ({
+  sessionPath: path.includes('/signup') || path == '/login',
+  rootPath: path == '/'
+})};
+
+const AppContainer = withRouter(connect(mapSTP)(App));
+
+export default AppContainer;
+
+// export default App;
