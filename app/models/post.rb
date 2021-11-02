@@ -5,7 +5,7 @@
 #  id         :bigint           not null, primary key
 #  body       :text             not null
 #  user_id    :integer          not null
-#  like_count :integer          not null
+#  like_count :integer          not null REMEMBER TO REMOVE THIS COLUMN(not necessary)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
