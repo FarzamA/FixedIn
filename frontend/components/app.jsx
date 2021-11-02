@@ -9,11 +9,11 @@ import HeaderContainer from "./header/header";
 import Main from './main/main';
 
 const App = ({ rootPath }) => {
-  const header = (
-    <div>
-      <Route path='/' component={ HeaderContainer } />
-    </div>
-  )
+  // const header = (
+  //   <div>
+  //     <Route path='/' component={ HeaderContainer } />
+  //   </div>
+  // )
     
   return (
     <div>
