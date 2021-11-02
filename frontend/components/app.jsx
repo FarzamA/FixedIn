@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import LoginFormContainer from "./session_form/login_form_container";
@@ -7,6 +7,8 @@ import { SignUpForms } from "./session_form/signup_form_container";
 import Splash from "./splash/splash";
 import HeaderContainer from "./header/header";
 import Main from './main/main';
+import NotFound from './not_found/not_found';
+import FeedContainer from './feed/feed'
 
 const App = ({ rootPath }) => {
   // const header = (
@@ -20,10 +22,15 @@ const App = ({ rootPath }) => {
       {/* {header} */}
       <Route path='/' component={ HeaderContainer }/>
       <section className='main-section'>
+      {/* <AuthRoute exact path='/' component={ Splash } /> */}
+      <Switch>
+        <ProtectedRoute exact path='/feed' component={ FeedContainer } />
+        <AuthRoute exact path='/' component={ Splash } />
+        {/* <Route path='/*' component={ SignUpForms } /> */}
         <AuthRoute exact path='/login' component={ LoginFormContainer } />
         <AuthRoute path='/signup' component={ SignUpForms } />
-        <ProtectedRoute path='/' component={ Main } />
-        <AuthRoute exact path='/' component={ Splash } />
+        <Route component={ NotFound } />
+      </Switch>
       </section>
     </div>
   )

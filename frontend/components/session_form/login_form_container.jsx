@@ -45,6 +45,7 @@ class LoginForm extends React.Component {
     }
 
     render() {
+
         const [errorOne, errorTwo] = this.props.errors;
         const { splash } = this.props;
         const loginPage= (
@@ -68,6 +69,13 @@ class LoginForm extends React.Component {
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
                         <br />
                         {errorOne ? <p className='error-msg'>{errorOne}</p> : null}
+                        {/* {if (errorOne) {
+                            <p className='error-msg'>{errorOne}</p>
+                        } else {
+                            null
+                        }
+                        } */}
+                        
                     </label>
                         <br />
                     <label>Password
