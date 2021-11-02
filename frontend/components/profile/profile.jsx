@@ -23,8 +23,9 @@ const mSTP = ({ entities: { users, educations, experiences }, session: { current
                //checking for time elapsed since jan 1
                if (Date.parse(a.startDate) > Date.parse(b.startDate)) {
                 return -1
-               } else 
-               return 1    
+               } else {
+                return 1    
+               }
            }
        }
    );
@@ -37,9 +38,10 @@ const mSTP = ({ entities: { users, educations, experiences }, session: { current
             } else if ((a.endDate == null || a.endDate == '') && (b.endDate == null || b.endDate == '')) {
                 //checking for time elapsed since jan 1
                 if (Date.parse(a.startDate) > Date.parse(b.startDate)) {
-                return -1
-                } else 
-                return 1    
+                    return -1
+                } else {
+                    return 1   
+                } 
             }
         })
 
