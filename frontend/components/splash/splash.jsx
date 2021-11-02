@@ -5,7 +5,7 @@ const Splash = () => (
     <div className='splash-div'>
         <div>
             <p className='splash-text'>Welcome to your professional community</p>
-            {/* <LoginFormContainer /> */}
+            <LoginFormContainer />
         </div>
         <div>
             <img src={window.splashImg} className='splash-img' />
