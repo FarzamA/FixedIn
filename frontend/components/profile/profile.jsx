@@ -30,7 +30,7 @@ const mSTP = ({ entities: { users, educations, experiences }, session: { current
        }
    );
 
-       const sortedEducation = Object.values(educations).filter(
+       const sortedEducations = Object.values(educations).filter(
            edu => edu.userId == ownProps.match.params.id
        ).sort((a, b) => {
             if ((a.endDate == null || a.endDate == '') && (b.endDate != null && b.endDate != '')) {
@@ -48,7 +48,7 @@ const mSTP = ({ entities: { users, educations, experiences }, session: { current
     return {
         educations: sortedEducations,
         experiences: sortedExperiences,
-        user: user[ownProps.match.params.id]
+        user: users[ownProps.match.params.id]
     }
 };
 
