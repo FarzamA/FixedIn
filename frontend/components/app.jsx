@@ -8,21 +8,30 @@ import Splash from "./splash/splash";
 import HeaderContainer from "./header/header";
 import Main from './main/main';
 
-const App = () => (
-  <div>
-    {/* <h1>FixedIn</h1> */}
-    <Route path='/' component={HeaderContainer}/>
-    <AuthRoute exact path='/login' component={LoginFormContainer} />
-    <AuthRoute path='/signup' component={ SignUpForms } />
-    <ProtectedRoute path='/' component={ Main } />
-    <AuthRoute exact path='/' component={Splash} />
-  </div>
-);
+const App = ({ rootPath }) => {
+  const header = (
+    <div>
+      <Route path='/' component={ HeaderContainer } />
+    </div>
+  )
+    
+  return (
+    <div>
+      {/* {header} */}
+      <Route path='/' component={ HeaderContainer }/>
+      <section className='main-section'>
+        <AuthRoute exact path='/login' component={ LoginFormContainer } />
+        <AuthRoute path='/signup' component={ SignUpForms } />
+        <ProtectedRoute path='/' component={ Main } />
+        <AuthRoute exact path='/' component={ Splash } />
+      </section>
+    </div>
+  )
+};
 
 const mapSTP = (state, ownProps) => {
   const path = ownProps.location.pathname;
   return ({
-  sessionPath: path.includes('/signup') || path == '/login',
   rootPath: path == '/'
 })};
 

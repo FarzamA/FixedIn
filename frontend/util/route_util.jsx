@@ -8,7 +8,7 @@ const mSTP = ({ session: { currentUser } }) => ({
 
 const Auth = ({ component: Component, loggedIn, path, exact }) => (
     <Route exact={exact} path={path} render={props => (
-        loggedIn ? <Redirect to='/' /> : <Component {...props} />
+        loggedIn ? <Redirect to='/feed' /> : <Component {...props} />
     )} />
 )
 

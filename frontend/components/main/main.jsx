@@ -10,7 +10,7 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <ProtectedRoute exact path='/feed' component={FeedContainer} />
+                <ProtectedRoute exact path='/feed' component={ FeedContainer } />
             </div>
             
         )
