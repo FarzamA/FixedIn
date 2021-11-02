@@ -1,5 +1,16 @@
 class Api::PostsController < ApplicationController
     def index 
+        #what goes in the feed
+        user_id = current_user.id
+        connected_users = User.joins(:rec_connects)
+                                .where("connections.accepted = true AND (connections.connector_id = #{user_id} OR connections.connected_id = #{user_id}")
+                                .pluck(:id)
+
+        @posts = Post.includes(:user)
+                      .where(user_id: connected_users) #need to put connected users here
+                      .order(created_at: :desc)
+                      .includes(:likes)
+                      .limit(10)
 
     end
 
