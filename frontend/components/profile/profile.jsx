@@ -5,14 +5,14 @@ import { fetchUser } from '../../actions/session_actions';
 
 class Profile extends React.Component {
     componentDidMount() {
-
+        
     }
 }
 
 
 
 
-const mSTP = ({ entities: { users, educations, experiences }, session: { currentUser }}, ownProps) => {
+const mSTP = ({ entities: { users, educations, experiences } }, ownProps) => {
    const sortedExperiences = Object.values(experiences).filter(
        experience => experience.userId == ownProps.match.params.id
    ).sort(

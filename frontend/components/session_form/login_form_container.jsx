@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { loginUser } from '../../actions/session_actions';
+import { clearSessionErrors, loginUser } from '../../actions/session_actions';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -14,6 +14,10 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);  
         this.handleDemo = this.handleDemo.bind(this);     
     };
+
+    componentDidMount() {
+        this.props.clearSessionErrors();
+    }
 
     handleInput(field) {
         return e => this.setState({ [field]: e.target.value })
@@ -90,7 +94,8 @@ const mSTP = ({ errors: { session } }, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
-    loginUser: user => dispatch(loginUser(user))
+    loginUser: user => dispatch(loginUser(user)),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
 const LoginFormContainer = withRouter(connect(mSTP, mDTP)(LoginForm));
