@@ -40,11 +40,32 @@ class UserDetail extends React.Component {
             );
 
             backgroundButton = (
-                <button className='upload=bg-button'>
+                <button className='upload-bg-button'>
                     <i className='fas fa-camera-retro'></i>
                 </button>
             )
-        }
+        };
+
+        return (
+            <>
+                <div className='user-profile-container'>
+                    <div className='user-bg-img'>
+                        <img alt='Background Picture' />
+                        {backgroundButton}
+                    </div>
+                    <div className='user-details'>
+                        <div className='profile-user-info'>
+                            <div className='profile-avatar-container'>
+                                <div className='avatar'>
+                                    <img alt='Profile Pic' />
+                                </div>
+                                {avatarButton}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </>
+        )
     }
 }
 
