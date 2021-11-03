@@ -60,7 +60,6 @@ class LoginForm extends React.Component {
 
         return (
         <div className='login-section'>
-            <div className='login-form-div'>
                 <form onSubmit={this.handleSubmit}>
                     {splash ? null : <h1>Sign In</h1>}
                     <label>Email
@@ -82,7 +81,6 @@ class LoginForm extends React.Component {
                     <button onClick={this.handleDemo}>Demo User</button>
                     <p>New to FixedIn? <Link to="/signup">Join now</Link></p>
                 </form>
-            </div>
         </div>
         )
     }
