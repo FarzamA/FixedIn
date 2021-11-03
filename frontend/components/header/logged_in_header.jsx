@@ -22,7 +22,7 @@ class LoggedIn extends React.Component {
     render() {
         const { user, logoutUser } = this.props;
         return (
-            <div className='nav-bar'>
+            <div className='logged-in-container'>
                 <nav className='left-nav-bar'>
                     <Link to='/'>
                         <div className='icon-logo'>

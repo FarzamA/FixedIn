@@ -40,7 +40,7 @@ class UserDetail extends React.Component {
 
             avatarButton = (
                 <button className='upload-av-btn'>
-                    <i className='fas fa=camera-retro'></i>
+                    <i className='fas fa-camera-retro'></i>
                 </button>
             );
 

@@ -34,8 +34,8 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="search-container">
-                <input type='text' placeholder='Search' id='search-field' onChange={this.handleInput} />
                 <i className="fas fa-search"></i>
+                <input type='text' placeholder='Search' id='search-field' onChange={this.handleInput} />
                 <ul className='search-results'>
                     {this.state.results.map(user => (
                         <li key={user.id} onClick={() => {this.redirectUser(user.id)}}>

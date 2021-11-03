@@ -3,14 +3,9 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 10;
-
-    // .nav-bar {
-    //     // display: flex;
-    //     // justify-content: space-around;
-    //     margin: 0 auto;
-    //     align-items: center;
-    // }
+    // border: 3px solid red;
+    display: flex;
+    justify-content: center;
 
     .logo {
         width: 175px;
@@ -18,8 +13,10 @@
     }
 
     .session-nav {
+        border: 3px solid rgb(0, 255, 42);
+        width: 60vw;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         font-size: 16px;
         font-weight: 900;
@@ -30,8 +27,8 @@
 
         .splash-signup {
             color: $gray;
-            padding: 8px 10px;
-            margin-right: 10px;
+            padding: 8px 20px;
+            // margin-right: 10px;
             text-decoration: none;
 
             &:hover {
@@ -70,4 +67,22 @@
     }
 }
 
+.logged-in-container {
+    display: flex;
+    width: 65vw;
+    border: 3px solid rgb(81, 255, 0);
+    // display: grid;
+    justify-content: space-between;
+
+    .left-nav-bar {
+        display: flex;
+        align-items: center;
+        width: 30vw;
+        border: 3px solid rgb(153, 0, 255);
+
+        .search-container {
+            // padding-top: 4vh;
+        }
+    }
+}
 
