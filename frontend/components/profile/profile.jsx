@@ -22,7 +22,7 @@ class Profile extends React.Component {
         return(
             <div className='profile-page-cont'>
                 <div className='user-section'>
-                    <UserDetailContainer lastEducation={} lastExperience={} />
+                    <UserDetailContainer lastEducation={educations[0]} lastExperience={experiences[0]} />
                 </div>
                 <div className='edu-section'>
                     <EducationIndexContainer educations={educations} />
