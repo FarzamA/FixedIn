@@ -1,8 +1,9 @@
 .splash-img-div {
-    margin-left: 40vw;
+    margin-left: 45vw;
     color: rgb(201, 201, 201);
     img {
-        height: 70vh;
+        // position: absolute;
+        height: 80vh;
         width: auto;
     }
 
@@ -14,6 +15,13 @@
         margin-left: 20vw;
     }
 
+}
+
+.splash-text {
+    margin-top: 20px;
+    color: $brown;
+    font-size: 55px;
+    // position: absolute;
 }
 
 

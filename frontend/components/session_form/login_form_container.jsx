@@ -55,27 +55,19 @@ class LoginForm extends React.Component {
             </div>
         );
 
-        const logo = splash ? null : <Link to='/' className='login-logo'><img src={window.logo} className='main-logo'/></Link>
+        // const logo = splash ? null : <Link to='/' className='login-logo'><img src={window.logo} className='main-logo'/></Link>
 
 
         return (
         <div className='login-section'>
-            {/* {logo} */}
             <div className='login-form-div'>
                 <form onSubmit={this.handleSubmit}>
-                    {splash ? null : loginPage}
+                    {/* {splash ? null : loginPage} */}
                     <label>Email
                         <br />
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
                         <br />
-                        {errorOne ? <p className='error-msg'>{errorOne}</p> : null}
-                        {/* {if (errorOne) {
-                            <p className='error-msg'>{errorOne}</p>
-                        } else {
-                            null
-                        }
-                        } */}
-                        
+                        {errorOne ? <p className='error-msg'>{errorOne}</p> : null}   
                     </label>
                         <br />
                     <label>Password
