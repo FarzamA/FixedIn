@@ -5,12 +5,13 @@ import EducationIndexItemContainer from './education_index_item';
 
 class EducationIndex extends React.Component {
     render() {
+        console.log(this.currentUser);
         const { currentUser, match, educations } = this.props;
-        const newEduButton = currentUser == (match.params.id ? (
+        const newEduButton = currentUser == (match.params.id) ? (
             <button>
                 <i className="fas fa-plus"></i>
             </button>
-        ) : null);
+        ) : null;
 
         if (!educations.length) return null;
 
