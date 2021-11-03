@@ -5,3 +5,12 @@
 .profile-page-cont {
     margin: 22vh;
 }
+
+.user-details {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}

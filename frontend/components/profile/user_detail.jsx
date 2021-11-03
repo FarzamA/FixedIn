@@ -6,10 +6,21 @@ class UserDetail extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
+        this.state = {
+            dropDown: false
+        }
 
-        // }
+        this.clicked = this.clicked.bind(this);
+        this.leave = this.leave.bind(this);
     }
+
+    clicked() {
+        this.setState({ drop: true });
+    };
+
+    leave() {
+        this.setState({ drop: false });
+    };  
 
     render() {
         const { user, currentUser, match, lastExperience, lastEducation } = this.props;
@@ -29,8 +40,8 @@ class UserDetail extends React.Component {
             );
 
             editSectionButton = (
-                <button className='pf-edit-btn'>Edit section 
-                    <ul className={`pf-edit-drp ${'reveal'}`}>
+                <button className='pf-edit-btn' onFocus={this.clicked} onBlur={this.leave} >Edit section 
+                    <ul className={`pf-edit-drp ${this.state.dropDown ? 'reveal' : 'hide'}`}>
                         <li>Intro</li>
                         <li>Experiences</li>
                         <li>Education</li>
@@ -85,7 +96,7 @@ class UserDetail extends React.Component {
                             <div className='pf-user-history'>
                                 {/* will pass in lastExperience and lastEducation props from the profile */}
                                 <p>{lastExperience ? lastExperience.company : null }</p>
-                                <p>{lastEducation ? lastEducation.company : null }</p>
+                                <p>{lastEducation ? lastEducation.school : null }</p>
                             </div>
                     </div>
                 </div>
