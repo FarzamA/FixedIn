@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchUser } from '../../actions/session_actions';
 import EducationIndexContainer from '../education/education_index';
+import ExperienceIndexContainer from '../experiences/experience_index';
 
 class Profile extends React.Component {
     componentDidMount() {
@@ -15,6 +16,7 @@ class Profile extends React.Component {
         const { experiences, educations, user } = this.props
 
         if (!user) return null;
+        // debugger
 
         return(
             <div className='profile-page-cont'>
@@ -24,6 +26,8 @@ class Profile extends React.Component {
                 <div className='edu-section'>
                     <EducationIndexContainer educations={educations} />
                 </div>
+                <div> </div>
+                    <ExperienceIndexContainer experiences={experiences} />
             </div>
         )
     }

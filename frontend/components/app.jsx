@@ -24,15 +24,15 @@ const App = ({ rootPath }) => {
       <Route path='/' component={ HeaderContainer }/>
       <section className='main-section'>
       {/* <AuthRoute exact path='/' component={ Splash } /> */}
-      <Switch>
-        <ProtectedRoute exact path='/feed' component={ FeedContainer } />
-        <ProtectedRoute exact path='/users/:id' component={ ProfileContainer }/>
-        <AuthRoute exact path='/' component={ Splash } />
-        {/* <Route path='/*' component={ SignUpForms } /> */}
-        <AuthRoute exact path='/login' component={ LoginFormContainer } />
-        <AuthRoute path='/signup' component={ SignUpForms } />
-        <Route component={ NotFound } />
-      </Switch>
+        <Switch>
+          <ProtectedRoute exact path='/feed' component={ FeedContainer } />
+          <ProtectedRoute exact path='/users/:id' component={ ProfileContainer }/>
+          <AuthRoute exact path='/' component={ Splash } />
+          {/* <Route path='/*' component={ SignUpForms } /> */}
+          <AuthRoute exact path='/login' component={ LoginFormContainer } />
+          <AuthRoute path='/signup' component={ SignUpForms } />
+          <Route component={ NotFound } />
+        </Switch>
       </section>
     </div>
   )
