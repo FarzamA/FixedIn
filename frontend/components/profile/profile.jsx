@@ -7,7 +7,7 @@ import EducationIndexContainer from '../education/education_index';
 class Profile extends React.Component {
     componentDidMount() {
         const { fetchUser, match } = this.props;
-        
+        //wip
         fetchUser(match.params.id);
     }
 
