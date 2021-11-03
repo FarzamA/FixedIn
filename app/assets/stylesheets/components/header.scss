@@ -1,0 +1,67 @@
+.header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+
+    // .nav-bar {
+    //     // display: flex;
+    //     // justify-content: space-around;
+    //     margin: 0 auto;
+    //     align-items: center;
+    // }
+
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+
+    .session-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+
+        .splash-signup {
+            color: $gray;
+            padding: 8px 10px;
+            margin-right: 10px;
+
+            &:hover {
+                background: $lightgray;
+                color: black;
+                border-radius: 3px;
+                transition: 0.3s;
+              }
+        }
+
+        .splash-signin {
+            color: $LIblue;
+            border: 1px solid $LIblue;
+            border-radius: 24px;
+            padding: 8px 20px;
+        
+            &:hover {
+              background: rgba(112,181,249,0.15);
+              box-shadow: inset 0 0 0 2px $LIblue;
+              transition: 0.3s;
+            }
+        }
+
+       
+
+        // img {
+        //     // display: flex;
+        //     // justify-content: flex-end;
+        // }
+    }
+
+    .nav-icon {
+        display: flex; 
+        flex-direction: column;
+    }
+}
+
+
