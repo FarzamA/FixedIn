@@ -60,26 +60,26 @@ class LoginForm extends React.Component {
 
         return (
         <div className='login-section'>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} >
                     {splash ? null : <h1>Sign In</h1>}
                     <label>Email
-                        <br />
+                        {/* <br /> */}
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
-                        <br />
+                        {/* <br /> */}
                         {errorOne ? <p className='error-msg'>{errorOne}</p> : null}   
                     </label>
-                        <br />
+                        {/* <br /> */}
                     <label>Password
-                        <br />
+                        {/* <br /> */}
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
-                        <br />
+                        {/* <br /> */}
                         {errorTwo ? <p className='error-msg'>{errorTwo}</p> : null}
                     </label>
-                        <br />
+                        {/* <br /> */}
                     <button type="submit">Sign In</button>
-                        <br />
+                        {/* <br /> */}
                     <button onClick={this.handleDemo}>Demo User</button>
-                    <p>New to FixedIn? <Link to="/signup">Join now</Link></p>
+                    <p>New to FixedIn? <Link to="/signup"><span>Join now</span></Link></p>
                 </form>
         </div>
         )

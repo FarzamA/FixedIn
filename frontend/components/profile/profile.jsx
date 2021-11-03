@@ -2,10 +2,30 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchUser } from '../../actions/session_actions';
+import EducationIndexContainer from '../education/education_index';
 
 class Profile extends React.Component {
     componentDidMount() {
+        const { fetchUser, match } = this.props;
         
+        fetchUser(match.params.id);
+    }
+
+    render() {
+        const { experiences, educations, user } = this.props
+
+        if (!user) return null;
+
+        return(
+            <div className='profile-page-cont'>
+                <div className='user-section'>
+
+                </div>
+                <div className='edu-section'>
+                    <EducationIndexContainer educations={educations} />
+                </div>
+            </div>
+        )
     }
 }
 

@@ -4,7 +4,8 @@ import { withRouter } from 'react-router';
 
 const EducationIndexItem = ({ education, currentUser, match }) => {
     // add an onclick of the dispatched action to the button
-    const edit = currenUser == match.params.id ? (
+    console.log(education);
+    const edit = currentUser == match.params.id ? (
         <button> 
             <i className="fas fa-pencil-alt"></i>
         </button>

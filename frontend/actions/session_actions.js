@@ -25,7 +25,7 @@ export const receiveUser = payload => ({
     type: RECEIVE_USER,
     user: payload.user,
     experiences: payload.experiences,
-    educations: payload.education
+    educations: payload.educations
 });
 
 export const receiveUserEmail = email => ({
