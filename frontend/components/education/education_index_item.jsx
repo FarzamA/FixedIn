@@ -11,12 +11,34 @@ const EducationIndexItem = ({ education, currentUser, match }) => {
         </button>
     ) : null;
 
+    let strStart;
+    let strEnd; 
+    let eduTime;
+        // console.log(education);
+    if (education.startDate) {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        const startDateEdu = new Date(`${education.startDate}`);
+
+        const endDateEdu = new Date(`${education.endDate}`);
+
+        const startMonth = months[startDateEdu.getMonth()];
+        const startYear = startDateEdu.getFullYear();
+        const endMonth = months[endDateEdu.getMonth()];
+        const endYear = endDateEdu.getFullYear();
+
+        strStart = `${startMonth} ${startYear}`;
+        strEnd = education.endDate ? `${endMonth} ${endYear}` : 'Present';
+
+        eduTime = <p className='edu-time'>{strStart} - {strEnd}</p>;
+    };
+
     return (
         <div className='profile-edu'>
             <p className='school'>{education.school}</p>
             <p className='degree'>{education.degree}</p>
             <p className='field'>{education.field}</p>
-            <p className='date'>{education.start_date} - {education.end_date}</p>
+            {eduTime}
             <p className='gpa'>{education.gpa}</p>
             <p className='activities'>{education.activities ? `Activities & Societies: ${education.activities}` : null}</p>
             <p className='description'>{education.description ? `Description: ${education.description}` : null}</p>

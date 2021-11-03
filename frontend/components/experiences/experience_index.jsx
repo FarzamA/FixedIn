@@ -14,9 +14,11 @@ class ExperienceIndex extends React.Component {
             // console.log(experiences);
         if (!experiences.length) return null;
 
+        let head = (experiences.length > 1) ? (<h1>Experiences</h1>) : (<h1>Experience</h1>)
+
         return (
             <div className='exp-index'>
-                <h1>Experience</h1>
+                {head}
                 {newExpButton}
                 <ul>
                     {experiences.map(exp => (

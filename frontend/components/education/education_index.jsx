@@ -15,9 +15,11 @@ class EducationIndex extends React.Component {
 
         if (!educations.length) return null;
 
+        let head = (educations.length > 1) ? (<h1>Educations</h1>) : (<h1>Education</h1>)
+
         return (
             <div className='edu-index'>
-              <h1>Education</h1>
+              {head}
               {newEduButton}
               <ul>
                 {educations.map(edu => (

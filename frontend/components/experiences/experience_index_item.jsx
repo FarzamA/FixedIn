@@ -22,7 +22,7 @@ const ExperienceIndexItem = ({ experience, currentUser, match }) => {
 
         const startMonth = months[startDateExp.getMonth()];
         const startYear = startDateExp.getFullYear();
-        const endMonth = months[endDateExp];
+        const endMonth = months[endDateExp.getMonth()];
         const endYear = endDateExp.getFullYear();
 
         strStart = `${startMonth} ${startYear}`;
