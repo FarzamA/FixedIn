@@ -62,7 +62,7 @@ class LoginForm extends React.Component {
         <div className='login-section'>
             <div className='login-form-div'>
                 <form onSubmit={this.handleSubmit}>
-                    {/* {splash ? null : loginPage} */}
+                    {splash ? null : <h1>Sign In</h1>}
                     <label>Email
                         <br />
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />

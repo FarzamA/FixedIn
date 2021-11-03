@@ -1,8 +1,14 @@
+.splash-div {
+    display: grid;
+}
+
+
 .splash-img-div {
-    margin-left: 45vw;
+    margin-left: 38vw;
     color: rgb(201, 201, 201);
+    grid-column: 1;
+    grid-row: 1;
     img {
-        // position: absolute;
         height: 80vh;
         width: auto;
     }
@@ -20,9 +26,19 @@
 .splash-text {
     margin-top: 20px;
     color: $brown;
-    font-size: 55px;
-    // position: absolute;
+    font-size: 60px;
+    font-weight: 300;
+    margin-left: 11vw;
+    width: 48vw;
+    line-height: 150%;
 }
+
+.splash-form-div {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
 
 
 

@@ -61,7 +61,6 @@ export const receiveSessionErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 });
-// might need to clear errors was having trouble with that on benchbnb
 
 export const clearSessionErrors = () => ({
     type: CLEAR_SESSION_ERRORS

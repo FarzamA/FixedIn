@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { receiveUserEmail, loginUser } from '../../actions/session_actions';
+import { receiveUserEmail, loginUser, clearSessionErrors } from '../../actions/session_actions';
 import { checkEmail } from '../../util/session_api_util';
 
 class EmailForm extends React.Component {
@@ -133,7 +133,8 @@ const mSTP = ({ session: { signUp }}) => ({
 const mDTP = dispatch => ({
     receiveUserEmail: email => dispatch(receiveUserEmail(email)),
     loginUser: user => dispatch(loginUser(user)),
-    checkEmail: user => checkEmail(user)
+    checkEmail: user => checkEmail(user),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
 const EmailFormContainer = connect(mSTP, mDTP)(EmailForm);

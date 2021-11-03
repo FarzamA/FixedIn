@@ -22,12 +22,13 @@
         justify-content: space-around;
         align-items: center;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 900;
 
         .splash-signup {
             color: $gray;
             padding: 8px 10px;
             margin-right: 10px;
+            text-decoration: none;
 
             &:hover {
                 background: $lightgray;
@@ -42,6 +43,7 @@
             border: 1px solid $LIblue;
             border-radius: 24px;
             padding: 8px 20px;
+            text-decoration: none;
         
             &:hover {
               background: rgba(112,181,249,0.15);
