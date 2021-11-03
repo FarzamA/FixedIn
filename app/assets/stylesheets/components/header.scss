@@ -77,11 +77,37 @@
     .left-nav-bar {
         display: flex;
         align-items: center;
-        width: 30vw;
+        width: 40vw;
         border: 3px solid rgb(153, 0, 255);
 
         .search-container {
-            // padding-top: 4vh;
+            display: flex;
+
+            i {
+                padding-right: 0.5vw;
+            }
+        }
+
+
+    }
+
+    .right-nav-bar {
+        // border: 3px solid rgb(4, 0, 255);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 15vw;
+        padding: 0 1.0vw 0 0.5vw;
+        // margin: 20px;
+
+        .nav-icon {
+            display: flex;
+            padding: 0 0.5vw 0 0.5vw;
+            align-items: center;
+
+            i {
+                font-size: x-large;
+            }
         }
     }
 }
