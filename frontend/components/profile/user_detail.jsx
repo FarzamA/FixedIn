@@ -61,7 +61,27 @@ class UserDetail extends React.Component {
                                 </div>
                                 {avatarButton}
                             </div>
+                            <div>
+                                <h1>{`${user.firstName} ${user.lastName}`}</h1>
+                            </div>
+                            <div>
+                                <h2>{user.headline}</h2>
+                            </div>
+                            <div>
+                                <h3>{user.location}</h3>
+                            </div>
+                            <div>
+                                <span>{user.connections} connection{user.connections > 1 || user.connections == 0 ? 's' : ''}</span>
+                            </div>
+                            <div className='user-details-buttons'>
+                                {editSectionButton}
+                            </div>
                         </div>
+                            <div className='pf-user-history'>
+                                {/* will pass in lastExperience and lastEducation props from the profile */}
+                                <p>{lastExperience ? lastExperience.company : null }</p>
+                                <p>{lastEducation ? lastEducation.company : null }</p>
+                            </div>
                     </div>
                 </div>
             </>

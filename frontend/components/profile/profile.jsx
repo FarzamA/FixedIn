@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchUser } from '../../actions/session_actions';
 import EducationIndexContainer from '../education/education_index';
 import ExperienceIndexContainer from '../experiences/experience_index';
+import UserDetailContainer from './user_detail';
 
 class Profile extends React.Component {
     componentDidMount() {
@@ -21,7 +22,7 @@ class Profile extends React.Component {
         return(
             <div className='profile-page-cont'>
                 <div className='user-section'>
-
+                    <UserDetailContainer lastEducation={} lastExperience={} />
                 </div>
                 <div className='edu-section'>
                     <EducationIndexContainer educations={educations} />
