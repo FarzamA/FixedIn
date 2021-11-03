@@ -5,7 +5,7 @@ class NotFound extends React.Component {
     render() {
         return (
             <div className='explore'>
-                <h2>Page not found</h2>
+                <h1>Page not found</h1>
                 <p>
                     Uh oh, we can’t seem to find the page you’re looking for. Try going back to the previous page.
                 </p>
