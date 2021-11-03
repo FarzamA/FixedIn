@@ -12,7 +12,12 @@ class UserDetail extends React.Component {
     }
 
     render() {
-        const { user, currentUser, match } = this.props;
+        const { user, currentUser, match, lastExperience, lastEducation } = this.props;
+
+        let editIntroButton;
+        let editSectionButton;
+        let avatarButton;
+        let backgroundButton;
 
         if (currentUser == match.params.id) {
             // separated buttons out to deal w click handlers leading to
