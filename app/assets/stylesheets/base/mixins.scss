@@ -1,0 +1,5 @@
+@mixin btn-hover-border($color, $background) {
+    background: $background;
+    box-shadow: inset 0 0 0 2px $color;
+    transition: 0.3s;
+}

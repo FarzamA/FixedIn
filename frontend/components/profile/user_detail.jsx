@@ -23,7 +23,7 @@ class UserDetail extends React.Component {
     };  
 
     render() {
-        const { user, currentUser, match, lastExperience, lastEducation } = this.props;
+        const { user, currentUser, match, lastExperience, lastEducation, avatarUrl } = this.props;
 
         let editIntroButton;
         let editSectionButton;
@@ -73,7 +73,7 @@ class UserDetail extends React.Component {
                         <div className='profile-user-info'>
                             <div className='profile-avatar-container'>
                                 <div className='avatar'>
-                                    <img alt='Profile Pic' />
+                                    <img src={avatarUrl || window.defaultUser} alt='Profile Pic' />
                                 </div>
                                 {avatarButton}
                             </div>

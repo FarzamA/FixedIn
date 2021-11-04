@@ -10,7 +10,7 @@ class Feed extends React.Component {
 
     render() {
         const { currentUser, userConnections } = this.props;
-        const { firstName, lastName, headline } = currentUser;
+        const { firstName, lastName, headline, avatarUrl } = currentUser;
 
         return (
             <section className='feed-section'>
@@ -23,7 +23,7 @@ class Feed extends React.Component {
                         <div className='user-sidebar-info'>
                             <Link to={`/users/${currentUser.id}`}>
                                 <div className='user-sidebar-avatar'>
-                                    <img alt='pfp'/>
+                                    <img src={avatarUrl || window.defaultUser} alt='pfp'/>
                                 </div>
                             </Link>
                             <p>{`${firstName} ${lastName}`}</p>
