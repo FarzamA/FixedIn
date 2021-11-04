@@ -10,17 +10,17 @@ class UserDetail extends React.Component {
             dropDown: false
         }
 
-        this.clicked = this.clicked.bind(this);
-        this.leave = this.leave.bind(this);
+        // this.clicked = this.clicked.bind(this);
+        // this.leave = this.leave.bind(this);
     }
 
-    clicked() {
-        this.setState({ drop: true });
-    };
+    // clicked() {
+    //     this.setState({ drop: true });
+    // };
 
-    leave() {
-        this.setState({ drop: false });
-    };  
+    // leave() {
+    //     this.setState({ drop: false });
+    // };  
 
     render() {
         const { user, currentUser, match, lastExperience, lastEducation, avatarUrl } = this.props;
@@ -40,13 +40,15 @@ class UserDetail extends React.Component {
             );
 
             editSectionButton = (
-                <button className='pf-edit-btn' onFocus={this.clicked} onBlur={this.leave} >Edit section 
-                    <ul className={`pf-edit-drp ${this.state.dropDown ? 'reveal' : 'hide'}`}>
-                        <li>Intro</li>
-                        <li>Experiences</li>
-                        <li>Education</li>
-                    </ul>
-                </button>
+                <div className='dropdown'>
+                    <button className='pf-edit-btn' >Edit section</button> 
+                        <ul className={`pf-edit-drp`}>
+                            <li>Intro</li>
+                            <li>Experiences</li>
+                            <li>Education</li>
+                        </ul>
+                </div>
+                
             );
 
             avatarButton = (

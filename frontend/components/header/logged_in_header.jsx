@@ -32,14 +32,18 @@ class LoggedIn extends React.Component {
                     <SearchBar />
                 </nav>
                 <nav className='right-nav-bar'>
+                <Link to='/feed'>
                     <div className='nav-icon'>
                         <i className='fas fa-home'></i>
                         <p>Home</p>
                     </div>
+                </Link>
+                <Link to='/banana'>
                     <div className='nav-icon'>
                         <i className="fas fa-user-friends"></i>
                         <p>My Network</p>
                     </div>
+                </Link>
                     <button onClick={logoutUser}>Sign Out</button>
                 </nav>  
             </div>
