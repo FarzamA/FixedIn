@@ -9,7 +9,7 @@ import JobFormContainer from "./job_form_container";
 import StudentFormContainer from "./student_form_container";
 
 export const SignUpForms = () => (
-    <div>
+    <div className='signup-cont'>
         {/* <Link to='/' className='signUp-logo'><img src={window.logo} /></Link>    */}
         <AuthRoute exact path='/signup/student' component={StudentFormContainer}/>
         <AuthRoute exact path='/signup/job' component={JobFormContainer}/>

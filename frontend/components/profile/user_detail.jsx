@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class UserDetail extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class UserDetail extends React.Component {
     // };  
 
     render() {
-        const { user, currentUser, match, lastExperience, lastEducation, avatarUrl } = this.props;
+        const { user, currentUser, match, lastExperience, lastEducation, avatarUrl, openModal } = this.props;
 
         let editIntroButton;
         let editSectionButton;
@@ -52,7 +53,7 @@ class UserDetail extends React.Component {
             );
 
             avatarButton = (
-                <button className='upload-av-btn'>
+                <button onClick={() => openModal('uploadAvatar')} className='upload-av-btn'>
                     <i className='fas fa-camera-retro'></i>
                 </button>
             );
@@ -118,8 +119,9 @@ const mSTP = ({ entities: { users }, session: { currentUser }}, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-
-}) ;
+    openModal: (modal, id) => dispatch(openModal(modal, id)),
+    dispatch
+});
 
 const UserDetailContainer = withRouter(connect(mSTP, mDTP)(UserDetail));
 export default UserDetailContainer

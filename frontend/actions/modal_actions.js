@@ -3,7 +3,7 @@ export const CLOSE_MODAL = 'CLOSE_MODAL';
 
 
 export const openModal = (modal, id = null) => {
-    document.getElementsByClassName('header')[0].getElementsByClassName.zIndex = 0;
+    document.getElementsByClassName('header')[0].style.zIndex = 0;
 
     return {
         type: OPEN_MODAL,

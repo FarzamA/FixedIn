@@ -94,7 +94,7 @@ class EmailForm extends React.Component {
         const { emailErr, pwErr } = this.state;
 
         return(
-            <div>
+            <div className='signup-section'>
                 <h2>Make the most out of your professional life</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>Email

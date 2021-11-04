@@ -10,6 +10,7 @@ import Main from './main/main';
 import NotFound from './not_found/not_found';
 import FeedContainer from './feed/feed';
 import ProfileContainer from "./profile/profile";
+import ModalContainer from "./modal/modal";
 
 const App = ({ rootPath }) => {
   // const header = (
@@ -21,6 +22,7 @@ const App = ({ rootPath }) => {
   return (
     <div>
       {/* {header} */}
+      <ModalContainer />
       <Route path='/' component={ HeaderContainer }/>
       <section className='main-section'>
       {/* <AuthRoute exact path='/' component={ Splash } /> */}
