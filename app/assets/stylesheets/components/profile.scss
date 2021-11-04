@@ -91,10 +91,15 @@
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
+    
+    
+    // .pf-edit-btn {
+        &:hover {
+            .pf-edit-drp {
+                display: block;
+            }
+        }
+    // }
 
-    &:hover {
-        .pf-edit-drp {display: block}
-    }
 }
-
 // .pf-edit-btn:hover .pf-edit-drp {display: block}

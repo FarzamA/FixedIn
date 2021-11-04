@@ -18,7 +18,6 @@ const Modal = ({ modal, closeModal }) => {
 
     return (
         <div className='modal-bg' onClick={closeModal}>
-            {/* clicks on links are still processed w stopProp */}
             <div className='modal-comp' onClick={e => e.stopPropagation()}>
                 {component}
             </div>

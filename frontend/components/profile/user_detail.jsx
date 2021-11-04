@@ -45,9 +45,9 @@ class UserDetail extends React.Component {
                 <div className='dropdown'>
                     <button className='pf-edit-btn' >Edit section</button> 
                         <ul className={`pf-edit-drp`}>
-                            <li>Intro</li>
-                            <li>Experiences</li>
-                            <li>Education</li>
+                            <li onClick={() => openModal('uploadAvatar')} >Intro</li>
+                            <li >Experiences</li>
+                            <li >Education</li>
                         </ul>
                 </div>
                 

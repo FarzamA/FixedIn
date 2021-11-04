@@ -3,3 +3,14 @@
     box-shadow: inset 0 0 0 2px $color;
     transition: 0.3s;
 }
+
+@mixin modal-button($color, $background) {
+    color: $color;
+    background: $background;
+    padding: 5px 15px;
+    border-radius: 30px;
+    border: 1px solid $color; 
+    font-weight: 600px;
+}
+
+$modal-padding: 12px 24px;

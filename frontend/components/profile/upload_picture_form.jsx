@@ -49,7 +49,7 @@ class UploadPictureForm extends React.Component {
 
         formData.append(`user[${imageType}]`, this.state[imageType]);
 
-        debugger
+        // debugger
         updateUserImg(formData, user.id);
 
         this.setState({
@@ -70,19 +70,21 @@ class UploadPictureForm extends React.Component {
         )
 
         const deleteButton = this.state[imageType] ? (
-            <button onClick={this.removeFile}>Cancel</button>
+            <button onClick={this.removeFile} className='close-modal-button'>Cancel</button>
         ) : null;
 
         return (
-            <div className='modal upload-image'>
+            <div className='modal upload-img'>
                 <header>{formType}</header>
                 <div className='upload-img-body'>
                     {preview}
                 </div>
                 <footer>
                     <input type='file' id='image-input' accept='image/png, image/jpeg' onChange={this.handleFile}></input>
-                    <button onClick={this.handleSubmit}>Save</button>
-                    {deleteButton}
+                    <div className='img-btn'>
+                        {deleteButton}
+                        <button onClick={this.handleSubmit}>Save</button>
+                    </div>
                 </footer>
             </div>
         )
