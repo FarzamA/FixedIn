@@ -80,7 +80,7 @@ class UploadPictureForm extends React.Component {
                     {preview}
                 </div>
                 <footer>
-                    <input type='file' id='image-input' accept='' onChange={this.handleFile}></input>
+                    <input type='file' id='image-input' accept='image/png, image/jpeg' onChange={this.handleFile}></input>
                     <button onClick={this.handleSubmit}>Save</button>
                     {deleteButton}
                 </footer>

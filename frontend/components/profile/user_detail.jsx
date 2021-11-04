@@ -24,7 +24,8 @@ class UserDetail extends React.Component {
     // };  
 
     render() {
-        const { user, currentUser, match, lastExperience, lastEducation, avatarUrl, openModal } = this.props;
+        // debugger
+        const { user, currentUser, match, lastExperience, lastEducation, openModal } = this.props;
 
         let editIntroButton;
         let editSectionButton;
@@ -69,14 +70,14 @@ class UserDetail extends React.Component {
             <>
                 <div className='user-profile-container'>
                     <div className='user-bg-img'>
-                        <img alt='Background Picture' />
+                        <img src={user.bgUrl} alt='Background Picture' />
                         {backgroundButton}
                     </div>
                     <div className='user-details'>
                         <div className='profile-user-info'>
                             <div className='profile-avatar-container'>
                                 <div className='avatar'>
-                                    <img src={avatarUrl || window.defaultUser} alt='Profile Pic' />
+                                    <img src={user.avatarUrl || window.defaultUser} alt='Profile Pic' />
                                 </div>
                                 {avatarButton}
                             </div>
