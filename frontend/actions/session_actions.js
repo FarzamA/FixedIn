@@ -79,6 +79,12 @@ export const updateUser = user => dispatch => (
     )
 );
 
+export const updateUserImg = (formData, id) => dispatch => (
+    SessionAPI.updateUserImg(formData, id).then(
+        user => dispatch(receiveUser(user))
+    )
+);
+
 export const loginUser = user => dispatch => (
     SessionAPI.loginUser(user).then(
         user => dispatch(receiveCurrentUser(user)),
