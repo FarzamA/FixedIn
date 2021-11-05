@@ -16,7 +16,10 @@
 
     img {
         height: 12vh;
-        width: auto;
+        width: 12vh;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
     }
 
     h1 {
@@ -94,11 +97,11 @@
     
     
     // .pf-edit-btn {
-        &:hover {
-            .pf-edit-drp {
-                display: block;
-            }
-        }
+        // &:hover {
+        //     .pf-edit-drp {
+        //         display: block;
+        //     }
+        // }
     // }
 
 }

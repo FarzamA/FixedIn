@@ -3,7 +3,10 @@
     // margin-left: 220px;
 
     img {
-        height: 7vh;
-        width: auto;
+        height: 10vh;
+        width: 10vh;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
     }
 }

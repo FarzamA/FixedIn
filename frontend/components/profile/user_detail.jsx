@@ -7,21 +7,33 @@ class UserDetail extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            dropDown: false
-        }
+        // this.state = {
+        //     dropDown: false
+        //     // leave: false 
+        // }
 
-        // this.clicked = this.clicked.bind(this);
-        // this.leave = this.leave.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.leave = this.leave.bind(this);
     }
 
-    // clicked() {
-    //     this.setState({ drop: true });
-    // };
+    handleClick(e) {
+        e.preventDefault();
+        const ele = $('.pf-edit-drp');
+        // console.log(ele);
+        ele[0].style.display = 'block';
+        // this.setState({ dropDown: true })
+    }
 
-    // leave() {
-    //     this.setState({ drop: false });
-    // };  
+    leave() {
+        const ele = $('.pf-edit-drp');
+        // console.log(ele);
+
+        setTimeout(() =>{
+
+            ele[0].style.display = 'none';
+            // this.setState({ dropDown: false });
+        }, 100)
+    }
 
     render() {
         // debugger
@@ -43,7 +55,7 @@ class UserDetail extends React.Component {
 
             editSectionButton = (
                 <div className='dropdown'>
-                    <button className='pf-edit-btn' >Edit section</button> 
+                    <button onFocus={this.handleClick} onBlur={this.leave} className='pf-edit-btn' >Edit section</button> 
                         <ul className={`pf-edit-drp`}>
                             <li onClick={() => openModal('uploadAvatar')} >Intro</li>
                             <li >Experiences</li>
