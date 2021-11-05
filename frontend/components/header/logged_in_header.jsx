@@ -8,19 +8,24 @@ class LoggedIn extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     logout: false
-        // };
+        this.state = {
+            drop: false
+        };
 
-        // this.clicked = this.clicked.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.leave = this.leave.bind(this);
     }
 
-    // clicked() {
-    //     this.setState({ logout: true });
-    // }
+    handleClick() {
+        this.setState({ drop: true });
+    }
+
+    leave() {
+        this.setState({ drop: false });
+    }
 
     render() {
-        const { user, logoutUser } = this.props;
+        const { user, logoutUser, history } = this.props;
         return (
             <div className='logged-in-container'>
                 <nav className='left-nav-bar'>
@@ -44,7 +49,36 @@ class LoggedIn extends React.Component {
                         <p>My Network</p>
                     </div>
                 </Link>
-                    <button onClick={logoutUser}>Sign Out</button>
+                    <button className='user-sess-btn' onFocus={this.handleClick} onBlur={this.leave}>
+                        <div className='header-avatar'>
+                            <div className='avatar-small'>
+                                <img src={user.avatarUrl || window.defaultUser} alt='pfp-small' />
+                            </div>
+                            <p>Me <span className='arrow-down'></span></p>
+                        </div>
+                        <ul className={'header-dropdown-' + (this.state.drop ? 'reveal' : 'hide')}>
+                            <li>
+                                <div>
+                                    <div className='avatar'>
+                                        <img src={user.avatarUrl || window.defaultUser} alt='pfp-small' />
+                                    </div>
+                                    <div>
+                                        <p>{`${user.firstName} ${user.lastName}`}</p>
+                                        <p>{user.headline}</p>
+                                    </div>
+                                </div>
+                                <div className='pf-btn' onClick={() => {
+                                    history.push(`/users/${user.id}`);
+                                    console.log(this);
+                                    console.log(that);
+                                    this.leave;
+                                }}>
+                                    View Profile
+                                </div>
+                            </li>
+                            <li onClick={logoutUser}>Sign Out</li>
+                        </ul>
+                    </button>
                 </nav>  
             </div>
         )
