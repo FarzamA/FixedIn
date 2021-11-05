@@ -1,9 +1,9 @@
 .feed-section  {
-    margin: 22vh;
+    margin: 15vh;
 }
 
 .profile-page-cont {
-    margin: 22vh;
+    margin: 15vh;
 }
 
 .user-details {
@@ -93,7 +93,9 @@
     background: $lightergray;
 
     &:hover {
-        @include btn-hover-border($gray, $lightgray);
+        // @include btn-hover-border($gray, $lightgray);
+        box-shadow: inset 0 0 0 2px $gray;
+        transition: 0.3s;
         cursor: pointer;
     }
 
