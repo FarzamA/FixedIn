@@ -52,7 +52,9 @@ class User < ApplicationRecord
     end
 
     def self.search(query)
-        User.where("concat_ws('', first_name, last_name) LIKE #{query}")
+        # takes in a separator a primary string a secondary string and puts it together
+        # ~* to let db know this is using string interpolation and is prone to SQL injection
+        User.where("concat_ws(' ', first_name, last_name) ~* '#{query}'")
             .limit(10)
     end
 
