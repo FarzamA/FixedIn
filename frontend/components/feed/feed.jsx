@@ -10,7 +10,7 @@ class Feed extends React.Component {
 
     render() {
         const { currentUser, userConnections } = this.props;
-        const { firstName, lastName, headline, avatarUrl } = currentUser;
+        const { firstName, lastName, headline, avatarUrl, backgroundUrl } = currentUser;
 
         return (
             <section className='feed-section'>
@@ -18,7 +18,7 @@ class Feed extends React.Component {
                     {/* Tip: The <aside> content is often placed as a sidebar in a document. -- w3schools */}
                     <aside className='user-sidebar'>
                         <div className='user-sidebar-bg'>
-                            <img alt='bg'/>
+                            <img src={backgroundUrl || window.defaultBg} alt='bg'/>
                         </div>
                         <div className='user-sidebar-info'>
                             <Link to={`/users/${currentUser.id}`}>

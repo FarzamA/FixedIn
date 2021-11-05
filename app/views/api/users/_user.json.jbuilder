@@ -5,6 +5,6 @@ if user.avatar.attached?
     json.avatarUrl url_for(user.avatar)
 end
 
-if user.bg.attached? 
-    json.bgUrl url_for(user.bg)
+if user.background.attached? 
+    json.backgroundUrl url_for(user.background)
 end

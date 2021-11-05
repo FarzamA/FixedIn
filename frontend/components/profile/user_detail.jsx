@@ -52,7 +52,7 @@ class UserDetail extends React.Component {
 
         let editIntroButton;
         let editSectionButton;
-        let avatarButton;
+        // let avatarButton;
         let backgroundButton;
 
         if (currentUser == match.params.id) {
@@ -68,7 +68,7 @@ class UserDetail extends React.Component {
                 <div className='dropdown'>
                     <button onFocus={this.handleClick} onBlur={this.leave} className='pf-edit-btn' >Edit section</button> 
                         <ul className={`pf-edit-drp`}>
-                            <li onClick={() => openModal('uploadAvatar')} >Intro</li>
+                            <li >Intro</li>
                             <li >Experiences</li>
                             <li >Education</li>
                         </ul>
@@ -76,24 +76,26 @@ class UserDetail extends React.Component {
                 
             );
 
-            avatarButton = (
-                <button onClick={() => openModal('uploadAvatar')} className='upload-av-btn'>
-                    <i className='fas fa-camera-retro'></i>
-                </button>
-            );
+            // avatarButton = (
+            //     <button onClick={() => openModal('uploadAvatar')} className='upload-av-btn'>
+            //         <i className='fas fa-camera-retro'></i>
+            //     </button>
+            // );
 
             backgroundButton = (
-                <button className='upload-bg-button'>
+                <button onClick={() => openModal('uploadBackground')} className='upload-bg-button'>
                     <i className='fas fa-camera-retro'></i>
                 </button>
             )
         };
 
+        // console.log(user);
+
         return (
             <>
                 <div className='user-profile-container'>
                     <div className='user-bg-img'>
-                        <img src={user.bgUrl} alt='Background Picture' />
+                        <img src={user.backgroundUrl || window.defaultBg} alt='Background Picture' />
                         {backgroundButton}
                     </div>
                     <div className='user-details'>

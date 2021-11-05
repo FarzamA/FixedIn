@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import UploadAvatarContainer from '../profile/upload_avatar_container';
+import UploadBackgroundContainer from '../profile/upload_bg_container';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) return null;
@@ -14,6 +15,8 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'uploadBackground':
             component = <UploadBackgroundContainer closeModal={closeModal}/>;
+            //always remember to break in case statements
+            break;
         default:
             return null;
     }

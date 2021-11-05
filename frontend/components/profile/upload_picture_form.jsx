@@ -7,8 +7,8 @@ class UploadPictureForm extends React.Component {
         this.state = {
             avatar: '',
             avatarUrl: '',
-            bg: '',
-            bgUrl: ''
+            background: '',
+            backgroundUrl: ''
         };
 
         this.removeFile = this.removeFile.bind(this);
@@ -46,7 +46,7 @@ class UploadPictureForm extends React.Component {
         let formData = new FormData();
 
 
-
+        // debugger
         formData.append(`user[${imageType}]`, this.state[imageType]);
 
         // debugger
@@ -80,7 +80,7 @@ class UploadPictureForm extends React.Component {
                     {preview}
                 </div>
                 <footer>
-                    <input type='file' id='image-input' accept='image/png, image/jpeg' onChange={this.handleFile}></input>
+                    <input type='file' id='image-input' accept='image/*' onChange={this.handleFile}></input>
                     <div className='img-btn'>
                         {deleteButton}
                         <button onClick={this.handleSubmit}>Save</button>
