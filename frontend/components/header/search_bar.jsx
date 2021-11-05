@@ -29,6 +29,7 @@ class SearchBar extends React.Component {
         this.setState({ results: [] });
         document.getElementById('search-field').value = '';
         this.props.history.push(`/users/${userId}`);
+        // this.forceUpdate();
     }
 
     render() {

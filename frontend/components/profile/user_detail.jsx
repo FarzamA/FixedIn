@@ -22,14 +22,25 @@ class UserDetail extends React.Component {
         // console.log(ele);
         ele[0].style.display = 'block';
         // this.setState({ dropDown: true })
+
+        const button = $('.pf-edit-btn');
+        
+        // console.log(button[0].style);
+        button[0].style.background = '#d8d8d8';
+        setTimeout(() => {
+            button[0].style.boxShadow = 'inset 0 0 0 2px rgba(0,0,0,0.6)';
+            button[0].style.transition = '0.3s';
+        }, 100)
+
     }
 
     leave() {
         const ele = $('.pf-edit-drp');
         // console.log(ele);
-
+        const button = $('.pf-edit-btn');
         setTimeout(() =>{
-
+            button[0].style.boxShadow = '';
+            button[0].style.background = '#eeeeee'
             ele[0].style.display = 'none';
             // this.setState({ dropDown: false });
         }, 100)
@@ -89,9 +100,9 @@ class UserDetail extends React.Component {
                         <div className='profile-user-info'>
                             <div className='profile-avatar-container'>
                                 <div className='avatar'>
-                                    <img src={user.avatarUrl || window.defaultUser} alt='Profile Pic' />
+                                    <img onClick={() => openModal('uploadAvatar')} src={user.avatarUrl || window.defaultUser} alt='Profile Pic' />
                                 </div>
-                                {avatarButton}
+                                {/* {avatarButton} */}
                             </div>
                             <div>
                                 <h1>{`${user.firstName} ${user.lastName}`}</h1>

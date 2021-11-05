@@ -20,6 +20,11 @@
         border-radius: 50%;
         object-fit: cover;
         object-position: top;
+
+        &:hover {
+            box-shadow: inset 10px 10px 10px 10px rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
     }
 
     h1 {
@@ -106,3 +111,39 @@
 
 }
 // .pf-edit-btn:hover .pf-edit-drp {display: block}
+
+.pf-edit-btn {
+    position: relative;
+    padding: 5px 15px;
+    border: 1px solid $gray;
+    border-radius: 20px;
+    font-weight: 600;
+    background: $lightergray;
+
+    &:hover {
+        @include btn-hover-border($gray, $lightgray);
+        cursor: pointer;
+    }
+
+   
+}
+
+.pf-edit-drp {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    border-radius: 8px;
+    border: 1px solid $lightgray;
+    background: white;
+    box-shadow: 0px 2px 8px 3px rgba(200, 200, 200, 0.7);
+    z-index: 10;
+
+    li {
+        padding: 8px 20px;
+  
+        &:hover {
+          background: $lightgray;
+          cursor: pointer;
+        }
+    }
+}

@@ -12,6 +12,8 @@ const Modal = ({ modal, closeModal }) => {
             // debugger
             component = <UploadAvatarContainer closeModal={closeModal}/>;
             break;
+        case 'uploadBackground':
+            component = <UploadBackgroundContainer closeModal={closeModal}/>;
         default:
             return null;
     }
