@@ -15,7 +15,13 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'uploadBackground':
             component = <UploadBackgroundContainer closeModal={closeModal}/>;
-            //always remember to break in case statements
+            //always remember to break in case statements or it breaks your code ha ha ha
+            break;
+        case 'createEdu':
+            component = <CreateEducationForm closeModal={closeModal}/>
+            break;
+        case 'editEdu':
+            component = <EditEducationForm closeModal={closeModal} />
             break;
         default:
             return null;

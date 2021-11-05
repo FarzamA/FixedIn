@@ -1,9 +1,13 @@
-.feed-section  {
-    margin: 15vh;
-}
-
 .profile-page-cont {
-    margin: 15vh;
+    padding-left: 18.75vw;
+}
+.user-bg-img {
+    img {
+        width: 42vw;
+        height: 30vh;
+        object-fit: cover;
+        object-position: top;
+    }
 }
 
 .user-details {
@@ -13,6 +17,7 @@
     padding: 20px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    width: 40vw;
 
     img {
         height: 12vh;

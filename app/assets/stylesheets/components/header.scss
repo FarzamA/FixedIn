@@ -170,9 +170,19 @@
             ul {
                 li {
                     border: 1px solid black;
+                    padding: 8px 20px;
+  
+                    &:hover {
+                    background: $lightgray;
+                    cursor: pointer;
+                    }
                 }
                 background-color: white;
                 position: absolute;
+            }
+
+            &:hover{
+                cursor: pointer;
             }
         }
         

@@ -1,12 +1,29 @@
+.feed-section  {
+    padding-left: 18.75vw;
+    padding-top: 5vh;
+}
+
 .user-sidebar{
-    margin-top: 15vh;
+    // margin-top: 15vh;
     // margin-left: 220px;
 
     .user-sidebar-avatar > img {
-        height: 10vh;
-        width: 10vh;
+        height: 8vh;
+        width: 8vh;
         border-radius: 50%;
         object-fit: cover;
         object-position: top;
+        // position: absolute;
     }
+
+    .user-sidebar-bg > img {
+        width: 15vw;
+        height: 12vh;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    // .user-sidebar-info {
+    //     position: absolute;
+    // }
 }
