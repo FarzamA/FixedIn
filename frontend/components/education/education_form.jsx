@@ -59,8 +59,13 @@ class EducationForm extends React.Component {
 
 
     render() {
-        console.log(this.state);
-        const { id, school, degree, field, gpa, start_date, end_date, activities, description, schoolErr, yearErr } = this.state;
+        // console.log(this.state);
+        // debugger
+        const { id, school, degree, field, gpa, startDate, endDate, activities, description, schoolErr, yearErr } = this.state;
+
+        const startDateEdu = new Date(`${startDate}`)
+        const endDateEdu = new Date(`${endDate}`)
+
 
         const years = [];
         for(let i = 1945; i <= 2042; i++ ) {
@@ -74,11 +79,11 @@ class EducationForm extends React.Component {
         const endDateSelectors = (
             <>
                 <select className='edu-selector-form' onChange={this.handleInput('endMon')}>
-                    <option value='Month'>Month</option>
+                    <option value='Month'>{months[endDateEdu.getMonth() - 1] || 'Month'}</option>
                     {monthOptions}
                 </select>
                 <select> 
-                    <option value='Year'>Year</option>
+                    <option value='Year'>{endDateEdu.getFullYear() || 'Year'}</option>
                     {years.map(year => (
                         <option key={year}>{year}</option>
                     ))}
@@ -109,11 +114,11 @@ class EducationForm extends React.Component {
                         <label>Start Date</label>
                         <div className='edu-date'>
                             <select className='start-month' onChange={this.handleInput('startMon')} >
-                                <option value='Month'>Month</option>
+                                <option value='Month'>{months[startDateEdu.getMonth() - 1] || 'Month'}</option>
                                 {monthOptions}
                             </select>
                             <select className='start-year' onChange={this.handleInput('startYear')} >
-                                <option value='Year'>Year</option>
+                                <option value='Year'>{startDateEdu.getFullYear() || 'Year'}</option>
                                 {years.map(year => {
                                     if (year < 2022) return (<option key={year}>{year}</option>)
                                 })}
