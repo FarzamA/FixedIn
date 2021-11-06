@@ -126,11 +126,11 @@ class EducationForm extends React.Component {
                     </div>
                     {yearErr ? <p className='error-msg'>Error</p> : null}
                     <label>GPA</label>
-                    <input type='text' value={gpa} onChange={this.handleInput('gpa')} />
+                    <input type='text' value={gpa || ''} onChange={this.handleInput('gpa')} />
                     <label>Activities</label>
-                    <input type='text' value={activities} onChange={this.handleInput('activities')} />
+                    <input type='text' value={activities || ''} onChange={this.handleInput('activities')} />
                     <label>Description</label>
-                    <input type='text' value={description} onChange={this.handleInput('description')} />
+                    <input type='text' value={description || ''} onChange={this.handleInput('description')} />
                 </form>
                 <footer className='exp-edu-footer'>
                     <button onClick={this.handleSubmit}>Save</button>
