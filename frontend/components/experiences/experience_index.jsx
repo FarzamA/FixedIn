@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { openModal } from '../../actions/modal';
 import ExperienceIndexItemContainer from './experience_index_item';
 
 class ExperienceIndex extends React.Component {
@@ -36,7 +37,7 @@ const mSTP = ({ session: { currentUser } }) => ({
 });
 
 const mDTP = dispatch => ({
-
+    openModal: (modal, id) => dispatch(openModal(modal, id))
 });
 
 const ExperienceIndexContainer = withRouter(connect(mSTP, mDTP)(ExperienceIndex));

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions'
 
 const ExperienceIndexItem = ({ experience, currentUser, match }) => {
     const editButton = currentUser == match.params.id ? (
@@ -52,7 +53,8 @@ const mSTP = ({ session: { currentUser } }) => ({
 });
 
 const mDTP = dispatch => ({
-
+    openModal: (modal, id) => dispatch(openModal(modal, id)),
+    dispatch
 });
 
 const ExperienceIndexItemContainer = withRouter(connect(mSTP, mDTP)(ExperienceIndexItem));
