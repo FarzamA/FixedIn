@@ -69,7 +69,7 @@ class EducationForm extends React.Component {
             <option key={month} value={month}>{month}</option> 
         ));
 
-        const endDateSelectors = present ? <p>Present</p> : (
+        const endDateSelectors = (
             <>
                 <select className='edu-selector-form' onChange={this.handleInput('endMon')}>
                     <option value='Month'>Month</option>
@@ -92,7 +92,7 @@ class EducationForm extends React.Component {
             <div className='modal'>
                 <header>
                     <h2>{this.props.formType}</h2>
-                    <span className='close-modal-button' >X</span> 
+                    <span className='close-modal-button' onClick={() => this.props.closeModal()}>X</span> 
                 </header>
                 <form className='edu-form'>
                     <label>School*</label> 
@@ -139,3 +139,5 @@ class EducationForm extends React.Component {
         );
     }
 }
+
+export default EducationForm;

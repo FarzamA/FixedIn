@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import UploadAvatarContainer from '../profile/upload_avatar_container';
 import UploadBackgroundContainer from '../profile/upload_bg_container';
+import CreateEducationForm from '../education/create_education_form';
+import EditEducationForm from '../education/edit_education_form';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) return null;

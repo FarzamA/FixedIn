@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 import EducationIndexItemContainer from './education_index_item';
 
@@ -8,7 +9,7 @@ class EducationIndex extends React.Component {
         // console.log(this.currentUser);
         const { currentUser, match, educations } = this.props;
         const newEduButton = currentUser == (match.params.id) ? (
-            <button>
+            <button onClick={() => this.props.openModal('createEdu')} className='open-edu'>
                 <i className="fas fa-plus"></i>
             </button>
         ) : null;
@@ -37,7 +38,7 @@ const mapSTP = ({ session: { currentUser } }) => ({
 });
 
 const mapDTP = dispatch => ({
-
+    openModal: (modal, id) => dispatch(openModal(modal, id))
 });
 
 const EducationIndexContainer = withRouter(connect(mapSTP, mapDTP)(EducationIndex));

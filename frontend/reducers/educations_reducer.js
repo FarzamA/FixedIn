@@ -8,7 +8,7 @@ const educationsReducer = (state = {}, action) => {
         case RECEIVE_CURRENT_USER: 
             return { ...state, ...action.educations };
         case RECEIVE_EDUCATIONS: 
-            return { ...state, ...actions.educations };
+            return { ...state, ...action.educations };
         case RECEIVE_EDUCATION:
             const { id } = action.education;
             return { ...state, [id]: action.education }
