@@ -54,7 +54,7 @@ class UserDetail extends React.Component {
         let editSectionButton;
         // let avatarButton;
         let backgroundButton;
-
+        // == converts variables to same type b4 conversion === does not do this
         if (currentUser == match.params.id) {
             // separated buttons out to deal w click handlers leading to
             // modals later
@@ -102,7 +102,8 @@ class UserDetail extends React.Component {
                         <div className='profile-user-info'>
                             <div className='profile-avatar-container'>
                                 <div className='avatar'>
-                                    <img onClick={() => openModal('uploadAvatar')} src={user.avatarUrl || window.defaultUser} alt='Profile Pic' />
+                                    <img onClick={() => currentUser == match.params.id ? openModal('uploadAvatar') : null} src={user.avatarUrl || window.defaultUser} alt='Profile Pic' />
+
                                 </div>
                                 {/* {avatarButton} */}
                             </div>
