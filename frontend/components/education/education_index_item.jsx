@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { openModal } from '../../actions/modal_actions'
 
 const EducationIndexItem = ({ education, currentUser, match }) => {
     // add an onclick of the dispatched action to the button
@@ -54,6 +55,7 @@ const mSTP = ({ session: { currentUser }}) => ({
 
 const mDTP = dispatch => ({
     // whatever action that will execute on edit
+    openModal: (modal, id) => dispatch(openModal(modal, id))
 });
 
 const EducationItemContainer = withRouter(connect(mSTP, mDTP)(EducationIndexItem));
