@@ -23,6 +23,7 @@ const Modal = ({ modal, closeModal }) => {
             component = <CreateEducationForm closeModal={closeModal}/>
             break;
         case 'editEdu':
+            console.log('editing modal')
             component = <EditEducationForm closeModal={closeModal} />
             break;
         default:

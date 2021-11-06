@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteEducation, updateEducation } from '../../util/education_api';
+import { deleteEducation, updateEducation } from '../../actions/education_actions';
 import EducationForm from './education_form';
 
 const mSTP = ({ entities: { educations }, ui: { filter }}) => ({

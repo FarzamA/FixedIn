@@ -18,8 +18,9 @@ const months = [
 class EducationForm extends React.Component {
     constructor(props) {
         super(props);
+        // debugger
         this.state = {
-            ...this.props.education,
+            ...props.education,
             startMon: '',
             endMon: '',
             startYear: '',
@@ -58,6 +59,7 @@ class EducationForm extends React.Component {
 
 
     render() {
+        console.log(this.state);
         const { id, school, degree, field, gpa, start_date, end_date, activities, description, schoolErr, yearErr } = this.state;
 
         const years = [];
@@ -119,7 +121,7 @@ class EducationForm extends React.Component {
                         </div>
                     </div>
                     <div className="edu-end-year">
-                        <label>End Date*</label>
+                        <label>End Date</label>
                         {endDateSelectors}
                     </div>
                     {yearErr ? <p className='error-msg'>Error</p> : null}
