@@ -130,7 +130,7 @@ class EducationForm extends React.Component {
         const endDateSelectors = (
             <>
                 <select className='edu-selector-form' onChange={this.handleInput('endMonth')}>
-                    <option value='Month'>{months[endDateEdu.getMonth() - 1] || 'Month'}</option>
+                    <option value='Month'>{months[endDateEdu.getMonth()] || 'Month'}</option>
                     {monthOptions}
                 </select>
                 <select> 
@@ -165,7 +165,7 @@ class EducationForm extends React.Component {
                         <label>Start Date</label>
                         <div className='edu-date'>
                             <select className='start-month' onChange={this.handleInput('startMonth')} >
-                                <option value='Month'>{months[startDateEdu.getMonth() - 1] || 'Month'}</option>
+                                <option value='Month'>{months[startDateEdu.getMonth()] || 'Month'}</option>
                                 {monthOptions}
                             </select>
                             <select className='start-year' onChange={this.handleInput('startYear')} >

@@ -39,7 +39,7 @@ class ExperienceForm extends React.Component {
             titleErr: false,
             companyErr: false,
             yearErr: false,
-            present: true
+            present: false
         };
 
         this.yearErrMsg = '';
@@ -146,7 +146,7 @@ class ExperienceForm extends React.Component {
         const endDateSelectors = present ? <p>Present</p> : (
             <>
                 <select className='exp-selector-form' onChange={this.handleInput('endMon')}>
-                    <option value='Month'>{months[endDateExp.getMonth() - 1] || 'Month'}</option>
+                    <option value='Month'>{months[endDateExp.getMonth()] || 'Month'}</option>
                     {monthOptions}
                 </select>
                 <select> 
@@ -191,8 +191,8 @@ class ExperienceForm extends React.Component {
                     <div className='year-form'>
                         <label>Start Date</label>
                         <div className='exp-date'>
-                            <select className='start-month' onChange={this.handleInput('startMon')} >
-                                <option value='Month'>{months[startDateExp.getMonth() - 1] || 'Month'}</option>
+                            <select className='start-month' onChange={this.handleInput('startMonth')} >
+                                <option value='Month'>{months[startDateExp.getMonth()] || 'Month'}</option>
                                 {monthOptions}
                             </select>
                             <select className='start-year' onChange={this.handleInput('startYear')} >
