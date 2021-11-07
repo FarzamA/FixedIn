@@ -23,9 +23,9 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    has_one_attached :avatar, dependent: :destroy
+    has_one_attached :avatar
 
-    has_one_attached :background, dependent: :destroy
+    has_one_attached :background
 
     has_many :posts, dependent: :destroy
 
