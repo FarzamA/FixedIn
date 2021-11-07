@@ -145,7 +145,7 @@ class ExperienceForm extends React.Component {
 
         const endDateSelectors = present ? <p>Present</p> : (
             <>
-                <select className='exp-selector-form' onChange={this.handleInput('endMon')}>
+                <select className='exp-selector-form' onChange={this.handleInput('endMonth')}>
                     <option value='Month'>{months[endDateExp.getMonth()] || 'Month'}</option>
                     {monthOptions}
                 </select>
