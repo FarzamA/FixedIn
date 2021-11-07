@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions'
 
-const ExperienceIndexItem = ({ experience, currentUser, match }) => {
+const ExperienceIndexItem = ({ experience, currentUser, match, openModal }) => {
     const editButton = currentUser == match.params.id ? (
-        <button className='edit-exp-but'>
+        <button onClick={() => openModal('editExp', experience.id)}>
             <i className="fas fa-pencil-alt"></i>
         </button>
     ) : null; 

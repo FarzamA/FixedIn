@@ -5,6 +5,8 @@ import UploadAvatarContainer from '../profile/upload_avatar_container';
 import UploadBackgroundContainer from '../profile/upload_bg_container';
 import CreateEducationForm from '../education/create_education_form';
 import EditEducationForm from '../education/edit_education_form';
+import CreateExperienceForm from '../experiences/create_experience_form';
+import EditExperienceForm from '../experiences/edit_experience_form';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) return null;
@@ -23,9 +25,14 @@ const Modal = ({ modal, closeModal }) => {
             component = <CreateEducationForm closeModal={closeModal}/>
             break;
         case 'editEdu':
-            console.log('editing modal')
+            // console.log('editing modal')
             component = <EditEducationForm closeModal={closeModal} />
             break;
+        case 'editExp':
+            component = <EditExperienceForm closeModal={closeModal} />
+            break;
+        case 'createEdu':
+            component = <CreateExperienceForm closeModal={closeModal} />
         default:
             return null;
     }

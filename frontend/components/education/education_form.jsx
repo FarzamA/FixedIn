@@ -63,8 +63,8 @@ class EducationForm extends React.Component {
         // debugger
         const { id, school, degree, field, gpa, startDate, endDate, activities, description, schoolErr, yearErr } = this.state;
 
-        const startDateEdu = new Date(`${startDate}`)
-        const endDateEdu = new Date(`${endDate}`)
+        const startDateEdu = new Date(`${startDate}`);
+        const endDateEdu = new Date(`${endDate}`);
 
 
         const years = [];
