@@ -69,9 +69,7 @@ class LoggedIn extends React.Component {
                                 </div>
                                 <div className='pf-btn' onClick={() => {
                                     history.push(`/users/${user.id}`);
-                                    console.log(this);
-                                    console.log(that);
-                                    this.leave;
+                                    this.leave();
                                 }}>
                                     View Profile
                                 </div>
