@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'down'
+#require 'down'
 ActiveRecord::Base.transaction do 
     User.destroy_all 
     Post.destroy_all 
@@ -901,123 +901,104 @@ ActiveRecord::Base.transaction do
 
     post1 = Post.create(
         body: Faker::Quote.matz,
-        user_id: demo_user.id,
-        like_count: 3
+        user_id: demo_user.id
     )
 
     post2 = Post.create(
         body: Faker::Quote.matz,
-        user_id: demo_user.id,
-        like_count: 1
+        user_id: demo_user.id
     )
 
     post3 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user1.id,
-        like_count: 1
+        user_id: user1.id
     )
 
     post4 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user2.id,
-        like_count: 2
+        user_id: user2.id
     )
 
     post5 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user3.id,
-        like_count: 1
+        user_id: user3.id
     )
 
     post6 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user4.id,
-        like_count: 0
+        user_id: user4.id
     )
 
     post7 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user5.id,
-        like_count: 1
+        user_id: user5.id
     )
 
     post8 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user6.id,
-        like_count: 1
+        user_id: user6.id
     )
 
     post9 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user7.id,
-        like_count: 4
+        user_id: user7.id
     )
 
     post10 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user8.id,
-        like_count: 1
+        user_id: user8.id
     )
 
     post11 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user9.id,
-        like_count: 2
+        user_id: user9.id
     )
 
     post12 = Post.create(
         body: Faker::Quote.matz,
-        user_id: user10.id,
-        like_count: 2
+        user_id: user10.id
     )
 
     comment1 = Comment.create(
         body: Faker::Quote.famous_last_words,
         user_id: user1.id,
-        post_id: post1.id,
-        like_count: 0
+        post_id: post1.id
     )
 
     comment2 = Comment.create(
         body: Faker::Quote.famous_last_words,
         user_id: user1.id,
-        post_id: post2.id,
-        like_count: 0
+        post_id: post2.id
     )
 
     comment3 = Comment.create(
         body: Faker::Quote.famous_last_words,
         user_id: user1.id,
-        post_id: post3.id,
-        like_count: 1
+        post_id: post3.id
     )
 
     comment4 = Comment.create(
         body: Faker::Quote.famous_last_words,
         user_id: demo_user.id,
-        post_id: post4.id,
-        like_count: 1
+        post_id: post4.id
     )
 
     comment5 = Comment.create(
         body: Faker::Quote.famous_last_words,
         user_id: user2.id,
-        post_id: post1.id,
-        like_count: 0
+        post_id: post1.id
     )
 
     comment6 = Comment.create(
         body: Faker::Quote.famous_last_words,
         user_id: user3.id,
-        post_id: post5.id,
-        like_count: 2
+        post_id: post5.id
     )
 
     comment7 = Comment.create(
         body: Faker::Quote.famous_last_words,
         user_id: user4.id,
-        post_id: post7.id,
-        like_count: 1
+        post_id: post7.id
     )
 
     like1 = Like.create(
