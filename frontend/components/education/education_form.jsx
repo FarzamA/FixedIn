@@ -150,7 +150,7 @@ class EducationForm extends React.Component {
             <div className='modal'>
                 <header>
                     <h2>{this.props.formType}</h2>
-                    <span className='close-modal-button' onClick={() => this.props.closeModal()}>X</span> 
+                    <span className='close-modal-button' onClick={() => this.props.closeModal()}>✕</span> 
                 </header>
                 <form className='edu-form'>
                     <label>School*</label> 
