@@ -8,7 +8,7 @@ class ExperienceIndex extends React.Component {
     render () {
         const { currentUser, match, experiences } = this.props;
         const newExpButton = currentUser == (match.params.id) ? (
-            <button>
+            <button onClick={() => this.props.openModal('createExp')}>
                 <i className="fas fa-plus"></i>
             </button>
         ) : null;

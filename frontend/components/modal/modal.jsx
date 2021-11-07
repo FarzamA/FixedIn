@@ -31,8 +31,9 @@ const Modal = ({ modal, closeModal }) => {
         case 'editExp':
             component = <EditExperienceForm closeModal={closeModal} />
             break;
-        case 'createEdu':
+        case 'createExp':
             component = <CreateExperienceForm closeModal={closeModal} />
+            break;
         default:
             return null;
     }

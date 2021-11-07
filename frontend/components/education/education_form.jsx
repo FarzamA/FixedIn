@@ -21,15 +21,17 @@ class EducationForm extends React.Component {
         // debugger
         this.state = {
             ...props.education,
-            startMon: '',
-            endMon: '',
+            startMonth: '',
+            endMonth: '',
             startYear: '',
             endYear: '',
             yearErr: false, 
-            schoolErr: false 
+            schoolErr: false,
+            gpaErr: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.yearErrMsg = '';
     }
 
 
@@ -37,19 +39,22 @@ class EducationForm extends React.Component {
         e.preventDefault();
         this.setState({ yearErr: false });
 
-        const { startYear, startMon, endYear, endMon, userId } = this.state;
+        if (!this.handleErrors()) {
 
-        const start_date = `${startYear}-${months.indexOf(startMon) + 1}-01`;
-        const end_date = `${endYear}-${months.indexOf(endMon) + 1}-01`;
+            const { startYear, startMonth, endYear, endMonth, userId } = this.state;
 
-        this.props.processForm({
-            ...this.state,
-            user_id: userId,
-            start_date: start_date,
-            end_date: end_date,
-        });
+            const start_date = `${startYear}-${months.indexOf(startMonth) + 1}-01`;
+            const end_date = `${endYear}-${months.indexOf(endMonth) + 1}-01`;
 
-        this.props.closeModal();
+            this.props.processForm({
+                ...this.state,
+                user_id: userId,
+                start_date: start_date,
+                end_date: end_date,
+            });
+
+            this.props.closeModal();
+        }
         
     };
 
@@ -57,11 +62,57 @@ class EducationForm extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     };
 
+    handleErrors() {
+        console.log(this.state);
+        const { startYear, endYear, startMonth, endMonth, school, gpa } = this.state;
+        let errorSwitch = false;
+
+        if ((!startYear.length && !startMonth.length)) {
+            this.setState({ yearErr: true });
+            this.yearErrMsg = 'Please enter a start date';
+            errorSwitch = true;
+        } else if (!endYear.length && !endMonth.length) {
+            this.setState({ yearErr: true });
+            errorSwitch = true;
+            this.yearErrMsg = 'Please enter an end date'
+        } else {
+            // parseInt turns a string to an integer
+            const start = parseInt(startYear);
+            const end = parseInt(endYear);
+
+            if (start > end || (start == end && months.indexOf(startMonth) > months.indexOf(endMonth))) {
+                this.setState({ yearErr: true });
+                errorSwitch = true;
+                this.yearErrMsg = "Your start date can't be after your end date"
+            }
+        };
+
+        if (!school.length) {
+            this.setState({ schoolErr: true });
+            errorSwitch = true;
+        };
+
+        if (!gpa.length) {
+            this.setState({ gpaErr: true });
+            errorSwitch = true;
+        }
+
+        const parsed = parseInt(gpa);
+        console.log(gpa);
+
+        if (parsed < 0 || parsed > 4.0) {
+            this.setState({ gpaErr: true });
+            errorSwitch = true;
+        };
+
+        return errorSwitch;
+    }
+
 
     render() {
         // console.log(this.state);
         // debugger
-        const { id, school, degree, field, gpa, startDate, endDate, activities, description, schoolErr, yearErr } = this.state;
+        const { id, school, degree, field, gpa, startDate, endDate, activities, description, schoolErr, yearErr, gpaErr } = this.state;
 
         const startDateEdu = new Date(`${startDate}`);
         const endDateEdu = new Date(`${endDate}`);
@@ -78,7 +129,7 @@ class EducationForm extends React.Component {
 
         const endDateSelectors = (
             <>
-                <select className='edu-selector-form' onChange={this.handleInput('endMon')}>
+                <select className='edu-selector-form' onChange={this.handleInput('endMonth')}>
                     <option value='Month'>{months[endDateEdu.getMonth() - 1] || 'Month'}</option>
                     {monthOptions}
                 </select>
@@ -113,7 +164,7 @@ class EducationForm extends React.Component {
                     <div className='year-form'>
                         <label>Start Date</label>
                         <div className='edu-date'>
-                            <select className='start-month' onChange={this.handleInput('startMon')} >
+                            <select className='start-month' onChange={this.handleInput('startMonth')} >
                                 <option value='Month'>{months[startDateEdu.getMonth() - 1] || 'Month'}</option>
                                 {monthOptions}
                             </select>
@@ -129,9 +180,10 @@ class EducationForm extends React.Component {
                         <label>End Date</label>
                         {endDateSelectors}
                     </div>
-                    {yearErr ? <p className='error-msg'>Error</p> : null}
+                    {yearErr ? <p className='error-msg'>Your end year can't be earlier than your start year</p> : null}
                     <label>GPA</label>
                     <input type='text' value={gpa || ''} onChange={this.handleInput('gpa')} />
+                    {gpaErr ? <p>Please enter GPA between 0 and 4</p> : null}
                     <label>Activities</label>
                     <input type='text' value={activities || ''} onChange={this.handleInput('activities')} />
                     <label>Description</label>

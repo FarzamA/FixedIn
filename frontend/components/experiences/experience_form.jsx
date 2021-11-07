@@ -89,7 +89,7 @@ class ExperienceForm extends React.Component {
     };
 
     handleErrors() {
-        const { startYear, endYear, startMonth, endMonth, title, company, present} = this.state;
+        const { startYear, endYear, startMonth, endMonth, title, company, present } = this.state;
         let errorSwitch = false;
 
         if (!startYear.length && !startMonth.length) {
@@ -126,7 +126,7 @@ class ExperienceForm extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         const { id, title, company, location, description, startDate, endDate, 
             titleErr, companyErr, yearErr, present, headline, field, employmentType } = this.state;
 
@@ -174,7 +174,7 @@ class ExperienceForm extends React.Component {
                     {titleErr ? <p className='error-msg'>Please enter your title</p> : null}
                     <label>Employment type</label>
                     <select onChange={this.handleInput('employmentType')}>
-                        <option value='Type'>{empTypes[empTypes.indexOf(employmentType)] || 'Employment Tpe'}</option>
+                        <option value='Type'>{empTypes[empTypes.indexOf(employmentType)] || 'Employment Type'}</option>
                         {empTypes.map(type => (
                             <option key={type} value={type}>{type}</option>
                         ))}
