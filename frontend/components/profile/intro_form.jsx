@@ -62,7 +62,7 @@ class EditIntro extends React.Component {
 
     render() {
         const {
-            firstName, lastName, industry, state, city, firstNameErr,
+            firstName, lastName, industry, state, city, headline, firstNameErr,
             lastNameErr, headlineErr, stateErr, cityErr, industryErr
         } = this.state;
 
@@ -72,6 +72,59 @@ class EditIntro extends React.Component {
                     <h2>Edit Intro</h2>
                     <span className='close-modal-button' onClick={() => this.props.closeModal()}>✕</span>
                 </header>
+                <form>
+                    <div className='intro-name'>
+                        <div>
+                            <label>First Name*</label>
+                            <input type="text" value={firstName || ''} className = {firstNameErr ? 'input-error' : ''}
+                                onChange={this.handleInput('firstName')}
+                                onBlur={this.checkError('firstNameErr')}
+                             />
+                             {firstNameErr ? <p className='error-msg'>Please enter your first name</p> : null}
+                        </div>
+                        <div>
+                            <label>Last Name*</label>
+                            <input type="text" value={lastName || ''} className = {lastNameErr ? 'input-error' : ''}
+                                onChange={this.handleInput('lastName')}
+                                onBlur={this.checkError('lastNameErr')}
+                             />
+                             {lastNameErr ? <p className='error-msg'>Please enter your last name</p> : null}
+                        </div>
+                    </div>
+                    <label>Headline*</label>
+                    <input type='text' value={headline || ''} className={headlineErr ? 'input-error' : ''}
+                        onChange={this.handleInput('headline')}
+                        onBlur={this.checkError('headlineErr')}
+                    />
+                    {headlineErr ? <p className='error-msg'>Please enter a headline</p> : null}
+                    <div className='intro-location'>
+                        <div className='intro state'>
+                            <label>State *</label>
+                            <input type="text" value={state || ''} className={stateErr ? 'input-error' : ''}
+                            onChange={this.handleInput('state')} 
+                            onBlur={this.checkError('stateErr')}
+                            />
+                            {stateErr ? <p className='error-msg'>Please enter your state</p> : null}
+                        </div>
+                        <div className='intro city'>
+                        <label>City *</label>
+                            <input type="text" value={city || ''} className={cityErr ? 'input-error' : ''}
+                                    onChange={this.handleInput('city')} 
+                                    onBlur={this.checkError('cityErr')}
+                            />
+                            {cityErr ? <p className='error-msg'>Please enter your city</p> : null}
+                        </div>
+                        <label>Industry *</label>
+                        <input type="text" value={industry} className={industryErr ? 'input-error' : ''}
+                                onChange={this.handleInput('industry')} 
+                                onBlur={this.checkError('industryErr')}
+                        />
+                        {industryErr ? <p className='error-msg'>Please enter your industry</p> : null}
+                    </div>
+                </form>
+                <footer>
+                    <button onClick={this.handleSubmit}>Save</button>
+                </footer>
             </div>
             
         )

@@ -63,7 +63,7 @@ class EducationForm extends React.Component {
     };
 
     handleErrors() {
-        console.log(this.state);
+        // console.log(this.state);
         const { startYear, endYear, startMonth, endMonth, school, gpa } = this.state;
         let errorSwitch = false;
 

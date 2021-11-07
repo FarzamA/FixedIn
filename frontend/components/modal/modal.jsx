@@ -7,6 +7,7 @@ import CreateEducationForm from '../education/create_education_form';
 import EditEducationForm from '../education/edit_education_form';
 import CreateExperienceForm from '../experiences/create_experience_form';
 import EditExperienceForm from '../experiences/edit_experience_form';
+import EditIntroContainer from '../profile/intro_form';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) return null;
@@ -33,6 +34,9 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'createExp':
             component = <CreateExperienceForm closeModal={closeModal} />
+            break;
+        case 'editIntro':
+            component = <EditIntroContainer closeModal={closeModal} />
             break;
         default:
             return null;

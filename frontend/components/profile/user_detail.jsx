@@ -68,9 +68,9 @@ class UserDetail extends React.Component {
                 <div className='dropdown'>
                     <button onFocus={this.handleClick} onBlur={this.leave} className='pf-edit-btn' >Edit section</button> 
                         <ul className={`pf-edit-drp`}>
-                            <li >Intro</li>
-                            <li >Experiences</li>
-                            <li >Education</li>
+                            <li onClick={() => { openModal('editIntro'); this.leave(); }}>Intro</li>
+                            <li onClick={() => { openModal('createExp'); this.leave(); }} >Experiences</li>
+                            <li onClick={() => { openModal('createEdu'); this.leave(); }} >Education</li>
                         </ul>
                 </div>
                 
