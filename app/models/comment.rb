@@ -8,7 +8,6 @@
 #  post_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  like_count :integer          not null
 #
 class Comment < ApplicationRecord
     validates :body, :user_id, :post_id, presence: true
