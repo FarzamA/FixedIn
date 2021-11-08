@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ConnectedIndex = ({ connectedUsers }) => {
-    const connectionsList = connectedUsers.length ? (
+    console.log(connectedUsers);
+    const connectionsList = connectedUsers.length >= 1 ? (
         <ul className='connections-list'>
             {connectedUsers.map(user => (
                 <div key={user.id}>

@@ -5,7 +5,8 @@ const connectionsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_CONNECTIONS:
-            return { ...state, ...action.connection };
+            // debugger
+            return { ...state, ...action.connections };
         case RECEIVE_CONNECTION:
             return { ...state, ...action.connection };
         case REMOVE_CONNECTION:
@@ -13,7 +14,7 @@ const connectionsReducer = (state = {}, action) => {
             delete nextState[action.connectionId];
             return nextState;
         default: 
-        return state;
+            return state;
     }
 };
 

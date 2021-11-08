@@ -27,7 +27,7 @@ const App = ({ rootPath }) => {
       <section className='main-section'>
         <Switch>
           <ProtectedRoute exact path='/feed' component={ FeedContainer } />
-          <ProtectedRoute exact path='/mynetwork' component={NetworkContainer}/>
+          <ProtectedRoute exact path='/mynetwork' component={ NetworkContainer }/>
           <ProtectedRoute exact path='/users/:id' component={ ProfileContainer }/>
           <AuthRoute exact path='/' component={ Splash } />
           <AuthRoute exact path='/login' component={ LoginFormContainer } />

@@ -6,22 +6,29 @@ class Api::ConnectionsController < ApplicationController
     end  
 
     def connected 
-        @connection = Connection.find_by(
-            connectee_id: params[:connectee_id],
-            connector_id: params[:connector_id]
+        @sent_connection = Connection.find_by(
+            connector_id: params[:connector_id],
+            connectee_id: params[:connectee_id]
         )
 
-        if @connection 
-            render :show
+        @rec_connection = Connection.find_by(
+            connector_id: params[:connector_id],
+            connectee_id: params[:connectee_id]
+        )
+
+        if @sent_connection || @rec_connection 
+            @connection = @sent_connection || @rec_connection 
+            render :show 
         else  
             render json: { accepted: nil }
         end
+        
     end 
 
     def create 
         @connection = Connection.new(connection_params)
 
-        if @connection.sace 
+        if @connection.save 
             render :show 
         else 
             render json: @connection.errors.full_messages, status: 400

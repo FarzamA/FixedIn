@@ -6,10 +6,12 @@ import { fetchConnections } from '../../actions/connection_actions';
 
 class Network extends React.Component {
     componentDidMount() {
+        // debugger
         this.props.fetchConnections();
     }
 
     render() {
+        // debugger
         const { requestingUsers, connectedUsers, requests } = this.props;
 
         return (
@@ -23,20 +25,30 @@ class Network extends React.Component {
 
 
 const mSTP = ({ entities: { users, connections }, session: { currentUser }}) => {
-    // debugger
+    console.log('users', users);
     const requests = Object.values(connections).filter(
-        con => con.accepted === false && con.connectorId != currentUser
+        con => con.accepted === false && con.connecteeId !== currentUser
     );
+    console.log('requests', requests);
 
     const connected = Object.values(connections).filter(
         con => con.accepted === true
     );
+    console.log('connected', connected);
 
-    const requestingUsers = requests.map(req => users[req.connectorId]);
+    const requestingUsers = requests.map(req => {
+        // debugger
+        // currently users only contains one user
+        return users[req.connecteeId]
+    });
+
+    console.log('requesting users', requestingUsers);
 
     const connectedUsers = connected.map(con => {
         return con.connectorId === currentUser ? users[con.connecteeId] : users[con.connectorId]
     });
+
+    console.log('connected users', connectedUsers)
 
     return {
         requests, 
