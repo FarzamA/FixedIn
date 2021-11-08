@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import RequestsIndexContainer from './request_index';
+import RequestsIndexContainer from './requests_index';
 import ConnectedIndex from './connected_index';
 import { fetchConnections } from '../../actions/connection_actions';
 

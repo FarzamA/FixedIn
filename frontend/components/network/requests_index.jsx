@@ -5,7 +5,7 @@ import { deleteConnection, updateConnection } from '../../actions/connection_act
 
 const RequestsIndex = ({ requestingUsers, requests, updateConnection, deleteConnection }) => {
     const header = requestingUsers.length ? 'Invitations' : 'No pending invites';
-    const requests = requestingUsers.length ? (
+    const requestsList = requestingUsers.length ? (
         <ul>
             {requestingUsers.map((user, i) => (
                 <div key={user.id}>
@@ -30,7 +30,7 @@ const RequestsIndex = ({ requestingUsers, requests, updateConnection, deleteConn
     return (
         <div className='connections'>
             <header>{header}</header>
-            {requests}
+            {requestsList}
         </div>
     )
 };

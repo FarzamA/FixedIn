@@ -11,6 +11,7 @@ import NotFound from './not_found/not_found';
 import FeedContainer from './feed/feed';
 import ProfileContainer from "./profile/profile";
 import ModalContainer from "./modal/modal";
+import NetworkContainer from "./network/network";
 
 const App = ({ rootPath }) => {
   // const header = (
@@ -26,6 +27,7 @@ const App = ({ rootPath }) => {
       <section className='main-section'>
         <Switch>
           <ProtectedRoute exact path='/feed' component={ FeedContainer } />
+          <ProtectedRoute exact path='/mynetwork' component={NetworkContainer}/>
           <ProtectedRoute exact path='/users/:id' component={ ProfileContainer }/>
           <AuthRoute exact path='/' component={ Splash } />
           <AuthRoute exact path='/login' component={ LoginFormContainer } />

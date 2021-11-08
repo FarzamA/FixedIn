@@ -4,7 +4,7 @@ export const fetchConnections = () => (
     })
 );
 
-export const fetchConnections = (connector_id, connectee_id) => (
+export const fetchConnection = (connector_id, connectee_id) => (
     $.ajax({
         url: `/api/connections/connected`,
         data: {

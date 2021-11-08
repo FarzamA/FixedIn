@@ -43,7 +43,7 @@ class LoggedIn extends React.Component {
                         <p>Home</p>
                     </div>
                 </Link>
-                <Link to='/banana'>
+                <Link to='/mynetwork'>
                     <div className='nav-icon'>
                         <i className="fas fa-user-friends"></i>
                         <p>My Network</p>

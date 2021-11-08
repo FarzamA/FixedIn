@@ -30,6 +30,6 @@ const ConnectedIndex = ({ connectedUsers }) => {
             {connectionsList}
         </div>
     );
-}
+};
 
 export default ConnectedIndex;
