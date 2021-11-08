@@ -25,7 +25,7 @@ export const createConnection = connection => (
 export const updateConnection = connection => (
     $.ajax({
         method: `PATCH`,
-        url: `/api/connection/${connection.id}`,
+        url: `/api/connections/${connection.id}`,
         data: { connection }
     })
 );
