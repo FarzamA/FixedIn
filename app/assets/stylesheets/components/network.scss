@@ -1,0 +1,22 @@
+.connections {
+    padding-top: 10vh;
+    border: 1px solid $lightgray;
+    border-radius: 8px;
+    background: white;
+
+    header {
+        padding: 20px;
+        font-weight: 600;
+        color: gray;
+    }
+
+    img {
+        height: 7vh;
+        width: 7vh;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+
+}
