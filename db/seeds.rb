@@ -28,7 +28,7 @@ ActiveRecord::Base.transaction do
         industry: "FixedIn"
     )
     demo_user_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/demo_avatar.jpg')
-    demo_user.avatar.attach(io: demo_user_av, filename: 'demo_avatar')
+    demo_user.avatar.attach(io: demo_user_av, filename: 'demo_avatar.jpg')
 
 
     user1_name = Faker::Name.name.split(' ')
@@ -42,7 +42,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user1_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user1.jpg')
-    user1.avatar.attach(io: user1_av, filename: 'user1')
+    user1.avatar.attach(io: user1_av, filename: 'user1.jpg')
 
     user2_name = Faker::Name.name.split(' ')
     user2 = User.create(
@@ -55,7 +55,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user2_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user2.jpg')
-    user2.avatar.attach(io: user2_av, filename: 'user2')
+    user2.avatar.attach(io: user2_av, filename: 'user2.jpg')
 
     user3_name = Faker::Name.name.split(' ')
     user3 = User.create(
@@ -68,7 +68,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user3_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user3.jpg')
-    user3.avatar.attach(io: user3_av, filename: 'user3')
+    user3.avatar.attach(io: user3_av, filename: 'user3.jpg')
 
     user4_name = Faker::Name.name.split(' ')
     user4 = User.create(
@@ -81,7 +81,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user4_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user4.jpg')
-    user4.avatar.attach(io: user4_av, filename: 'user4')
+    user4.avatar.attach(io: user4_av, filename: 'user4.jpg')
 
     user5_name = Faker::Name.name.split(' ')
     user5 = User.create(
@@ -94,7 +94,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user5_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user5.jpg')
-    user5.avatar.attach(io: user5_av, filename: 'user5')
+    user5.avatar.attach(io: user5_av, filename: 'user5.jpg')
 
     user6_name = Faker::Name.name.split(' ')
     user6 = User.create(
@@ -107,7 +107,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user6_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user6.jpg')
-    user6.avatar.attach(io: user6_av, filename: 'user6')
+    user6.avatar.attach(io: user6_av, filename: 'user6.jpg')
 
     user7_name = Faker::Name.name.split(' ')
     user7 = User.create(
@@ -120,7 +120,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user7_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user7.jpg')
-    user7.avatar.attach(io: user7_av, filename: 'user7')
+    user7.avatar.attach(io: user7_av, filename: 'user7.jpg')
 
     user8_name = Faker::Name.name.split(' ')
     user8 = User.create(
@@ -133,7 +133,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user8_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user8.jpg')
-    user8.avatar.attach(io: user8_av, filename: 'user8')
+    user8.avatar.attach(io: user8_av, filename: 'user8.jpg')
 
     user9_name = Faker::Name.name.split(' ')
     user9 = User.create(
@@ -146,7 +146,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user9_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user9.jpg')
-    user9.avatar.attach(io: user9_av, filename: 'user9')
+    user9.avatar.attach(io: user9_av, filename: 'user9.jpg')
 
     user10_name = Faker::Name.name.split(' ')
     user10 = User.create(
@@ -159,7 +159,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user10_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user10.jpg')
-    user10.avatar.attach(io: user10_av, filename: 'user10')
+    user10.avatar.attach(io: user10_av, filename: 'user10.jpg')
 
     user11_name = Faker::Name.name.split(' ')
     user11 = User.create(
@@ -172,7 +172,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user11_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user11.jpg')
-    user11.avatar.attach(io: user11_av, filename: 'user11')
+    user11.avatar.attach(io: user11_av, filename: 'user11.jpg')
 
     user12_name = Faker::Name.name.split(' ')
     user12 = User.create(
@@ -185,7 +185,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user12_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user12.jpg')
-    user12.avatar.attach(io: user12_av, filename: 'user12')
+    user12.avatar.attach(io: user12_av, filename: 'user12.jpg')
 
     user13_name = Faker::Name.name.split(' ')
     user13 = User.create(
@@ -198,7 +198,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user13_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user13.jpg')
-    user13.avatar.attach(io: user13_av, filename: 'user13')
+    user13.avatar.attach(io: user13_av, filename: 'user13.jpg')
 
     user14_name = Faker::Name.name.split(' ')
     user14 = User.create(
@@ -211,7 +211,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user14_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user14.jpg')
-    user14.avatar.attach(io: user14_av, filename: 'user14')
+    user14.avatar.attach(io: user14_av, filename: 'user14.jpg')
 
     user15_name = Faker::Name.name.split(' ')
     user15 = User.create(
@@ -224,7 +224,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user15_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user15.jpg')
-    user15.avatar.attach(io: user15_av, filename: 'user15')
+    user15.avatar.attach(io: user15_av, filename: 'user15.jpg')
 
     user16_name = Faker::Name.name.split(' ')
     user16 = User.create(
@@ -237,7 +237,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user16_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user16.jpg')
-    user16.avatar.attach(io: user16_av, filename: 'user16')
+    user16.avatar.attach(io: user16_av, filename: 'user16.jpg')
 
     user17_name = Faker::Name.name.split(' ')
     user17 = User.create(
@@ -250,7 +250,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user17_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user17.jpg')
-    user17.avatar.attach(io: user17_av, filename: 'user17')
+    user17.avatar.attach(io: user17_av, filename: 'user17.jpg')
 
     user18_name = Faker::Name.name.split(' ')
     user18 = User.create(
@@ -263,7 +263,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user18_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user18.jpg')
-    user18.avatar.attach(io: user18_av, filename: 'user18')
+    user18.avatar.attach(io: user18_av, filename: 'user18.jpg')
 
     user19_name = Faker::Name.name.split(' ')
     user19 = User.create(
@@ -276,7 +276,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user19_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user19.jpg')
-    user19.avatar.attach(io: user19_av, filename: 'user19')
+    user19.avatar.attach(io: user19_av, filename: 'user19.jpg')
 
     user20_name = Faker::Name.name.split(' ')
     user20 = User.create(
@@ -289,7 +289,7 @@ ActiveRecord::Base.transaction do
         industry: "#{Faker::Job.field}"
     )
     user20_av = Down.download('https://fixedin-seeds.s3.amazonaws.com/user20.jpg')
-    user20.avatar.attach(io: user20_av, filename: 'user20')
+    user20.avatar.attach(io: user20_av, filename: 'user20.jpg')
 
     Experience.create(
         user_id: demo_user.id,
