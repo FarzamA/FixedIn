@@ -66,7 +66,7 @@ class EducationForm extends React.Component {
         // console.log(this.state);
         const { startYear, endYear, startMonth, endMonth, school, gpa } = this.state;
         let errorSwitch = false;
-
+        // debugger
         if ((!startYear.length && !startMonth.length)) {
             this.setState({ yearErr: true });
             this.yearErrMsg = 'Please enter a start date';
@@ -100,7 +100,7 @@ class EducationForm extends React.Component {
         const parsed = parseInt(gpa);
         console.log(gpa);
 
-        if (parsed < 0 || parsed > 4.0) {
+        if (parsed < 0.0 || parsed > 4.0) {
             this.setState({ gpaErr: true });
             errorSwitch = true;
         };
