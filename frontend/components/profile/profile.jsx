@@ -38,26 +38,10 @@ class Profile extends React.Component {
 
 
 const mSTP = ({ entities: { users, educations, experiences } }, ownProps) => {
-   const sortedExperiences = Object.values(experiences).filter(
-       experience => experience.userId == ownProps.match.params.id
-   ).sort(
-       (a, b) => {
-           if ((a.endDate == null || a.endDate == '') && (b.endDate != null && b.endDate != '')) {
-               return -1
-           } else if ((a.endDate == null || a.endDate == '') && (b.endDate == null || b.endDate == '')) {
-               //checking for time elapsed since jan 1
-               if (Date.parse(a.startDate) > Date.parse(b.startDate)) {
-                return -1
-               } else {
-                return 1    
-               }
-           }
-       }
-   );
-
-       const sortedEducations = Object.values(educations).filter(
-           edu => edu.userId == ownProps.match.params.id
-       ).sort((a, b) => {
+    const sortedExperiences = Object.values(experiences).filter(
+        experience => experience.userId == ownProps.match.params.id
+    ).sort(
+        (a, b) => {
             if ((a.endDate == null || a.endDate == '') && (b.endDate != null && b.endDate != '')) {
                 return -1
             } else if ((a.endDate == null || a.endDate == '') && (b.endDate == null || b.endDate == '')) {
@@ -65,10 +49,26 @@ const mSTP = ({ entities: { users, educations, experiences } }, ownProps) => {
                 if (Date.parse(a.startDate) > Date.parse(b.startDate)) {
                     return -1
                 } else {
-                    return 1   
-                } 
+                    return 1    
+                }
             }
-        })
+        }
+    );
+
+    const sortedEducations = Object.values(educations).filter(
+        edu => edu.userId == ownProps.match.params.id
+    ).sort((a, b) => {
+        if ((a.endDate == null || a.endDate == '') && (b.endDate != null && b.endDate != '')) {
+            return -1
+        } else if ((a.endDate == null || a.endDate == '') && (b.endDate == null || b.endDate == '')) {
+            //checking for time elapsed since jan 1
+            if (Date.parse(a.startDate) > Date.parse(b.startDate)) {
+                return -1
+            } else {
+                return 1   
+            } 
+        }
+    });
 
     return {
         educations: sortedEducations,

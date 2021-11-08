@@ -2,18 +2,37 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
+import { createConnection, deleteConnection, receiveConnection, updateConnection } from '../../actions/connection_actions';
+import { fetchConnection } from '../../util/connection_api';
 
 class UserDetail extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     dropDown: false
-        //     // leave: false 
-        // }
+        this.state = {
+            requested: false,
+            accepted: false,
+            connectionId: null
+            // leave: false 
+        }
 
         this.handleClick = this.handleClick.bind(this);
         this.leave = this.leave.bind(this);
+    }
+    
+    componentDidMount() {
+        const { currentUser, user, fetchConnectionAPI, receiveConnection, dispatch } = this.props;
+
+        fetchConnectionAPI(currentUser, user.id).then(
+            payload => {
+                if (payload.connection) {
+                    dispatch(receiveConnection(payload));
+                    this.setState({ accepted: Object.values(payload.connection)[0].accepted });
+                    this.setState({ connectionId: Object.keys(payload.connection)[0] });
+                    this.setState({ requested: true });
+                }
+            }
+        );
     }
 
     handleClick(e) {
@@ -48,9 +67,10 @@ class UserDetail extends React.Component {
 
     render() {
         // debugger
-        const { user, currentUser, match, lastExperience, lastEducation, openModal } = this.props;
+        const { user, currentUser, match, lastExperience, lastEducation, openModal, deleteConnection, createConnection } = this.props;
 
         let editIntroButton;
+        let connectionButton;
         let editSectionButton;
         // let avatarButton;
         let backgroundButton;
@@ -87,6 +107,38 @@ class UserDetail extends React.Component {
                     <i className='fas fa-camera-retro'></i>
                 </button>
             )
+        } else {
+            if (this.state.requested && this.state.accepted) {
+                connectionButton = (
+                    <button className='connect-btn' onClick={() => {
+                        deleteConnection(this.state.connectionId);
+                        this.setState({ requested: false });
+                        
+                    }}>
+                        Unlink
+                    </button>
+                )
+            }
+            if (!this.state.requested && !this.state.accepted) {
+                connectionButton = (
+                    <button className='connect-btn' onClick={() => {
+                        createConnection({ connector_id: currentUser, connectee_id: user.id });
+                        this.setState({ requested: true });
+                    }}>
+                        Link
+                    </button>
+                )
+            }
+            if (this.state.requested && !this.state.accepted) {
+                connectionButton = (
+                    <button className='connect-btn' onClick={() => {
+                        deleteConnection(this.state.connectionId);
+                        this.setState({ requested: false });
+                    }}>
+                        Cancel
+                    </button>
+                )
+            }
         };
 
         // console.log(user);
@@ -120,6 +172,7 @@ class UserDetail extends React.Component {
                                 <span>{user.connections} connection{user.connections > 1 || user.connections == 0 ? 's' : ''}</span>
                             </div>
                             <div className='user-details-buttons'>
+                                {connectionButton}
                                 {editSectionButton}
                             </div>
                         </div>
@@ -136,17 +189,24 @@ class UserDetail extends React.Component {
 }
 
 
-const mSTP = ({ entities: { users }, session: { currentUser }}, ownProps) => {
+const mSTP = ({ entities: { users, connections }, session: { currentUser }}, ownProps) => {
     const user = users[ownProps.match.params.id];
 
     return {
         currentUser,
         user,
+        connection: Object.values(connections).filter(
+            con => con.connecteeId === user.id && con.connectorId === currentUser || con.connectorId === user.id && con.connecteeId === currentUser
+        )[0]
     };
 };
 
 const mDTP = dispatch => ({
     openModal: (modal, id) => dispatch(openModal(modal, id)),
+    createConnection: connection => dispatch(createConnection(connection)),
+    deleteConnection: connectionId => dispatch(deleteConnection(connectionId)),
+    fetchConnectionAPI: (connectorId, connecteeId) => fetchConnection(connectorId, connecteeId),
+    receiveConnection: connection => receiveConnection(connection),
     dispatch
 });
 

@@ -12,8 +12,8 @@ class Api::ConnectionsController < ApplicationController
         )
 
         @rec_connection = Connection.find_by(
-            connector_id: params[:connector_id],
-            connectee_id: params[:connectee_id]
+            connectee_id: params[:connectee_id],
+            connector_id: params[:connector_id]
         )
 
         if @sent_connection || @rec_connection 
@@ -46,7 +46,7 @@ class Api::ConnectionsController < ApplicationController
     end
 
     def destroy 
-        @connection = Conneciton.find(params[:id])
+        @connection = Connection.find(params[:id])
 
         @connection.destroy 
         render :show

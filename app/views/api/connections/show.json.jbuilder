@@ -5,7 +5,7 @@ json.connection do
 end
 
 json.user do 
-    if @conenction.connector.id == current_user.id 
+    if @connection.connector.id == current_user.id 
         json.set! @connection.connectee.id do 
             json.partial! '/api/users/user', user: @connection.connectee
         end
