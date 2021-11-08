@@ -23,6 +23,7 @@ class Network extends React.Component {
 
 
 const mSTP = ({ entities: { users, connections }, session: { currentUser }}) => {
+    debugger
     const requests = Object.values(connections).filter(
         con => con.accepted === false && con.connectorId != currentUser
     );
