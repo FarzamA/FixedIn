@@ -59,7 +59,7 @@ ActiveRecord::Base.transaction do
 
     user3_name = Faker::Name.name.split(' ')
     user3 = User.create(
-        email: 'user32@user3.com',
+        email: 'user3@user3.com',
         first_name: user3_name[0],
         last_name: user3_name[1],
         headline: Faker::Job.position,
@@ -98,7 +98,7 @@ ActiveRecord::Base.transaction do
 
     user6_name = Faker::Name.name.split(' ')
     user6 = User.create(
-        email: 'user2@user2.com',
+        email: 'user6@user6.com',
         first_name: user6_name[0],
         last_name: user6_name[1],
         headline: Faker::Job.position,
@@ -111,7 +111,7 @@ ActiveRecord::Base.transaction do
 
     user7_name = Faker::Name.name.split(' ')
     user7 = User.create(
-        email: 'user2@user2.com',
+        email: 'user7@user7.com',
         first_name: user7_name[0],
         last_name: user7_name[1],
         headline: Faker::Job.position,
@@ -137,7 +137,7 @@ ActiveRecord::Base.transaction do
 
     user9_name = Faker::Name.name.split(' ')
     user9 = User.create(
-        email: 'user2@user2.com',
+        email: 'user9@user9.com',
         first_name: user9_name[0],
         last_name: user9_name[1],
         headline: Faker::Job.position,

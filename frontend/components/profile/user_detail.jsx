@@ -122,7 +122,7 @@ class UserDetail extends React.Component {
             if (!this.state.requested && !this.state.accepted) {
                 connectionButton = (
                     <button className='connect-btn' onClick={() => {
-                        createConnection({ connector_id: currentUser, connectee_id: user.id });
+                        createConnection({ connector_id: user.id, connectee_id: currentUser, accepted: false });
                         this.setState({ requested: true });
                     }}>
                         Link
