@@ -30,6 +30,7 @@ class ExperienceForm extends React.Component {
     constructor(props) {
         super(props);
         // debugger
+        
         this.state = {
             ...props.experience,
             startMonth: '',
@@ -39,14 +40,18 @@ class ExperienceForm extends React.Component {
             titleErr: false,
             companyErr: false,
             yearErr: false,
-            present: true
+            present: props.experience.endDate ? false : true
         };
 
         this.yearErrMsg = '';
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.togglePresent = this.togglePresent.bind(this);
-    }
+    };
+
+    handleInput(field) {
+        return e => this.setState({ [field]: e.target.value });
+    };
 
     handleSubmit(e) {
         e.preventDefault();
@@ -84,26 +89,23 @@ class ExperienceForm extends React.Component {
         }
     };
 
-    handleInput(field) {
-        return e => this.setState({ [field]: e.target.value });
-    };
 
     handleErrors() {
-        const { endYear, endMonth, title, company, present, startDate } = this.state;
+        const { endYear, endMonth, title, company, present, startDate, startMonth, startYear } = this.state;
         let errorSwitch = false;
-        let startYear;
-        let startMonth;
-        if (startDate) {
-            const start = new Date(`${startDate}`);
+        // let startYear;
+        // let startMonth;
+        // if (startDate) {
+        //     const start = new Date(`${startDate}`);
 
-            startMonth = months[start.getMonth()];
-            startYear = start.getFullYear();
+        //     startMonth = months[start.getMonth()];
+        //     startYear = start.getFullYear();
 
-            this.setState({
-                startMonth: startMonth,
-                startYear: startYear
-            });
-        }
+        //     this.setState({
+        //         startMonth: startMonth,
+        //         startYear: startYear
+        //     });
+        // }
         // debugger
         console.log(startYear);
         console.log(startMonth);
@@ -124,10 +126,6 @@ class ExperienceForm extends React.Component {
                 this.setState({ yearErr: true });
                 errorSwitch = true;
                 this.yearErrMsg = "Your start date can't be after your end date"
-            } else {
-                this.setState({ yearErr: false });
-                errorSwitch = false;
-                this.yearErrMsg = '';
             }
         };
 

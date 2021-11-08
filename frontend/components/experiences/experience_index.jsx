@@ -6,9 +6,9 @@ import ExperienceIndexItemContainer from './experience_index_item';
 
 class ExperienceIndex extends React.Component {
     render () {
-        const { currentUser, match, experiences } = this.props;
+        const { currentUser, match, experiences, openModal } = this.props;
         const newExpButton = currentUser == (match.params.id) ? (
-            <button onClick={() => this.props.openModal('createExp')}>
+            <button onClick={() => openModal('createExp')}>
                 <i className="fas fa-plus"></i>
             </button>
         ) : null;
