@@ -100,7 +100,7 @@ class EducationForm extends React.Component {
         const parsed = parseInt(gpa);
         console.log(gpa);
 
-        if (parsed < 0.0 || parsed > 4.0) {
+        if ((parsed < 0.0 || parsed > 4.0) || (parsed < 0 || parsed > 4 )) {
             this.setState({ gpaErr: true });
             errorSwitch = true;
         };
@@ -133,7 +133,7 @@ class EducationForm extends React.Component {
                     <option value='Month'>{months[endDateEdu.getMonth()] || 'Month'}</option>
                     {monthOptions}
                 </select>
-                <select> 
+                <select onChange={this.handleInput('endYear')}> 
                     <option value='Year'>{endDateEdu.getFullYear() || 'Year'}</option>
                     {years.map(year => (
                         <option key={year}>{year}</option>

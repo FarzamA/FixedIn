@@ -122,10 +122,10 @@ class ExperienceForm extends React.Component {
         //     })
         // };
         // debugger
-        console.log("start yr", startYear);
-        console.log("start month", startMonth);
-        console.log("end month", endMonth);
-        console.log("end year", endYear);
+        // console.log("start yr", startYear);
+        // console.log("start month", startMonth);
+        // console.log("end month", endMonth);
+        // console.log("end year", endYear);
         if (!startYear.length && !startMonth.length) {
             this.setState({ yearErr: true });
             this.yearErrMsg = 'Please enter a start date';
