@@ -91,21 +91,22 @@ class ExperienceForm extends React.Component {
 
 
     handleErrors() {
-        const { endYear, endMonth, title, company, present, startDate, startMonth, startYear } = this.state;
+        // debugger
+        const { endYear, endMonth, title, company, present, startDate } = this.state;
         let errorSwitch = false;
-        // let startYear;
-        // let startMonth;
-        // if (startDate) {
-        //     const start = new Date(`${startDate}`);
+        let startYear;
+        let startMonth;
+        if (startDate) {
+            const start = new Date(`${startDate}`);
 
-        //     startMonth = months[start.getMonth()];
-        //     startYear = start.getFullYear();
+            startMonth = months[start.getMonth()];
+            startYear = start.getFullYear();
 
-        //     this.setState({
-        //         startMonth: startMonth,
-        //         startYear: startYear
-        //     });
-        // }
+            this.setState({
+                startMonth: startMonth,
+                startYear: startYear
+            });
+        }
         // debugger
         console.log(startYear);
         console.log(startMonth);
@@ -166,7 +167,7 @@ class ExperienceForm extends React.Component {
                     <option value='Month'>{months[endDateExp.getMonth()] || 'Month'}</option>
                     {monthOptions}
                 </select>
-                <select> 
+                <select onChange={this.handleInput('endYear')}> 
                     <option value='Year'>{endDateExp.getFullYear() || 'Year'}</option>
                     {years.map(year => (
                         <option key={year}>{year}</option>
