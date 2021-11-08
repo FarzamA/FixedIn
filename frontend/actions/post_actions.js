@@ -24,7 +24,7 @@ export const fetchPosts = (offset) => dispatch => (
     PostAPI.fetchPosts(offset).then(posts => dispatch(receivePosts(posts)))
 );
 
-export const fetchPost = postId = dispatch => (
+export const fetchPost = postId => dispatch => (
     PostAPI.fetchPost(postId).then(post => dispatch(receivePost(post)))
 );
 
