@@ -92,24 +92,40 @@ class ExperienceForm extends React.Component {
 
     handleErrors() {
         // debugger
-        const { endYear, endMonth, title, company, present, startDate } = this.state;
+        const { endMonth, endYear, title, company, present, startMonth, startYear } = this.state;
         let errorSwitch = false;
-        let startYear;
-        let startMonth;
-        if (startDate) {
-            const start = new Date(`${startDate}`);
+        // let startYear;
+        // let startMonth;
 
-            startMonth = months[start.getMonth()];
-            startYear = start.getFullYear();
+        // let endYear; 
+        // let endMonth;
 
-            this.setState({
-                startMonth: startMonth,
-                startYear: startYear
-            });
-        }
+        // if (startDate) {
+        //     const start = new Date(`${startDate}`);
+
+        //     startMonth = months[start.getMonth()];
+        //     startYear = start.getFullYear();
+
+        //     this.setState({
+        //         startMonth: startMonth,
+        //         startYear: startYear
+        //     });
+        // } else if (endDate) {
+        //     const end = new Date(`${endDate}`);
+
+        //     endMonth = months[end.getMonth()];
+        //     endYear = end.getFullYear();
+
+        //     this.setState({
+        //         enMonth: endMonth,
+        //         endYear: endYear
+        //     })
+        // };
         // debugger
-        console.log(startYear);
-        console.log(startMonth);
+        console.log("start yr", startYear);
+        console.log("start month", startMonth);
+        console.log("end month", endMonth);
+        console.log("end year", endYear);
         if (!startYear.length && !startMonth.length) {
             this.setState({ yearErr: true });
             this.yearErrMsg = 'Please enter a start date';
@@ -177,7 +193,7 @@ class ExperienceForm extends React.Component {
         );
 
         const deleteBtn = this.props.deleteExperience ? (
-            <button onClick={() => {this.props.deleteExperience(id)}} className='delete btn'>Delete</button>
+            <button onClick={() => {this.props.deleteExperience(id); this.props.closeModal()}} className='delete btn'>Delete</button>
         ) : null;
 
         return (
