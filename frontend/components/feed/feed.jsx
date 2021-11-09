@@ -48,8 +48,10 @@ class Feed extends React.Component {
                     </Link>
                     <button onClick={() => openModal('createPost')}>Start a post</button>
                 </div>
-                <div className='feed-div'></div>
-                <PostIndexContainer/>
+                <div className='feed-div'>
+                    <PostIndexContainer/>
+                </div>
+                
                 </section>
             </section>
         )
