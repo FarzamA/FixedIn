@@ -15,6 +15,13 @@ ActiveRecord::Base.transaction do
     Experience.destroy_all
     Education.destroy_all 
     Connection.destroy_all 
+    ActiveRecord::Base.connection.reset_pk_sequence!('users')
+    ActiveRecord::Base.connection.reset_pk_sequence!('posts')
+    ActiveRecord::Base.connection.reset_pk_sequence!('comments')
+    ActiveRecord::Base.connection.reset_pk_sequence!('likes')
+    ActiveRecord::Base.connection.reset_pk_sequence!('educations')
+    ActiveRecord::Base.connection.reset_pk_sequence!('experiences')
+    ActiveRecord::Base.connection.reset_pk_sequence!('connections')
 
 
 

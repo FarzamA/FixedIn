@@ -12,17 +12,13 @@ class Api::PostsController < ApplicationController
         connected_users = rec_connections | sent_connections
         connected_users.push(user_id)
         
-        debugger
+        # debugger
         @posts = Post.includes(:user)
                       .where(user_id: connected_users) #need to put connected users here
                       .order(created_at: :desc)
                       .includes(:likes)
                       .offset(params[:offset].to_i * 10)
                       .limit(10)
-
-
-        
-
     end
 
     def create 
