@@ -97,15 +97,22 @@ class PostIndexItem extends React.Component {
                                 <img src={profile} className='pfp'></img>
                             </div>
                         </Link>
+                    
+                        <div>
+                            <Link to={`/users/${userId}`}>
+                                <p>{name}</p>
+                                <p>{postUser.headline}</p>
+                                <p>{this.timeFromNow()}</p>
+                            </Link>
+                        </div>
                     </div>
-                    <div>
-                        <Link to={`/users/${userId}`}>
-                            <p>{name}</p>
-                            <p>{postUser.headline}</p>
-                            <p>{this.timeFromNow()}</p>
-                        </Link>
-                    </div>
+                    {dropdown}
                 </header>
+                <p>{body}</p>
+                <img src={mediaUrl} alr=''></img>
+                <div className='num-lc'>
+                    {numLikes} {numComments}
+                </div>
             </div>
         )
     }
