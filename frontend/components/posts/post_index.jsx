@@ -51,11 +51,12 @@ class PostIndex extends React.Component {
         return (
             <ul className='posts-index'>
                 {posts.map((post, idx) => {
+                    // return (<PostIndexItemContainer key={`${post.id}`} post={post} />);
                     if (idx + 1 === posts.length) {
                         console.log('post', post);
                         console.log('post id', post.id);
                         return (
-                            <>
+                            <div key={idx}>
                                 <PostIndexItemContainer key={`${post.id}`} post={post} />
                                 <div ref={this.lastPostRef}></div>
                                 {this.state.loading ? (
@@ -76,15 +77,15 @@ class PostIndex extends React.Component {
                                         </div>
                                     </div>
                                 ) : null}
-                            </>
+                            </div>
                         )
                     } else {
-                        console.log('post', post);
-                        console.log('post id', post.id);
+                        console.log('post2', post);
+                        console.log('post2 id', post.id);
                         return (
-                        <>
-                            <PostIndexItemContainer  key={`${post.id}`} post={post}/>
-                        </>)
+                        <div key={idx}>
+                            <PostIndexItemContainer key={`${post.id}`} post={post}/>
+                        </div>)
                     }
                 })}
             </ul>
