@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
         sent_connections = Connection.where(connector_id: user_id, accepted: true)
                                      .pluck(:connectee_id)
 
-        connected_users = rec_connects | out_connects
+        connected_users = rec_connections | sent_connections
         connected_users.push(user_id)
 
         @posts = Post.includes(:user)
