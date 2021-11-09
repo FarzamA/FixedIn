@@ -51,7 +51,63 @@ class PostIndexItem extends React.Component {
     };
 
     render() {
+        const {
+            currentUser, openModal, deletePost, users, post: { id, body, mediaUrl, userId }  
+        } = this.props
         
+        const { drop, likeCount, commentCount } = this.state;
+        let postUser;
+        let name;
+        let dropdown;
+
+        if (users[userId]) {
+            postUser = users[userId];
+            name = postUser.firstName + ' ' + postUser.lastName;
+
+            if ( userId === currentUser) {
+                dropdown = (
+                    <button onFocus={this.clicked} onBlur={this.leave}>
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Simple_icon_ellipsis.svg' className='ellipsis'></img>
+                        <ul className='post-dropdown'>
+                            <li onClick={() => {openModal('editPost', id); this.leave();}}><i className="far fa-edit"></i>Edit Post</li>
+                            <li onClick={() => deletePost(id)}><i className="far fa-trash-alt"></i>Delete Post</li>
+                        </ul>
+                    </button>
+                );
+            } 
+        } else {
+            postUser = { headline: ''}
+        }
+
+        const profile = postUser.avatarUrl || window.defaultUser;
+
+        const numComments = commentCount ? `${commentCount} comment${commentCount > 1 ? 's' : ''}` : null;
+        const numLikes = likeCount ? (
+            <>
+            <i className="far fa-thumbs-up small"></i>{likeCount}{numComments ? ' | ' : null}
+            </>
+        ) : null;
+
+        return (
+            <div ref={this.postItemRef}>
+                <header>
+                    <div>
+                        <Link to={`/users/${userId}`}>
+                            <div className='avatar'>
+                                <img src={profile} className='pfp'></img>
+                            </div>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={`/users/${userId}`}>
+                            <p>{name}</p>
+                            <p>{postUser.headline}</p>
+                            <p>{this.timeFromNow()}</p>
+                        </Link>
+                    </div>
+                </header>
+            </div>
+        )
     }
 }
 
