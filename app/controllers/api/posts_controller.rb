@@ -2,14 +2,20 @@ class Api::PostsController < ApplicationController
     def index 
         #what goes in the feed
         user_id = current_user.id
-        connected_users = User.joins(:rec_connects)
-                                .where("connections.accepted = true AND (connections.connector_id = #{user_id} OR connections.connected_id = #{user_id}")
-                                .pluck(:id)
+        rec_connections = Connection.where(connectee_id: user_id, accepted: true)
+                                    .pluck(:connector_id)
+        
+        sent_connections = Connection.where(connector_id: user_id, accepted: true)
+                                     .pluck(:connectee_id)
+
+        connected_users = rec_connects | out_connects
+        connected_users.push(user_id)
 
         @posts = Post.includes(:user)
                       .where(user_id: connected_users) #need to put connected users here
                       .order(created_at: :desc)
                       .includes(:likes)
+                      .offset(params[:offset].to_i * 10)
                       .limit(10)
 
     end
@@ -47,6 +53,6 @@ class Api::PostsController < ApplicationController
 
     private 
     def post_params
-        params.require(:post).permit(:body, :user_id)
+        params.require(:post).permit(:body, :user_id, :media)
     end
 end

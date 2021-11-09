@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchUser } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
+import PostIndexContainer from '../posts/post_index';
 
 class Feed extends React.Component {
     componentDidMount() {
@@ -9,7 +11,7 @@ class Feed extends React.Component {
     };
 
     render() {
-        const { currentUser, userConnections } = this.props;
+        const { currentUser, userConnections, openModal } = this.props;
         const { firstName, lastName, headline, avatarUrl, backgroundUrl } = currentUser;
 
         return (
@@ -37,6 +39,18 @@ class Feed extends React.Component {
                         </div>
                     </aside>
                 </div>
+                <section className='posts-section'>
+                <div className='start-post'>
+                    <Link to={`/users/${currentUser.id}`}>
+                    <div className='avatar'>
+                        <img src={avatarUrl || window.defaultUser} alt="Profile Pic" className='pfp'/>
+                    </div>
+                    </Link>
+                    <button onClick={() => openModal('createPost')}>Start a post</button>
+                </div>
+                <div className='feed-div'></div>
+                <PostIndexContainer/>
+                </section>
             </section>
         )
     }
@@ -49,7 +63,8 @@ const mSTP = ({ entities: { users }, session: { currentUser, userConnections } }
 });
 
 const mDTP = dispatch => ({
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 const FeedContainer = connect(mSTP, mDTP)(Feed);

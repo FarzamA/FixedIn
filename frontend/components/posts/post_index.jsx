@@ -86,7 +86,7 @@ class PostIndex extends React.Component {
 }
 
 const mSTP = ({ entities: { posts }}) => ({
-    post: Object.values(posts).sort((a, b) => Date.parse(a.createdAt) > Date.parse(b.createdAt) ? -1 : 1)
+    posts: Object.values(posts).sort((a, b) => Date.parse(a.createdAt) > Date.parse(b.createdAt) ? -1 : 1)
 });
 
 const mDTP = dispatch => ({
@@ -95,6 +95,6 @@ const mDTP = dispatch => ({
     dispatch
 });
 
-const PostIndexItemContainer = connect(mSTP, mDTP)(PostIndex);
+const PostIndexContainer = connect(mSTP, mDTP)(PostIndex);
 
-export default PostIndexItemContainer;
+export default PostIndexContainer;
