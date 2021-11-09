@@ -31,7 +31,7 @@ class LoggedIn extends React.Component {
                 <nav className='left-nav-bar'>
                     <Link to='/'>
                         <div className='icon-logo'>
-                            <img src={window.logo} className='logo'/>
+                            <img src={window.smallLogo} className='small-logo'/>
                         </div>
                     </Link>
                     <SearchBar />
