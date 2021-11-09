@@ -62,11 +62,11 @@ class ExperienceForm extends React.Component {
         if (!this.handleErrors()) {
             const { startYear, startMonth, endYear, endMonth, present, userId, employmentType } = this.state;
             
-            const start_date = `${startYear}-${months.indexOf(startMonth) + 1}-01`;
+            const start_date = `${startYear}-${months.indexOf(startMonth) + 2}-01`;
 
             let end_date;   
             if (!present) {
-                end_date = `${endYear}-${months.indexOf(endMonth) + 1}-01`
+                end_date = `${endYear}-${months.indexOf(endMonth) + 2}-01`
             };
 
             this.props.processForm({

@@ -43,8 +43,8 @@ class EducationForm extends React.Component {
 
             const { startYear, startMonth, endYear, endMonth, userId } = this.state;
 
-            const start_date = `${startYear}-${months.indexOf(startMonth) + 1}-01`;
-            const end_date = `${endYear}-${months.indexOf(endMonth) + 1}-01`;
+            const start_date = `${startYear}-${months.indexOf(startMonth) + 2}-01`;
+            const end_date = `${endYear}-${months.indexOf(endMonth) + 2}-01`;
 
             this.props.processForm({
                 ...this.state,
