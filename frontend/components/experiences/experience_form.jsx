@@ -30,13 +30,22 @@ class ExperienceForm extends React.Component {
     constructor(props) {
         super(props);
         // debugger
+
+        const startDateExp = new Date(`${props.experience.startDate}`);
+
+        const endDateExp = new Date(`${props.experience.endDate}`);
+
+        const startMonth = months[startDateExp.getMonth()];
+        const startYear = startDateExp.getFullYear();
+        const endMonth = months[endDateExp.getMonth()];
+        const endYear = endDateExp.getFullYear();
         
         this.state = {
             ...props.experience,
-            startMonth: '',
-            endMonth: '',
-            startYear: '',
-            endYear: '',
+            startMonth: startMonth || '',
+            endMonth: endMonth || '',
+            startYear: startYear || '',
+            endYear: endYear || '',
             titleErr: false,
             companyErr: false,
             yearErr: false,
@@ -179,12 +188,12 @@ class ExperienceForm extends React.Component {
 
         const endDateSelectors = present ? <p>Present</p> : (
             <>
-                <select className='exp-selector-form' onChange={this.handleInput('endMonth')}>
-                    <option value='Month'>{months[endDateExp.getMonth()] || 'Month'}</option>
+                <select className='exp-selector-form' onChange={this.handleInput('endMonth')} defaultValue={months[endDateExp.getMonth()] || 'Month'}>
+                    {/* <option value='Month'>{months[endDateExp.getMonth()] || 'Month'}</option> */}
                     {monthOptions}
                 </select>
-                <select onChange={this.handleInput('endYear')}> 
-                    <option value='Year'>{endDateExp.getFullYear() || 'Year'}</option>
+                <select onChange={this.handleInput('endYear')} defaultValue={endDateExp.getFullYear() || 'Year'}> 
+                    {/* <option value='Year'>{endDateExp.getFullYear() || 'Year'}</option> */}
                     {years.map(year => (
                         <option key={year}>{year}</option>
                     ))}
@@ -225,12 +234,12 @@ class ExperienceForm extends React.Component {
                     <div className='year-form'>
                         <label>Start Date</label>
                         <div className='exp-date'>
-                            <select className='start-month' onChange={this.handleInput('startMonth')} >
-                                <option value='Month'>{months[startDateExp.getMonth()] || 'Month'}</option>
+                            <select className='start-month' onChange={this.handleInput('startMonth')} defaultValue={months[startDateExp.getMonth()] || 'Month'} >
+                                {/* <option value='Month'>{months[startDateExp.getMonth()] || 'Month'}</option> */}
                                 {monthOptions}
                             </select>
-                            <select className='start-year' onChange={this.handleInput('startYear')} >
-                                <option value='Year'>{startDateExp.getFullYear() || 'Year'}</option>
+                            <select className='start-year' onChange={this.handleInput('startYear')} defaultValue={startDateExp.getFullYear() || 'Year'} >
+                                {/* <option value='Year'>{startDateExp.getFullYear() || 'Year'}</option> */}
                                 {years.map(year => {
                                     if (year < 2022) return (<option key={year}>{year}</option>)
                                 })}

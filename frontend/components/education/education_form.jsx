@@ -18,13 +18,24 @@ const months = [
 class EducationForm extends React.Component {
     constructor(props) {
         super(props);
+        console.log('education constructor props', props);
+
+        const startDateEdu = new Date(`${props.education.startDate}`);
+
+        const endDateEdu = new Date(`${props.education.endDate}`);
+
+        const startMonth = months[startDateEdu.getMonth()];
+        const startYear = startDateEdu.getFullYear();
+        const endMonth = months[endDateEdu.getMonth()];
+        const endYear = endDateEdu.getFullYear();
+        
         // debugger
         this.state = {
             ...props.education,
-            startMonth: '',
-            endMonth: '',
-            startYear: '',
-            endYear: '',
+            startMonth: startMonth || '',
+            endMonth: endMonth || '',
+            startYear: startYear || '',
+            endYear: endYear || '',
             yearErr: false, 
             schoolErr: false,
             gpaErr: false
@@ -67,6 +78,7 @@ class EducationForm extends React.Component {
         const { startYear, endYear, startMonth, endMonth, school, gpa } = this.state;
         let errorSwitch = false;
         // debugger
+        console.log('start month', startMonth);
         if ((!startYear.length && !startMonth.length)) {
             this.setState({ yearErr: true });
             this.yearErrMsg = 'Please enter a start date';
@@ -92,15 +104,15 @@ class EducationForm extends React.Component {
             errorSwitch = true;
         };
 
-        if (!gpa.length) {
-            this.setState({ gpaErr: true });
-            errorSwitch = true;
-        }
+        // if (!gpa.length) {
+        //     this.setState({ gpaErr: true });
+        //     errorSwitch = true;
+        // }
 
         const parsed = parseInt(gpa);
         console.log(gpa);
 
-        if ((parsed < 0.0 || parsed > 4.0) || (parsed < 0 || parsed > 4 )) {
+        if ((parsed <= 0.0 || parsed > 4.0) || (parsed <= 0 || parsed > 4 )) {
             this.setState({ gpaErr: true });
             errorSwitch = true;
         };
@@ -123,18 +135,17 @@ class EducationForm extends React.Component {
             years.unshift(i)
         };
 
-        const monthOptions = months.map(month => (
-            <option key={month} value={month}>{month}</option> 
-        ));
+        const monthOptions = months.map((month) => {
+            // debugger
+            return <option key={month} value={month} >{month}</option>
+        });
 
         const endDateSelectors = (
             <>
-                <select className='edu-selector-form' onChange={this.handleInput('endMonth')}>
-                    <option value='Month'>{months[endDateEdu.getMonth()] || 'Month'}</option>
+                <select className='edu-selector-form' onChange={this.handleInput('endMonth')} defaultValue={months[endDateEdu.getMonth()] || 'Month'}>
                     {monthOptions}
                 </select>
-                <select onChange={this.handleInput('endYear')}> 
-                    <option value='Year'>{endDateEdu.getFullYear() || 'Year'}</option>
+                <select onChange={this.handleInput('endYear')} defaultValue={endDateEdu.getFullYear() || 'Year'}> 
                     {years.map(year => (
                         <option key={year}>{year}</option>
                     ))}
@@ -164,12 +175,12 @@ class EducationForm extends React.Component {
                     <div className='year-form'>
                         <label>Start Date</label>
                         <div className='edu-date'>
-                            <select className='start-month' onChange={this.handleInput('startMonth')} >
-                                <option value='Month'>{months[startDateEdu.getMonth()] || 'Month'}</option>
+                            <select className='start-month' onChange={this.handleInput('startMonth')} defaultValue={months[startDateEdu.getMonth()] || 'Month'} >
+                                {/* <option value={months[startDateEdu.getMonth()] || 'Month'}>{months[startDateEdu.getMonth()] || 'Month'}</option> */}
                                 {monthOptions}
                             </select>
-                            <select className='start-year' onChange={this.handleInput('startYear')} >
-                                <option value='Year'>{startDateEdu.getFullYear() || 'Year'}</option>
+                            <select className='start-year' onChange={this.handleInput('startYear')} defaultValue={startDateEdu.getFullYear() || 'Year'}>
+                                {/* <option value={startDateEdu.getFullYear() || 'Year'}>{startDateEdu.getFullYear() || 'Year'}</option> */}
                                 {years.map(year => {
                                     if (year < 2022) return (<option key={year}>{year}</option>)
                                 })}
