@@ -2,7 +2,7 @@ class Api::ConnectionsController < ApplicationController
     def index 
         user_id = current_user.id 
         @connections = Connection.includes(:connector)
-                                  .where("connector_id = #{user_id} OR connectee_id = #{user_id}")
+                    .where("connector_id = #{user_id} OR connectee_id = #{user_id}")
     end  
 
     def connected 
