@@ -1,4 +1,4 @@
-$small_logo_height: 32px;
+$small_logo_height: 34px;
 
 .header {
     background: white;
@@ -18,7 +18,7 @@ $small_logo_height: 32px;
         padding-top: 16px;
         padding-bottom: 15px;
         padding-right: 5px;
-        width: 32px;
+        width: 34px;
         height: $small_logo_height;
     }
 
@@ -122,7 +122,7 @@ $small_logo_height: 32px;
     }
 
     .right-nav-bar {
-        border: 3px solid rgb(4, 0, 255);
+        // border: 3px solid rgb(4, 0, 255);
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -225,7 +225,7 @@ $small_logo_height: 32px;
         // display: none;
         position: absolute;
         top: 45px;
-        width: 325px;
+        width: 400px;
         background: white;
         border-radius: 8px;
         overflow: hidden;
@@ -259,8 +259,8 @@ $small_logo_height: 32px;
             }
       
             &:hover {
-              background: $lightergray;
-              cursor: pointer;
+                background: $lightergray;
+                cursor: pointer;
             }
         }
 
@@ -277,15 +277,19 @@ $small_logo_height: 32px;
     height: $small_logo_height -3;
     padding: 5px 5px 5px 40px;
     box-sizing: border-box;
-    border-radius: 5px;
+    // border-radius: 5px;
     // border-color: #f1f7ff;
     font-size: 14px;
+    border: 1px solid $lightergray;
+    border-radius: 3px;
 
     &:focus {
-        width: 325px;
+        width: 400px;
         height: $small_logo_height;
         font-size: 16px;
         padding: 5px 5px 5px 50px;
+        outline: none;
+        // border: 1px solid $lightergray;
         transition: 0.3s;
     
         + .fas.fa-search {

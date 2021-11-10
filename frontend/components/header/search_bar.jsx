@@ -59,7 +59,7 @@ class SearchBar extends React.Component {
                             </li>
                         ))}
                     </ul>
-                    <input type='text' placeholder='Search' id='search-field' onChange={this.handleInput} />
+                    <input type='text' placeholder='Search' id='search-field' onChange={this.handleInput} onFocus={this.handleInput} onBlur={() => this.setState({ results: [] })} />
                 </div>
             </div>
         )
