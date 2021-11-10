@@ -1,3 +1,5 @@
+$small_logo_height: 32px;
+
 .header {
     background: white;
     position: fixed;
@@ -13,9 +15,11 @@
     }
 
     .small-logo {
-        padding: 15px;
-        width: 35px;
-        height: auto;
+        padding-top: 16px;
+        padding-bottom: 15px;
+        padding-right: 5px;
+        width: 32px;
+        height: $small_logo_height;
     }
 
     .session-nav {
@@ -83,34 +87,36 @@
     .left-nav-bar {
         display: flex;
         align-items: center;
+        // font-size: 20px;
         width: 40vw;
         // border: 3px solid rgb(153, 0, 255);
 
-        .search-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            // border: 1px solid rgb(255, 0, 255);
+        // .search-container {
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     // border: 1px solid rgb(255, 0, 255);
 
-            div {
-                padding-left: 1vw;
-                padding-right: 1vw;
-            }
+        //     div {
+        //         padding-left: 1vw;
+        //         padding-right: 1vw;
+        //     }
 
-            i {
-                padding-right: 0.5vw;
-            }
+        //     i {
+        //         font-size: 15px;
+        //         padding-right: 0.5vw;
+        //     }
 
-            // ul {
-            //     margin-left: auto;
-            // }
+        //     // ul {
+        //     //     margin-left: auto;
+        //     // }
 
-        }
-        .search-results {
-            position: absolute;
-            // border: 1px solid red;
+        // }
+        // .search-results {
+        //     position: absolute;
+        //     // border: 1px solid red;
             
-        }
+        // }
 
 
     }
@@ -131,7 +137,9 @@
         }
 
         button {
+            // border: 3px solid rgb(255, 0, 191);
             padding-left: 5px;
+            margin-right: 10px;
         }
 
         .nav-icon {
@@ -200,3 +208,98 @@
     }
 }
 
+
+
+.search-container {
+    position: relative;
+
+    .fas.fa-search {
+        position: absolute;
+        top: 7px;
+        left: 15px;
+        font-size: 16px;
+        color: gray;
+    }
+
+    .search-results {
+        position: absolute;
+        top: 45px;
+        width: 325px;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid $lightergray;
+        
+        li {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 10px;
+
+            
+      
+            p {
+              font-size: 16px;
+      
+              span {
+                color: gray;
+                font-size: 14px;
+              }
+            }
+      
+            &:hover {
+              background: $lightergray;
+              cursor: pointer;
+            }
+        }
+    }
+}
+
+
+#search-field {
+    background: #f1f7ff;
+    width: 300px;
+    height: $small_logo_height -3;
+    padding: 5px 5px 5px 40px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    // border-color: #f1f7ff;
+    font-size: 14px;
+
+    &:focus {
+        width: 325px;
+        height: $small_logo_height;
+        font-size: 16px;
+        padding: 5px 5px 5px 50px;
+        transition: 0.3s;
+    
+        + .fas.fa-search {
+          left: 20px;
+        //   top: 30px;
+          font-size: 30px;
+          transition: 0.3s;
+        }
+    }
+}
+
+  
+// .search-results:hover {
+//     display: block;
+// }
+
+// #search-field:focus + i + .search-results {
+// display: block;
+
+// > :first-child {
+//     border-top: 1px solid $lightergray;
+// }
+
+// > :last-child {
+//     border-bottom: 1px solid $lightergray;
+// }
+
+// li {
+//     border-left: 1px solid $lightergray;
+//     border-right: 1px solid $lightergray;
+// }
+// }
