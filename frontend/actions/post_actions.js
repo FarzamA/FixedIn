@@ -10,12 +10,12 @@ export const receivePosts = payload => ({
     users: payload.users
 });
 
-const receivePost = post => ({
+export const receivePost = post => ({
     type: RECEIVE_POST,
     post
 });
 
-const removePost = postId => ({
+export const removePost = postId => ({
     type: REMOVE_POST,
     postId
 });
@@ -29,7 +29,8 @@ export const fetchPost = postId => dispatch => (
 );
 
 export const createPost = formData => dispatch => (
-    PostAPI.createPost(formData).then(post => dispatch(receivePost(post)))
+    PostAPI.createPost(formData).then(post => dispatch(receivePost(post)),
+    error => console.log(error.responseText))
 );
 
 export const updatePost = post => dispatch => (

@@ -12,12 +12,19 @@ export const fetchPost = postId => (
 );
 
 export const createPost = formData => {
-    console.log(formData.media);
+    for(let pair of formData.entries()) {
+        console.log(pair[0]+ ', '+ pair[1]);
+    }
+
+    // const post = {
+    //     body: formData.get('post[body]'),
+    //     user_id: formData.get('post[user_id]')
+    // }
     return $.ajax({
         method: 'POST',
         url: `/api/posts`,
         data: formData,
-        connectType: false,
+        contentType: false,
         processData: false 
     })
 };

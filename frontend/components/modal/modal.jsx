@@ -44,7 +44,7 @@ const Modal = ({ modal, closeModal }) => {
             component = <CreatePostForm closeModal={closeModal}/>;
             break;
         case 'editPost':
-            component = <EditPostFormContainer closeModal={closeModal}/>;
+            component = <EditPostForm closeModal={closeModal}/>;
             break;
         default:
             return null;

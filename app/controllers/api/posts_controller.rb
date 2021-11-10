@@ -18,11 +18,11 @@ class Api::PostsController < ApplicationController
                       .order(created_at: :desc)
                         .includes(:likes)
                         .offset(params[:offset].to_i * 2)
-                      .limit(3)
+                      .limit(10)
     end
 
     def create 
-        debugger
+        # debugger
         @post = Post.new(post_params)
 
         if @post.save 
@@ -38,7 +38,7 @@ class Api::PostsController < ApplicationController
 
     def update 
         @post = Post.find(params[:id])
-
+        # debugger
         if @post.update(post_params)
             render :show
         else 

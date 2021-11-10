@@ -3,8 +3,9 @@ import React from 'react';
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
+        console.log(this.props)
+        this.state = this.props.post;
 
-        this.state = this.props.post
         this.removeFile = this.removeFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -31,33 +32,7 @@ class PostForm extends React.Component {
         // }
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-
-        let formData = new FormData();
-        // debugger
-        if (this.state.media) {
-            formData.append('post[media]', this.state.media)
-        };
-
-        if (this.state.id) {
-            formData.append('post[id]', this.state.id);
-        };
-
-        formData.append('post[body]', this.state.body);
-        formData.append('post[user_id]', this.state.userId);
-
-        this.props.processForm(formData);
-
-        this.setState({ 
-            body: "",
-            media: null,
-            mediaUrl: null
-        });
-
-        document.getElementById('post-media').value = '';
-        this.props.closeModal();
-    };
+    
 
     handleInput(e) {
         this.setState({ body: e.target.value });
@@ -69,16 +44,15 @@ class PostForm extends React.Component {
     };
 
     modalSwitch() {
-        // document.getElementsByClassName('post-form-modal')[0].classList.toggle('hidden');
-        // document.getElementsByClassName('post-media-modal')[0].classList.toggle('hidden');
+        
     }
 
     handleFile(e) {
         const file = e.target.files[0];
-
         const fileReader = new FileReader();
-
+        
         fileReader.onloadend = () => {
+            debugger
             this.setState({ media: file, mediaUrl: fileReader.result });
             const postBodies = document.getElementsByClassName('post-body');
 
@@ -101,7 +75,37 @@ class PostForm extends React.Component {
         } else {
             return true;
         }
-    }
+    };
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        let formData = new FormData();
+        // formData.append('post', this.state);
+        // debugger
+        if (this.state.media) {
+            formData.append('post[media]', this.state.media)
+        };
+
+        if (this.state.id) {
+            formData.append('post[id]', this.state.id);
+        };
+
+        formData.append('post[body]', this.state.body);
+        formData.append('post[user_id]', this.state.userId);
+        // formData.append('post', this.state);
+        console.log(this.state);
+        this.props.processForm(formData);
+
+        this.setState({ 
+            body: "",
+            media: null,
+            mediaUrl: null
+        });
+
+        document.getElementById('post-media').value = '';
+        this.props.closeModal();
+    };
 
     render() {
         const preview = (voidPic) => this.state.mediaUrl ? <img src={this.state.mediaUrl} /> : voidPic;
@@ -144,7 +148,7 @@ class PostForm extends React.Component {
                         </footer>
                     </form>
                 </div>
-                <div className='modal post-media-modal'>
+                {/* <div className='modal post-media-modal'>
                     <header>
                         <h2>Edit your photo</h2>
                         <span className='close-modal-button' onClick={this.modalSwitch()}>✕</span>
@@ -158,7 +162,7 @@ class PostForm extends React.Component {
                             <button className='done-btn' onClick={this.modalSwitch()}>Done</button>
                         </div>
                     </footer>
-                </div>
+                </div> */}
             </>
         )
     }

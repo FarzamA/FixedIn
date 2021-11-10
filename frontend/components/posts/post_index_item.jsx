@@ -55,7 +55,7 @@ class PostIndexItem extends React.Component {
             currentUser, openModal, deletePost, users, post: { id, body, mediaUrl, userId }  
         } = this.props
         
-        const { drop, likeCount, commentCount } = this.state;
+        const { likeCount, commentCount } = this.state;
         let postUser;
         let name;
         let dropdown;
@@ -109,7 +109,7 @@ class PostIndexItem extends React.Component {
                     {dropdown}
                 </header>
                 <p>{body}</p>
-                <img src={mediaUrl} alr=''></img>
+                <img src={mediaUrl} alr='' className='post-img'></img>
                 <div className='num-lc'>
                     {numLikes} {numComments}
                 </div>

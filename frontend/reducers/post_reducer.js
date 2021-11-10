@@ -8,6 +8,7 @@ const postsReducer = (state = {}, action) => {
             // debugger posts are coming in undefined
             return { ...state, ...action.posts }
         case RECEIVE_POST:
+            debugger
             return { ...state, ...action.post};
         case REMOVE_POST:
             let nextState = { ...state };
