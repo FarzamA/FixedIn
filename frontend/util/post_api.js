@@ -11,15 +11,16 @@ export const fetchPost = postId => (
     })
 );
 
-export const createPost = formData => (
-    $.ajax({
+export const createPost = formData => {
+    console.log(formData.media);
+    return $.ajax({
         method: 'POST',
         url: `/api/posts`,
         data: formData,
         connectType: false,
         processData: false 
     })
-);
+};
 
 export const updatePost = formData => (
     $.ajax({

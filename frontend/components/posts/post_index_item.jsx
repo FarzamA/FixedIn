@@ -32,13 +32,13 @@ class PostIndexItem extends React.Component {
         if (timeAgo < 60000) {
             return '<1m'; 
         } else if (timeAgo < 3600000) {
-            return Math.floor(timeAgo / 60000) + 'm';
+            return Math.floor(timeAgo / 60000) + 'm ago';
         } else if (timeAgo < 86400000) {
-            return Math.floor(timeAgo / 3600000) + 'h';
+            return Math.floor(timeAgo / 3600000) + 'h ago';
         }else if (timeAgo < 31536000000) {
-            return Math.floor(timeAgo / 86400000) + 'd';
+            return Math.floor(timeAgo / 86400000) + 'd ago';
         } else {
-            return Math.floor(timeAgo / 31536000000) +'y';
+            return Math.floor(timeAgo / 31536000000) +'y ago';
         }
     };
 

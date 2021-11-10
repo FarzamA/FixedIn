@@ -8,6 +8,8 @@ import EditEducationForm from '../education/edit_education_form';
 import CreateExperienceForm from '../experiences/create_experience_form';
 import EditExperienceForm from '../experiences/edit_experience_form';
 import EditIntroContainer from '../profile/intro_form';
+import CreatePostForm from '../posts/create_post_form';
+import EditPostForm from '../posts/edit_post_form';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) return null;
@@ -37,6 +39,12 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'editIntro':
             component = <EditIntroContainer closeModal={closeModal} />
+            break;
+        case 'createPost':
+            component = <CreatePostForm closeModal={closeModal}/>;
+            break;
+        case 'editPost':
+            component = <EditPostFormContainer closeModal={closeModal}/>;
             break;
         default:
             return null;
