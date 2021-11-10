@@ -222,6 +222,7 @@ $small_logo_height: 32px;
     }
 
     .search-results {
+        // display: none;
         position: absolute;
         top: 45px;
         width: 325px;
@@ -229,6 +230,16 @@ $small_logo_height: 32px;
         border-radius: 8px;
         overflow: hidden;
         border: 1px solid $lightergray;
+
+        img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            //don't use padding here it distorts circular images
+            margin-right: 10px;
+        }
         
         li {
             display: flex;
@@ -252,6 +263,10 @@ $small_logo_height: 32px;
               cursor: pointer;
             }
         }
+
+        // &:hover {
+        //     display: block;
+        // }
     }
 }
 

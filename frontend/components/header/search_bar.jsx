@@ -2,6 +2,15 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { searchUsers } from '../../util/session_api_util';
 
+//allows for a delay before search bar pops up
+let delay;
+const debounce = (callback, wait = 250) => {
+  return (...args) => {
+    clearTimeout(delay);
+    delay = setTimeout(() => { callback.apply(null, args); }, wait);
+  };
+};
+
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
@@ -16,9 +25,11 @@ class SearchBar extends React.Component {
 
     handleInput(e) {
          if (e.target.value.length) {
-             searchUsers(e.target.value).then(results => {
-                 this.setState({ results });
-             });
+            debounce(() => {
+                searchUsers(e.target.value).then(results => {
+                    this.setState({ results });
+                });
+            }, 300)();
          } else {
              this.setState({ results: [] });
          }
@@ -39,6 +50,11 @@ class SearchBar extends React.Component {
                     <ul className='search-results'>
                         {this.state.results.map(user => (
                             <li key={user.id} onClick={() => {this.redirectUser(user.id)}}>
+
+                                <div className='avatar-smaller'>
+                                    <img src={user.avatarUrl || window.defaultUser} alt="Avatar"/>
+                                </div>
+
                                 <p>{`${user.firstName} ${user.lastName}`}</p>
                             </li>
                         ))}
