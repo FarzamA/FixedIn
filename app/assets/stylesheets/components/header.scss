@@ -280,6 +280,7 @@ $small_logo_height: 34px;
                         &:hover {
                             transition: 0.3s;
                             // border: 2px solid #0a66c2;
+                            background: rgba(112,181,249,0.15);
                             box-shadow: inset 0px 0px 0px 2px #0a66c2;
                             cursor: pointer;
                         }

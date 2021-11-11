@@ -7,6 +7,12 @@
     margin-top: 5vh;
     display: flex;
 
+    p {
+        padding: 10px;
+    }
+
+    
+
     .start-post {
         display: flex;
         align-items: center;
@@ -58,6 +64,10 @@
             background: white;
             border: 1px solid $lightgray;
             border-radius: 8px;
+
+            ul {
+                display: none;
+            }
         }
     }
 }
@@ -106,6 +116,20 @@
         align-items: center;
         margin-top: -30px;
         // position: absolute;
+
+        p:first-child {
+            font-weight: bold;
+        }
+    }
+
+    .user-cons-sidebar > div {
+        display: flex;
+        width: 16vw;
+        align-items: center;
+        justify-content: space-around;
+        p {
+            justify-content: flex-start;
+        }
     }
 }
 

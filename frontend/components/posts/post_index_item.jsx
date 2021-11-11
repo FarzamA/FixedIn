@@ -44,10 +44,14 @@ class PostIndexItem extends React.Component {
 
     clicked() {
         this.setState({ drop: true });
+        const ele = document.getElementsByClassName('post-dropdown')[0];
+        ele.style.display = 'block';
     };
 
     leave() {
         this.setState({ drop: false });
+        const ele = document.getElementsByClassName('post-dropdown')[0];
+        ele.style.display = 'none';
     };
 
     render() {

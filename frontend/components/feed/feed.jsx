@@ -32,10 +32,16 @@ class Feed extends React.Component {
                             <p>{headline}</p>
                         </div>
                         <div className='user-cons-sidebar'>
+                            <Link to='/mynetwork' >
                             <div>
-                                <p>Connections</p>
-                                <p className="user-cons-count">{userConnections}</p>
+                                <div>
+                                    <p>Connections</p>
+                                </div>
+                                <div>
+                                    <p className="user-cons-count">{userConnections}</p>
+                                </div>
                             </div>
+                            </Link>
                         </div>
                     </aside>
                 </div>
