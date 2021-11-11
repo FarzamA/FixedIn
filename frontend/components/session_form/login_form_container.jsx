@@ -63,21 +63,14 @@ class LoginForm extends React.Component {
                 <form onSubmit={this.handleSubmit} >
                     {splash ? null : <h1>Sign In</h1>}
                     <label>Email
-                        {/* <br /> */}
-                        <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
-                        {/* <br /> */}
+                        <input type="text" className={errorOne ? 'input-error' : ''} value={this.state.email} onChange={this.handleInput('email')} />
                         {errorOne ? <p className='error-msg'>{errorOne}</p> : null}   
                     </label>
-                        {/* <br /> */}
                     <label>Password
-                        {/* <br /> */}
-                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
-                        {/* <br /> */}
+                        <input type="password" className={errorTwo ? 'input-error' : ''} value={this.state.password} onChange={this.handleInput('password')} />
                         {errorTwo ? <p className='error-msg'>{errorTwo}</p> : null}
                     </label>
-                        {/* <br /> */}
                     <button type="submit">Sign In</button>
-                        {/* <br /> */}
                     <button onClick={this.handleDemo}>Demo User</button>
                     <p>New to FixedIn? <Link to="/signup"><span>Join now</span></Link></p>
                 </form>

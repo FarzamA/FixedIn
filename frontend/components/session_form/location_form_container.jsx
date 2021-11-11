@@ -23,8 +23,8 @@ class LocationForm extends React.Component {
         const { city, state } = this.state; 
         let errorSwitch = false;
 
-        console.log(state, 'state');
-        console.log(city, 'city');
+        // console.log(state, 'state');
+        // console.log(city, 'city');
 
         if (city === '' || !city.length) {
             this.setState({ cityError: true });
