@@ -1,15 +1,18 @@
-.signup-section, .login-section {
+.signup-section, .login-section, .signup-form {
     display: flex;
     flex-direction: column;
     position: absolute;
+    align-items: center;
     // margin-top: 5%;
     margin-left: 20%;
+    width: 400px;
     // margin: 10px;
 
     h2 {
         display: flex;
         justify-content: center;
         margin-bottom: 40px;
+        width: 500px;
     }
 
     form {
@@ -105,5 +108,10 @@
     // display: flex;
     margin-top: 20vh;
     padding-left: 20vw;
+}
+
+.signup-section {
+    width: 20vw;
+    align-items: center;
 }
 

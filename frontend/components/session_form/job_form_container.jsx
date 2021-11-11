@@ -63,7 +63,7 @@ class JobForm extends React.Component {
 
         return(
             <div className='signup-form'>
-                <h1>What's your most recent experience</h1>
+                <h2>What's your most recent experience</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>Most recent job title*
                         <br/>
