@@ -1,9 +1,14 @@
 .connections {
-    padding-top: 15vh;
-    padding-left: 18.75vw;
+    // padding-top: 15vh;
+    // padding-left: 18.75vw;
     border: 1px solid $lightgray;
     border-radius: 8px;
     background: white;
+    width: 55vw;
+    padding: 50px;
+    // margin-left: 10vw;
+    // margin-right: 10vw;
+    // margin: 5vh 10vw 3vh 10vw;
 
     header {
         padding-bottom: 20px;
@@ -18,6 +23,18 @@
         object-fit: cover;
         object-position: top;
     }
+}
 
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    .connections:first-child{
+        margin: 8vh 0 10px 0;
+    }
+    .connections:last-child {
+        margin-bottom: 5vh;
+    }
+    
 }
