@@ -16,8 +16,9 @@ class PostIndex extends React.Component {
 
         this.observer = React.createRef();
         this.lastPostRef = node => {
+            // intersection observer lets us register a callback whenever the node is in our viewport
             this.observer.current = new IntersectionObserver(entries => {
-                // console.log(entries);
+                console.log(entries, 'entries');
                 if (entries[0].isIntersecting && this.state.morePosts) {
                     console.log(this.state.morePosts, 'morePosts');
                     // deal w loading bar later
