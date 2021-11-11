@@ -44,14 +44,14 @@ class PostIndexItem extends React.Component {
 
     clicked() {
         this.setState({ drop: true });
-        const ele = document.getElementsByClassName('post-dropdown')[0];
-        ele.style.display = 'block';
+        // const ele = document.getElementById('post-dropdown');
+        // ele.style.display = 'block';
     };
 
     leave() {
         this.setState({ drop: false });
-        const ele = document.getElementsByClassName('post-dropdown')[0];
-        ele.style.display = 'none';
+        // const ele = document.getElementById('post-dropdown');
+        // ele.style.display = 'none';
     };
 
     render() {
@@ -59,7 +59,7 @@ class PostIndexItem extends React.Component {
             currentUser, openModal, deletePost, users, post: { id, body, mediaUrl, userId }  
         } = this.props
         
-        const { likeCount, commentCount } = this.state;
+        const { likeCount, commentCount, drop } = this.state;
         let postUser;
         let name;
         let dropdown;
@@ -72,7 +72,7 @@ class PostIndexItem extends React.Component {
                 dropdown = (
                     <button onFocus={this.clicked} onBlur={this.leave}>
                         <img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Simple_icon_ellipsis.svg' className='ellipsis'></img>
-                        <ul className='post-dropdown'>
+                        <ul className={`post-dropdown-${drop ? 'reveal' : 'hide' }`}>
                             <li onClick={() => {openModal('editPost', id); this.leave();}}><i className="far fa-edit"></i>Edit Post</li>
                             <li onClick={() => deletePost(id)}><i className="far fa-trash-alt"></i>Delete Post</li>
                         </ul>
@@ -93,7 +93,7 @@ class PostIndexItem extends React.Component {
         ) : null;
 
         return (
-            <div ref={this.postItemRef}>
+            <div ref={this.postItemRef} className='post-item'>
                 <header>
                     <div>
                         <Link to={`/users/${userId}`}>

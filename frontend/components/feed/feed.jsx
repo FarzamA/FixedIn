@@ -28,12 +28,12 @@ class Feed extends React.Component {
                                     <img src={avatarUrl || window.defaultUser} alt='pfp'/>
                                 </div>
                             </Link>
-                            <p>{`${firstName} ${lastName}`}</p>
+                            <p className='name'>{`${firstName} ${lastName}`}</p>
                             <p>{headline}</p>
                         </div>
                         <div className='user-cons-sidebar'>
                             <Link to='/mynetwork' >
-                            <div>
+                            <div className='user-cons'>
                                 <div>
                                     <p>Connections</p>
                                 </div>
