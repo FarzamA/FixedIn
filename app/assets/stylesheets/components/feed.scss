@@ -1,15 +1,93 @@
+// .main-section {
+//     display: flex;
+// }
+
 .feed-section  {
-    padding-left: 18.75vw;
-    padding-top: 5vh;
+    padding-left: 15.75vw;
+    margin-top: 5vh;
+    display: flex;
+
+    .start-post {
+        display: flex;
+        align-items: center;
+        background: white;
+        border: 1px solid $lightgray;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-left: 9px;
+        width: 29.5vw;
+    
+        button {
+            flex-grow: 1;
+            margin: 20px;
+            background: white;
+            color: $gray;
+            border: 1px solid $lightgray;
+            border-radius: 24px;
+            font-weight: 600;
+            text-align: left;
+            height: 50px;
+            
+            p {
+                margin-left: 20px;
+            }
+        
+            &:hover {
+                background: $lightgray;
+                border: 1px solid rgb(201, 201, 201);
+                transition: 0.3s;
+                cursor: pointer;
+            }
+        }
+
+    }
+    
+    
+    .feed-div {
+        border-top: 1px solid #cccccc;
+        margin-top: 8px;
+        margin-left: 10px;
+    
+        &:before {
+          content: '';
+        }
+
+
+        .posts-index > div {
+            margin: 8px 0px;
+            background: white;
+            border: 1px solid $lightgray;
+            border-radius: 8px;
+        }
+    }
+}
+
+.posts-section {
+    margin-top: 3vh;
+    width: 30vw;
+    margin-left: 0.5vw;
 }
 
 .user-sidebar{
-    // margin-top: 15vh;
+    margin-top: 3vh;
     // margin-left: 220px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid $lightgray;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 15vw;
+
+    // .user-sidebar-bg {
+    //     height: 70px;
+    //     overflow: hidden;
+    // }
 
     .user-sidebar-avatar > img {
         height: 8vh;
         width: 8vh;
+        border: 2px solid white;
         border-radius: 50%;
         object-fit: cover;
         object-position: top;
@@ -18,14 +96,18 @@
 
     .user-sidebar-bg > img {
         width: 15vw;
-        height: 12vh;
+        height: 7vh;
         object-fit: cover;
-        object-position: top;
+        object-position: center;
     }
 
-    // .user-sidebar-info {
-    //     position: absolute;
-    // }
+    .user-sidebar-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -30px;
+        // position: absolute;
+    }
 }
 
 .avatar {
@@ -34,8 +116,8 @@
     // padding: 20px;
     img {
         margin: 10px;
-        height: 75px;
-        width: 75px;
+        height: 50px;
+        width: 50px;
         border-radius: 50%;
         object-fit: cover;
         object-position: top;

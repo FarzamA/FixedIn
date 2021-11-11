@@ -109,7 +109,7 @@ class PostIndexItem extends React.Component {
                     {dropdown}
                 </header>
                 <p>{body}</p>
-                <img src={mediaUrl} alr='' className='post-img'></img>
+                {mediaUrl ? <img src={mediaUrl} alr='' className='post-img' /> : null}
                 <div className='num-lc'>
                     {numLikes} {numComments}
                 </div>

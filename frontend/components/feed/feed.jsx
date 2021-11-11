@@ -46,7 +46,7 @@ class Feed extends React.Component {
                         <img src={avatarUrl || window.defaultUser} alt="Profile Pic" className='pfp'/>
                     </div>
                     </Link>
-                    <button onClick={() => openModal('createPost')}>Start a post</button>
+                    <button onClick={() => openModal('createPost')}><p>Start a post</p></button>
                 </div>
                 <div className='feed-div'>
                     <PostIndexContainer/>

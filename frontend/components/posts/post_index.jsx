@@ -56,7 +56,7 @@ class PostIndex extends React.Component {
                         // console.log('post', post);
                         // console.log('post id', post.id);
                         return (
-                            <div key={idx}>
+                            <div  key={idx}>
                                 <PostIndexItemContainer key={`${post.id}`} post={post} />
                                 <div ref={this.lastPostRef}></div>
                                 {/* {this.state.loading ? (
