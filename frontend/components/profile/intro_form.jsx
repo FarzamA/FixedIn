@@ -28,8 +28,8 @@ class EditIntro extends React.Component {
     handleInput(field) {
         // console.log(field);
         return e => {
-            console.log(e.target.value);
-            console.log(field);
+            // console.log(e.target.value);
+            // console.log(field);
             this.setState({ [field]: e.target.value });
         };
     };
@@ -61,10 +61,12 @@ class EditIntro extends React.Component {
             console.log(this.state)
             this.props.updateUser({
                 ...this.state,
+                first_name: this.state.firstName,
+                last_name: this.state.lastName,
                 location: `${city}, ${state}`
             });
             
-            console.log('we are here');
+            // console.log('we are here');
             this.props.closeModal();
         }
     };
