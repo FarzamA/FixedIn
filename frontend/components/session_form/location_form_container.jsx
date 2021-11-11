@@ -23,12 +23,15 @@ class LocationForm extends React.Component {
         const { city, state } = this.state; 
         let errorSwitch = false;
 
-        if (!city.length) {
+        console.log(state, 'state');
+        console.log(city, 'city');
+
+        if (city === '' || !city.length) {
             this.setState({ cityError: true });
             errorSwitch = true;
         }
 
-        if (!state.length) {
+        if (state === '' || !state.length) {
             this.setState({ stateError: true });
             errorSwitch = true;
         };
@@ -39,10 +42,12 @@ class LocationForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        const { city, state } = this.state;
-        const location = city + ',' + state;
-        this.props.receiveUserLocation(Object.assign({}, this.state, { location }));
-        this.props.history.push('/signup/job');
+        if (!this.handleErrors()) {
+            const { city, state } = this.state;
+            const location = city + ',' + state;
+            this.props.receiveUserLocation(Object.assign({}, this.state, { location }));
+            this.props.history.push('/signup/job');
+        }
     };
 
     render() {
