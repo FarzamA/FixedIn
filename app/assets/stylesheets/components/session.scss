@@ -6,6 +6,11 @@
     margin-left: 20%;
     // margin: 10px;
 
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
     form {
         display: flex;
         flex-direction: column;
@@ -13,6 +18,11 @@
         padding: 30px;
         width: 350px;
         border-radius: 8px;
+
+        p {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     label {
@@ -90,3 +100,4 @@
     margin-top: 20vh;
     padding-left: 20vw;
 }
+

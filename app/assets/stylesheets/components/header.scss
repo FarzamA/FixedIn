@@ -5,6 +5,7 @@ $small_logo_height: 34px;
     position: fixed;
     width: 100%;
     top: 0;
+    border: 0px 0px 1px 0px rgba(228, 228, 228, 0.6);
     // border: 3px solid red;
     display: flex;
     justify-content: center;
@@ -31,6 +32,14 @@ $small_logo_height: 34px;
         font-size: 16px;
         font-weight: 900;
 
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 22vw;
+            height: 5vh;
+        }
+
         .fixed {
             text-decoration: none;
         }
@@ -38,7 +47,7 @@ $small_logo_height: 34px;
         .splash-signup {
             color: $gray;
             padding: 8px 20px;
-            // margin-right: 10px;
+            margin-right: 10px;
             text-decoration: none;
 
             &:hover {
@@ -210,6 +219,7 @@ $small_logo_height: 34px;
                 width: 300px;
                 right: 16vw;
                 position: absolute;
+                color: black;
                 // outline: none;
                 // margin-right: 1000px;
 
@@ -309,7 +319,7 @@ $small_logo_height: 34px;
         background: white;
         border-radius: 8px;
         overflow: hidden;
-        border: 1px solid $lightergray;
+        border: 0px 1px 1px 1px solid $lightergray;
 
         img {
             height: 30px;

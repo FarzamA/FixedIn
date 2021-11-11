@@ -117,7 +117,7 @@ class EmailForm extends React.Component {
                     <br/>
                     <button className='form-button' onClick={this.handleDemo.bind(this)} >Demo User</button>
                     <br/>
-                    <p>Already on FixedIn? <Link to="/login">Sign In</Link> </p>
+                    <p>Already on FixedIn? <span><Link to="/login">Sign In</Link></span> </p>
                 </form>
             </div>
         )
