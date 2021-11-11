@@ -57,24 +57,24 @@ class LoggedIn extends React.Component {
                             <p>Me <span className='arrow-down'></span></p>
                         </div>
                         <ul className={'header-dropdown-' + (this.state.drop ? 'reveal' : 'hide')}>
-                            <li>
-                                <div>
-                                    <div className='avatar'>
-                                        <img src={user.avatarUrl || window.defaultUser} alt='pfp-small' />
-                                    </div>
+                                <li>
                                     <div>
-                                        <p>{`${user.firstName} ${user.lastName}`}</p>
-                                        <p>{user.headline}</p>
+                                        <div className='avatar'>
+                                            <img src={user.avatarUrl || window.defaultUser} alt='pfp-small' />
+                                        </div>
+                                        <div>
+                                            <p>{`${user.firstName} ${user.lastName}`}</p>
+                                            <p>{user.headline}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='pf-btn' onClick={() => {
-                                    history.push(`/users/${user.id}`);
-                                    this.leave();
-                                }}>
-                                    View Profile
-                                </div>
-                            </li>
-                            <li onClick={logoutUser}>Sign Out</li>
+                                    <div className='pf-btn' onClick={() => {
+                                        history.push(`/users/${user.id}`);
+                                        this.leave();
+                                    }}>
+                                        View Profile
+                                    </div>
+                                </li>
+                                <li onClick={logoutUser}>Sign Out</li>
                         </ul>
                     </button>
                 </nav>  
