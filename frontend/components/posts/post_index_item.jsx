@@ -73,6 +73,7 @@ class PostIndexItem extends React.Component {
                     <button onFocus={this.clicked} onBlur={this.leave}>
                         <img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Simple_icon_ellipsis.svg' className='ellipsis'></img>
                         <ul className={`post-dropdown-${drop ? 'reveal' : 'hide' }`}>
+                        {/* <ul className={`post-dropdown-reveal`}> */}
                             <li onClick={() => {openModal('editPost', id); this.leave();}}><i className="far fa-edit"></i>Edit Post</li>
                             <li onClick={() => deletePost(id)}><i className="far fa-trash-alt"></i>Delete Post</li>
                         </ul>
@@ -113,7 +114,7 @@ class PostIndexItem extends React.Component {
                     {dropdown}
                 </header>
                 <p>{body}</p>
-                {mediaUrl ? <img src={mediaUrl} alr='' className='post-img' /> : null}
+                {mediaUrl ? <div className='post-img-cont'><img src={mediaUrl} alr='' className='post-img' /></div> : null}
                 <div className='num-lc'>
                     {numLikes} {numComments}
                 </div>
