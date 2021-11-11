@@ -9,6 +9,7 @@
     h2 {
         display: flex;
         justify-content: center;
+        margin-bottom: 40px;
     }
 
     form {
@@ -22,6 +23,11 @@
         p {
             display: flex;
             justify-content: center;
+            
+            a {
+                color: #0a66c2;
+                text-decoration: none;
+            }
         }
     }
 

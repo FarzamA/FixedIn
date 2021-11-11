@@ -39,7 +39,7 @@ class EditIntro extends React.Component {
     };
 
     handleErrors() {
-        if (Object.values(this.state).some(el => el == true)) {
+        if (Object.values(this.state).some(el => el === true)) {
           return true;
         } else {
           return false;
@@ -48,14 +48,16 @@ class EditIntro extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger
         const { state, city } = this.state;
-
+        
         if (!this.handleErrors()) {
             this.props.updateUser({
                 ...this.state,
                 location: `${city}, ${state}`
             });
-
+            
+            console.log('we are here');
             this.props.closeModal();
         }
     };
