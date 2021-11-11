@@ -51,8 +51,29 @@ class Feed extends React.Component {
                 <div className='feed-div'>
                     <PostIndexContainer/>
                 </div>
-                
                 </section>
+                <div>
+                    <aside className='right-side-bar'>
+                        <div >
+                            <img src={window.farzam} />
+                        </div>
+                        <h1>Farzam Ahmad</h1>
+                        <div className='links'>
+                            <a href='https://github.com/FarzamA'>
+                                <div className='nav-icon'>
+                                    <i className="fab fa-github"></i>
+                                    <p>Github</p>
+                                </div>
+                            </a>
+                            <a href='https://www.linkedin.com/in/farzam-ahmad-41b024154/'>
+                                <div className='nav-icon'>
+                                    <i className="fab fa-linkedin"></i>
+                                    <p>LinkedIn</p>
+                                </div>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
             </section>
         )
     }

@@ -21,14 +21,41 @@ class Profile extends React.Component {
 
         return(
             <div className='profile-page-cont'>
-                <div className='user-section'>
-                    <UserDetailContainer lastEducation={educations[0]} lastExperience={experiences[0]} />
+                <div className='user-prof'>
+                    <div className='user-section'>
+                        <UserDetailContainer lastEducation={educations[0]} lastExperience={experiences[0]} />
+                    </div>
+                    <div className='edu-section'>
+                        <div>
+                            <EducationIndexContainer educations={educations} />
+                        </div>
+                    </div>
+                    <div> 
+                        <ExperienceIndexContainer experiences={experiences} />
+                    </div>
                 </div>
-                <div className='edu-section'>
-                    <EducationIndexContainer educations={educations} />
+                <div>
+                    <aside className='right-side-bar'>
+                        <div >
+                            <img src={window.farzam} />
+                        </div>
+                        <h1>Farzam Ahmad</h1>
+                        <div className='links'>
+                            <a href='https://github.com/FarzamA'>
+                                <div className='nav-icon'>
+                                    <i className="fab fa-github"></i>
+                                    <p>Github</p>
+                                </div>
+                            </a>
+                            <a href='https://www.linkedin.com/in/farzam-ahmad-41b024154/'>
+                                <div className='nav-icon'>
+                                    <i className="fab fa-linkedin"></i>
+                                    <p>LinkedIn</p>
+                                </div>
+                            </a>
+                        </div>
+                    </aside>
                 </div>
-                <div> </div>
-                    <ExperienceIndexContainer experiences={experiences} />
             </div>
         )
     }

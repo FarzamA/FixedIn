@@ -22,15 +22,21 @@ class EditIntro extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkError = this.checkError.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     handleInput(field) {
-        return e => this.setState({ [field]: e.target.value })
+        // console.log(field);
+        return e => {
+            console.log(e.target.value);
+            console.log(field);
+            this.setState({ [field]: e.target.value });
+        };
     };
 
     checkError(field) {
         return e => {
-            if (e.target.value == '') {
+            if (e.target.value === '') {
                 this.setState({ [field]: true })
             } else {
                 this.setState({ [field]: false })
@@ -52,6 +58,7 @@ class EditIntro extends React.Component {
         const { state, city } = this.state;
         
         if (!this.handleErrors()) {
+            console.log(this.state)
             this.props.updateUser({
                 ...this.state,
                 location: `${city}, ${state}`
@@ -78,7 +85,7 @@ class EditIntro extends React.Component {
                     <div className='intro-name'>
                         <div>
                             <label>First Name*</label>
-                            <input type="text" value={firstName || ''} className = {firstNameErr ? 'input-error' : ''}
+                            <input type="text" value={firstName || ''} className={firstNameErr ? 'input-error' : ''}
                                 onChange={this.handleInput('firstName')}
                                 onBlur={this.checkError('firstNameErr')}
                              />
@@ -86,7 +93,7 @@ class EditIntro extends React.Component {
                         </div>
                         <div>
                             <label>Last Name*</label>
-                            <input type="text" value={lastName || ''} className = {lastNameErr ? 'input-error' : ''}
+                            <input type="text" value={lastName || ''} className ={lastNameErr ? 'input-error' : ''}
                                 onChange={this.handleInput('lastName')}
                                 onBlur={this.checkError('lastNameErr')}
                              />

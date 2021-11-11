@@ -1,13 +1,19 @@
-// .profile-page-cont {
-//     padding-left: 18.75vw;
-// }
+.profile-page-cont {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+}
 .user-bg-img {
     img {
         width: 42vw;
-        height: 30vh;
+        height: 15vh;
         object-fit: cover;
-        object-position: top;
+        object-position: center;
     }
+}
+
+.user-prof {
+    margin-top: 3vh;
 }
 
 .user-details {

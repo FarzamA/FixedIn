@@ -64,7 +64,7 @@
 
 .posts-section {
     width: 30vw;
-    margin: 3vh 0.5vw 0 0.5vw;
+    margin: 3vh 1.3vw 0 0.5vw;
 }
 
 .user-sidebar{
@@ -114,7 +114,7 @@
     // width: 5vw;
     // padding: 20px;
     img {
-        margin: 10px;
+        margin-left: 15px;
         height: 50px;
         width: 50px;
         border-radius: 50%;
@@ -126,4 +126,58 @@
 .post-img {
     height: 100px;
     width: auto;
+}
+
+.right-side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+    // border: 1px solid red;
+    background: white;
+    border: 1px solid $lightgray;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 15vw;
+
+    div {
+        padding: 10px;
+    }
+
+    img {
+        width:100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .links {
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.6);
+
+            div {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                i {
+                    font-size: xx-large;
+                }
+            }
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
 }

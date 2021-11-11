@@ -252,14 +252,19 @@ $small_logo_height: 34px;
                         display: flex;
                         height: 10vh;
                         margin-bottom: -20px;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
 
 
                         > div:last-child {
                             // border: 1px solid red;
-                            display: grid;
+                            display: flex;
+                            flex-direction: column;
                             align-items: center;
                             align-content: space-evenly;
                             justify-content: center;
+                            margin-left: 10px;
                         }
                     }
 

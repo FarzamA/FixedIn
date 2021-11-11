@@ -85,7 +85,7 @@ class EmailForm extends React.Component {
         e.preventDefault();
 
         this.props.loginUser({
-            email: 'farzam@mazraf.com',
+            email: 'alvin@alvin.com',
             password: 'password'
         })
     };
