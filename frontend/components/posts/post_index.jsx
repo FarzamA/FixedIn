@@ -17,18 +17,21 @@ class PostIndex extends React.Component {
         this.observer = React.createRef();
         this.lastPostRef = node => {
             this.observer.current = new IntersectionObserver(entries => {
+                console.log(entries);
+                console.log(this.state.morePosts);
                 if (entries[0].isIntersecting && this.state.morePosts) {
-                    this.setState({ loading: true }), () => {
+                    // deal w loading bar later
+                    this.setState({ loading: true }, () => {
 
                         this.incrementOffset();
                         props.fetchPostsAPI(this.state.offset + 1).then(posts => {
                             props.dispatch(receivePosts(posts));
                             // magic number here pay attention
-                            if (Object.values(posts).length < 4) this.setState({ morePosts: false });
-                            this.setState({ leading: false });
-                        })
-                    }
-                }
+                            if (Object.values(posts).length < 10) this.setState({ morePosts: false });
+                            this.setState({ loading: false });
+                        });
+                    });
+                };
             });
 
             if (node) this.observer.current.observe(node);
@@ -42,7 +45,10 @@ class PostIndex extends React.Component {
     }
 
     incrementOffset() {
-        this.setState({ offset: this.state.offset + 1 });
+        console.log('incremented');
+        this.setState({ offset: this.state.offset + 1, morePosts: true });
+        console.log(this.state.offset);
+
     }
 
     render() {
@@ -51,7 +57,6 @@ class PostIndex extends React.Component {
         return (
             <ul className='posts-index'>
                 {posts.map((post, idx) => {
-                    // return (<PostIndexItemContainer key={`${post.id}`} post={post} />);
                     if (idx + 1 === posts.length) {
                         // console.log('post', post);
                         // console.log('post id', post.id);
@@ -59,32 +64,13 @@ class PostIndex extends React.Component {
                             <div  key={idx}>
                                 <PostIndexItemContainer key={`${post.id}`} post={post} />
                                 <div ref={this.lastPostRef}></div>
-                                {/* {this.state.loading ? (
-                                    <div className='loading'>
-                                        <div className="lds-spinner">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
-                                    </div>
-                                ) : null} */}
                             </div>
                         )
                     } else {
-                        // console.log('post2', post);
-                        // console.log('post2 id', post.id);
                         return (
                         <div key={idx}>
                             <PostIndexItemContainer key={`${post.id}`} post={post}/>
+                            {/* <div ref={this.lastPostRef}></div> */}
                         </div>)
                     }
                 })}

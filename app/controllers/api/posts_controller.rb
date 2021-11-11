@@ -16,8 +16,8 @@ class Api::PostsController < ApplicationController
         @posts = Post.includes(:user)
                       .where(user_id: connected_users) #need to put connected users here
                       .order(created_at: :desc)
-                        .includes(:likes)
-                        .offset(params[:offset].to_i * 2)
+                      .includes(:likes)
+                      .offset(params[:offset].to_i * 10)
                       .limit(10)
     end
 

@@ -23,9 +23,9 @@ class PostIndexItem extends React.Component {
         this.leave = this.leave.bind(this);
     }
 
-    // componentDidMount() {
-    //     const { post, currentUser } = this.props;
-    // };
+    componentDidMount() {
+        const { post, currentUser } = this.props;
+    };
 
     timeFromNow() {
         const { timeAgo } = this.state; 
