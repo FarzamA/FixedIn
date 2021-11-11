@@ -12,9 +12,9 @@ export const fetchPost = postId => (
 );
 
 export const createPost = formData => {
-    for(let pair of formData.entries()) {
-        console.log(pair[0]+ ', '+ pair[1]);
-    }
+    // for(let pair of formData.entries()) {
+    //     console.log(pair[0]+ ', '+ pair[1]);
+    // }
 
     // const post = {
     //     body: formData.get('post[body]'),

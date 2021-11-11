@@ -17,17 +17,22 @@ class PostIndex extends React.Component {
         this.observer = React.createRef();
         this.lastPostRef = node => {
             this.observer.current = new IntersectionObserver(entries => {
-                console.log(entries);
-                console.log(this.state.morePosts);
+                // console.log(entries);
                 if (entries[0].isIntersecting && this.state.morePosts) {
+                    console.log(this.state.morePosts, 'morePosts');
                     // deal w loading bar later
                     this.setState({ loading: true }, () => {
 
                         this.incrementOffset();
                         props.fetchPostsAPI(this.state.offset + 1).then(posts => {
                             props.dispatch(receivePosts(posts));
+
+                            console.log(posts.posts);
                             // magic number here pay attention
-                            if (Object.values(posts).length < 10) this.setState({ morePosts: false });
+                            if (Object.values(posts.posts).length < 10) {
+                                 this.setState({ morePosts: false })
+                            };
+
                             this.setState({ loading: false });
                         });
                     });
@@ -46,8 +51,8 @@ class PostIndex extends React.Component {
 
     incrementOffset() {
         console.log('incremented');
-        this.setState({ offset: this.state.offset + 1, morePosts: true });
-        console.log(this.state.offset);
+        this.setState({ offset: (this.state.offset + 1) });
+        console.log(this.state.offset, 'offset');
 
     }
 
