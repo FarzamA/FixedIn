@@ -27,7 +27,6 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 
 
 # Future Direction 
-- Allow users to message one another 
 - Likes as well as comments for posts
 - Messaging other users
 - Receive notifications from linked user's activities
