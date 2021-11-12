@@ -38,15 +38,19 @@ const EducationIndexItem = ({ education, currentUser, match, openModal }) => {
         <div className='edu-item'>
             <img src={window.edu} /> 
             <div className='edu-info'>
-                <p className='school'>{education.school}</p>
-                <p className='degree'>{education.degree} in {education.field}</p>
-                {/* <p className='field'>{education.field}</p> */}
-                <p className='gpa'>{education.gpa}</p>
-                {eduTime}
-                <p className='activities'>{education.activities ? `Activities & Societies: ${education.activities}` : null}</p>
-                <p className='description'>{education.description ? `Description: ${education.description}` : null}</p>
+                <div>
+                    <p className='school'>{education.school}</p>
+                    <p className='degree'>{education.degree} in {education.field}</p>
+                    {/* <p className='field'>{education.field}</p> */}
+                    <p className='gpa'>{education.gpa}</p>
+                    {eduTime}
+                    <p className='gpa'>{education.activities ? `Activities & Societies: ${education.activities}` : null}</p>
+                    <p className='gpa'>{education.description ? `Description: ${education.description}` : null}</p>
+                </div>
+                <div>
+                    {edit}
+                </div>
             </div>
-                {edit}
         </div>
     )
 }

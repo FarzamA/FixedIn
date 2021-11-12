@@ -36,15 +36,19 @@ const ExperienceIndexItem = ({ experience, currentUser, match, openModal }) => {
         <div className='exp-item'>
             <img src={window.exp} /> 
             <div className='exp-info'>
-                <p className='exp-title'>{experience.title}</p>
-                <p className='exp-company'>{experience.company} <span className='gray-shade'>{experience.employmentType}</span></p>
-                <p className='exp-industry'>{experience.industry}</p>
-                {/* <p className='exp-field'>{experience.field}</p> */}
-                {expTime}
-                <p className='exp-location'>{experience.location}</p>
-                <p className='exp-description'>{experience.description}</p>
+                <div>
+                    <p className='exp-title'>{experience.title}</p>
+                    <p className='exp-company'>{experience.company} <span className='gray-shade'>{experience.employmentType}</span></p>
+                    <p className='exp-industry'>{experience.industry}</p>
+                    {/* <p className='exp-field'>{experience.field}</p> */}
+                    {expTime}
+                    <p className='exp-location'>{experience.location}</p>
+                    <p className='exp-description'>{experience.description}</p>
+                </div>
+                <div>
+                    {editButton}
+                </div>
             </div>
-                {editButton}
         </div>
     )
     
