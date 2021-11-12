@@ -2,7 +2,7 @@
     border: 1px solid $lightgray;
     border-radius: 8px;
     background: white;
-    width: 40vw;
+    width: 500px;
     height: auto;
     // margin-top: 50vh;
     // margin-left: 20vw;
@@ -10,6 +10,7 @@
     input {
         padding: 0 10px;
         border-radius: 5px;
+        height: 25px;
     }
 
     > header {
@@ -28,14 +29,32 @@
         // }
     }
 
+    .intro-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     > form {
         display: flex;
         flex-direction: column;
+        // align-items: center;
         padding: $modal-padding;
 
         .intro-name {
             display: flex;
+            flex-direction: row;
+            div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .first-name {
+                margin-right: 50px;
+
+            }
         }
+
 
         div {
             display: flex;

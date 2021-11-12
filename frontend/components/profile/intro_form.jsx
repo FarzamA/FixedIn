@@ -83,9 +83,9 @@ class EditIntro extends React.Component {
                     <h2>Edit Intro</h2>
                     <span className='close-modal-button' onClick={() => this.props.closeModal()}>✕</span>
                 </header>
-                <form>
+                <form className='intro-form'>
                     <div className='intro-name'>
-                        <div>
+                        <div className='first-name'>
                             <label>First Name*</label>
                             <input type="text" value={firstName || ''} className={firstNameErr ? 'input-error' : ''}
                                 onChange={this.handleInput('firstName')}
@@ -93,6 +93,8 @@ class EditIntro extends React.Component {
                              />
                              {firstNameErr ? <p className='error-msg'>Please enter your first name</p> : null}
    
+                        </div>
+                        <div className='last-name'>
                             <label>Last Name*</label>
                             <input type="text" value={lastName || ''} className ={lastNameErr ? 'input-error' : ''}
                                 onChange={this.handleInput('lastName')}

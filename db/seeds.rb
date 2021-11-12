@@ -966,6 +966,61 @@ post12 = Post.create(
     user_id: user10.id
 )
 
+post13 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post14 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post15 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post16 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post17 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post18 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post19 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post20 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post21 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post22 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
+post23 = Post.create(
+    body: Faker::Quote.matz,
+    user_id: demo_user.id
+)
+
 comment1 = Comment.create(
     body: Faker::Quote.famous_last_words,
     user_id: user1.id,
