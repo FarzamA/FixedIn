@@ -39,8 +39,8 @@ class PostForm extends React.Component {
     };
 
     openFileLoader(){
-        // document.getElementById('post-media').click();
-        this.modalSwitch(); 
+        document.getElementById('post-media').click();
+        // this.modalSwitch(); 
     };
 
     modalSwitch() {
@@ -154,7 +154,7 @@ class PostForm extends React.Component {
                         </footer>
                     </form>
                 </div>
-                <div className='modal post-media-modal'>
+                {/* <div className='modal post-media-modal'>
                     <header>
                         <h2>Edit your photo</h2>
                         <span className='close-modal-button' onClick={this.modalSwitchBack()}>✕</span>
@@ -168,7 +168,7 @@ class PostForm extends React.Component {
                             <button className='done-btn' onClick={this.modalSwitchBack()}>Done</button>
                         </div>
                     </footer>
-                </div>
+                </div> */}
             </>
         )
     }
