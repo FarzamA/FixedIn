@@ -6,22 +6,22 @@ import { deleteConnection, updateConnection } from '../../actions/connection_act
 const RequestsIndex = ({ requestingUsers, requests, updateConnection, deleteConnection }) => {
     const header = requestingUsers.length ? 'Invitations' : 'No pending invites';
     const requestsList = requestingUsers.length ? (
-        <ul>
+        <ul className='connections-list'>
             {requestingUsers.map((user, i) => (
                 <div key={user.id}>
                     <Link to={`/users/${user.id}`}>
-                        <div>
+                        <div className='avatar'>
                             <img src={user.avatarUrl || window.defaultUser}></img>
                         </div>
                     </Link>
                     <div className='requesting'>
                         <div>
-                            <p className='connect-name'>{`${user.firstName} ${user.lastName}`}</p>
+                            <p className='connection-name'>{`${user.firstName} ${user.lastName}`}</p>
                         </div>
-                    </div>
-                    <div className='connections-btn'>
-                        <button className='reject' onClick={() => deleteConnection(requests[i].id)}>Ignore</button>
-                        <button className='accept' onClick={() => updateConnection(requests[i])}>Accept</button>
+                        <div className='connections-btn'>
+                            <button className='reject' onClick={() => deleteConnection(requests[i].id)}>Ignore</button>
+                            <button className='accept' onClick={() => updateConnection(requests[i])}>Accept</button>
+                        </div>
                     </div>
                 </div>
             ))}

@@ -104,7 +104,7 @@ class UserDetail extends React.Component {
 
             backgroundButton = (
                 <button onClick={() => openModal('uploadBackground')} className='upload-bg-button'>
-                    <i className='fas fa-camera-retro'></i>
+                    <i className='fas fa-pencil-alt'></i>
                 </button>
             )
         } else {

@@ -59,9 +59,9 @@ class LoginForm extends React.Component {
 
 
         return (
-        <div className='login-section'>
+        <div className='login-section' style={splash ? null : {marginTop: '20vh', marginRight: '20vw'}}>
+                    {splash ? null : <h2>Welcome</h2>}
                 <form onSubmit={this.handleSubmit} >
-                    {splash ? null : <h1>Sign In</h1>}
                     <label>Email
                         <input type="text" className={errorOne ? 'input-error' : ''} value={this.state.email} onChange={this.handleInput('email')} />
                         {errorOne ? <p className='error-msg'>{errorOne}</p> : null}   

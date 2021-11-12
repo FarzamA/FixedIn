@@ -4,8 +4,16 @@
 
 .feed-section  {
     // padding-left: 15.75vw;
-    margin-top: 10vh;
+    margin-top: 7vh;
     display: flex;
+
+    .num-lc {
+        padding: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
     p {
         padding: 10px;
@@ -349,3 +357,4 @@
 .post-dropdown-hide {
     display: none;
 }
+

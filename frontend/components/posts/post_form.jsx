@@ -3,7 +3,7 @@ import React from 'react';
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props)
+        // console.log(this.props)
         this.state = this.props.post;
 
         this.removeFile = this.removeFile.bind(this);
@@ -39,12 +39,18 @@ class PostForm extends React.Component {
     };
 
     openFileLoader(){
-        document.getElementById('post-media').click();
+        // document.getElementById('post-media').click();
         this.modalSwitch(); 
     };
 
     modalSwitch() {
-        
+        $('.post-media-modal').css('display', 'block');
+        $('.post-form-modal').css('display', 'none');
+    };
+
+    modalSwitchBack() {
+        $('.post-media-modal').css('display', 'none');
+        $('.post-form-modal').css('display', 'block');
     }
 
     handleFile(e) {
@@ -52,14 +58,14 @@ class PostForm extends React.Component {
         const fileReader = new FileReader();
         
         fileReader.onloadend = () => {
-            debugger
+            // debugger
             this.setState({ media: file, mediaUrl: fileReader.result });
-            const postBodies = document.getElementsByClassName('post-body');
+            // const postBodies = document.getElementsByClassName('post-body');
 
-            for (let i = 0; i < postBodies.length; i++) {
-                postBodies[i].style.overflowY = 'scroll';
-                postBodies[i].style.height = '400px';
-            }
+            // for (let i = 0; i < postBodies.length; i++) {
+            //     postBodies[i].style.overflowY = 'scroll';
+            //     postBodies[i].style.height = '400px';
+            // }
         };
 
         if (file) {
@@ -94,7 +100,7 @@ class PostForm extends React.Component {
         formData.append('post[body]', this.state.body);
         formData.append('post[user_id]', this.state.userId);
         // formData.append('post', this.state);
-        console.log(this.state);
+        // console.log(this.state);
         this.props.processForm(formData);
 
         this.setState({ 
@@ -111,11 +117,11 @@ class PostForm extends React.Component {
         const preview = (voidPic) => this.state.mediaUrl ? <img src={this.state.mediaUrl} /> : voidPic;
 
         const selectMedia = (
-            <span onClick={() => document.getElementById('post-media')}>Select images to share</span>
+            <span onClick={() => document.getElementById('post-media').click()}>Select images to share</span>
         );
 
         const closeImageButton = (
-            this.state.media ? <span className='remove-img-btn' onClick={this.removeFile}></span> : null
+            this.state.media ? <span className='remove-img-btn' onClick={this.removeFile}>✕</span> : null
         );
 
         return (
@@ -144,25 +150,25 @@ class PostForm extends React.Component {
                         <footer className='post-form-footer'>
                             <i className="far fa-image" onClick={this.openFileLoader}></i>
                             <input type="file" id='post-media' accept='image/*' onChange={this.handleFile}/>
-                            <button className='form-button'>Post</button>
+                            <button className='form-button' disabled={this.ensureContent()}>Post</button>
                         </footer>
                     </form>
                 </div>
-                {/* <div className='modal post-media-modal'>
+                <div className='modal post-media-modal'>
                     <header>
                         <h2>Edit your photo</h2>
-                        <span className='close-modal-button' onClick={this.modalSwitch()}>✕</span>
+                        <span className='close-modal-button' onClick={this.modalSwitchBack()}>✕</span>
                     </header>
                     <div className='post-body image-body'>
                         {preview(selectMedia)}
                     </div>
                     <footer>
                         <div>
-                            <button className='back-btn' onClick={() => {this.removeFile; this.modalSwitch()}}>Back</button>
-                            <button className='done-btn' onClick={this.modalSwitch()}>Done</button>
+                            <button className='back-btn' onClick={() => this.removeFile}>Back</button>
+                            <button className='done-btn' onClick={this.modalSwitchBack()}>Done</button>
                         </div>
                     </footer>
-                </div> */}
+                </div>
             </>
         )
     }

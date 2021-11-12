@@ -1,0 +1,25 @@
+.post-media-modal {
+    display: none;
+}
+
+.post-form-footer {
+    input {
+        display: none;
+    }
+
+    i {
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    button {
+        &:disabled {
+            cursor: not-allowed;
+        }
+
+        &:hover:enabled {
+            cursor: pointer;
+        }
+    }
+}

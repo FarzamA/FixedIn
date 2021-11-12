@@ -4,16 +4,42 @@
     margin-top: 5vh;
 }
 .user-bg-img {
+    display: grid;
+    justify-items: end;
     img {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        grid-column: 1;
+        grid-row: 1;
         width: 42vw;
-        height: 15vh;
+        height: 20vh;
         object-fit: cover;
         object-position: center;
+    }
+
+    button {
+        // padding:10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        color: #0a66c2;
+        border: none;
+        background-color: white;
+        grid-column: 1;
+        grid-row: 1;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
 .user-prof {
     margin-top: 3vh;
+    margin-right: 25px;
+    border-radius: 8px;
 }
 
 .user-details {
@@ -41,15 +67,18 @@
     h1 {
         font-size: 22px;
         font-weight: 500;
+        margin-bottom: 5px;
+        margin-top: 5px;
     }
 
     h2 {
-        margin-bottom: 3px;
+        margin-bottom: 10px;
     }
 
     h3 {
         font-size: 14px;
         color: $gray;
+        margin-bottom: 10px;
     }
 
     span {
@@ -64,9 +93,14 @@
         margin-top: 30px;
 
         p {
+            padding: 3px;
             font-size: 14px;
             font-weight: 600;
         }
+    }
+
+    button {
+        margin-top: 10px;
     }
 }
 

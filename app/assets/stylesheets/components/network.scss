@@ -6,9 +6,14 @@
     background: white;
     width: 55vw;
     padding: 50px;
+    // z-index: 900;
     // margin-left: 10vw;
     // margin-right: 10vw;
     // margin: 5vh 10vw 3vh 10vw;
+
+    ul {
+        border-top: 1px solid $lightgray;
+    }
 
     header {
         padding-bottom: 20px;
@@ -17,11 +22,93 @@
     }
 
     img {
-        height: 7vh;
-        width: 7vh;
+        height: 8vh;
+        width: 8vh;
         border-radius: 50%;
         object-fit: cover;
         object-position: top;
+    }
+
+    .connections-list {
+        border-top: 1px solid $lightgray;
+
+        &.requests > div {
+          background: rgb(197, 225, 255);
+        }
+        
+        p:first-child {
+            font-weight: bold;
+        }
+
+        p {
+            padding: 5px;
+        }
+    }
+
+    ul > div {
+        display: flex;
+        padding: 20px;
+        position: relative;
+    
+        .avatar {
+          margin-right: 20px;
+        }
+        
+        // img {
+        //   height: 45px;
+        //   width: 45px;
+        // }
+        
+        .connect-name {
+          font-weight: 600;
+        }
+        
+        .connect-headline {
+          color: $gray;
+        }
+    }
+}
+
+.requesting {
+    display: flex;
+
+    .connections-btn {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        // z-index: 998;
+    
+        button {
+          padding: 8px 15px;
+          border-radius: 24px;
+          font-weight: 600;
+        }
+    }
+}
+
+.accept {
+    color: $LIblue;
+    background-color: white;
+    border: 1px solid $LIblue;
+  
+    &:hover {
+        background: transparent;
+        box-shadow: inset 0 0 0 2px $LIblue;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+}
+  
+.reject {
+    color: $gray;
+    margin-right: 10px;
+    border: none;
+
+    &:hover {
+        // background: transparent;
+        box-shadow: inset 0 0 0 2px $gray;
+        transition: 0.3s;
+        cursor: pointer;
     }
 }
 
