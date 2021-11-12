@@ -6,7 +6,7 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 
 ## Dependencies
 - Ruby, Rials, React, Redux, Webpack, Babel
-- Gems: bcrypt, jquery-rails, aws-sdk-s3, faker, down
+- Gems: bcrypt, jquery-rails, aws-sdk-s3, faker
 
 ## Dev Dependencies
 - Gems: better_errors, binding_of_caller, pry-rails, annotate
