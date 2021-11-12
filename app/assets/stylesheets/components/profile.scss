@@ -4,8 +4,8 @@
     margin-top: 5vh;
 }
 
-.user-details-buttons {
-    button {
+// .user-details-buttons {
+    .connect-btn {
         margin-top: 10px;
         margin-right: 10px;
         color: white;
@@ -22,7 +22,7 @@
             cursor: pointer;
         }
     }
-}
+// }
 .user-bg-img {
     display: grid;
     justify-items: end;
