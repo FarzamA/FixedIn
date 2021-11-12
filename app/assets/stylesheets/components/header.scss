@@ -177,7 +177,7 @@ $small_logo_height: 34px;
 
         .header-dropdown-reveal {
             display: block;
-            z-index: 999;
+            // z-index: 999;
             // position: absolute;
         }
 
@@ -221,7 +221,7 @@ $small_logo_height: 34px;
                 width: 300px;
                 right: 16vw;
                 position: absolute;
-                z-index: 999;
+                // z-index: 999;
                 color: black;
                 // outline: none;
                 // margin-right: 1000px;
@@ -327,6 +327,7 @@ $small_logo_height: 34px;
     .search-results {
         // display: none;
         position: absolute;
+        z-index: 999;
         top: 45px;
         width: 400px;
         background: white;

@@ -25,14 +25,15 @@ class Profile extends React.Component {
                     <div className='user-section'>
                         <UserDetailContainer lastEducation={educations[0]} lastExperience={experiences[0]} />
                     </div>
+                    <div> 
+                        <ExperienceIndexContainer experiences={experiences} />
+                    </div>
                     <div className='edu-section'>
                         <div>
                             <EducationIndexContainer educations={educations} />
                         </div>
                     </div>
-                    <div> 
-                        <ExperienceIndexContainer experiences={experiences} />
-                    </div>
+                    
                 </div>
                 <div>
                     <aside className='right-side-bar'>
