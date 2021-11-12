@@ -4,7 +4,7 @@
 
 .feed-section  {
     // padding-left: 15.75vw;
-    margin-top: 5vh;
+    margin-top: 10vh;
     display: flex;
 
     p {
@@ -75,11 +75,15 @@
                 position: absolute;
                 border: 1px solid $lightgray;
                 background-color: white;
+                // display: flex;
+                flex-direction: column;
+                text-align: left;
+
                 li {
-                    padding: 5px;
+                    padding: 10px;
                     font-size: larger;
                     // margin: 10px;
-                    font-weight: bold;
+                    font-weight: 500;
 
                     i {
                         margin-right: 10px;
