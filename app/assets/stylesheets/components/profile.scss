@@ -224,7 +224,7 @@
     }
 
     ul {
-        padding: 20px
+        padding: 0px 20px 20px 20px;
     }
     
 
@@ -236,12 +236,12 @@
         display: flex;
         align-items: center;
 
-            .exp-title {
+            .exp-title, .school {
                 font-size: larger;
                 font-weight: bold;
             }
             
-            .exp-company {
+            .exp-company, .degree {
                 font-size: smaller;
                 color: black;
 
@@ -250,9 +250,17 @@
                 }
             }
 
-            .exp-location {
-                
+            .exp-location, .exp-industry, .gpa {
+                font-size: smaller;
+                color: $gray;
             }
+
+            .exp-description {
+                padding-top: 10px;
+                // font-size: small;
+
+            }
+
 
             .exp-time, .edu-time {
                 font-size: smaller;

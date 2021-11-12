@@ -251,9 +251,9 @@ class ExperienceForm extends React.Component {
                         {endDateSelectors}
                     </div>
                     {yearErr ? <p className='error-msg'>{this.yearErrMsg}</p> : null}
-                    <label>Field</label>
-                        <input type='text' value={field || ''} onChange={this.handleInput('field')} />
-                    <label>Industry</label>
+                    {/* <label>Field</label>
+                        <input type='text' value={field || ''} onChange={this.handleInput('field')} /> */}
+                    <label>Headline</label>
                         <input type='text' value={industry || ''} onChange={this.handleInput('industry')}/>
                     <label>Description</label>
                         <textarea value={description || ''} onChange={this.handleInput('description')}/>
