@@ -34,6 +34,7 @@ const ExperienceIndexItem = ({ experience, currentUser, match, openModal }) => {
 
     return (
         <div>
+            <img src={window.exp} /> 
             <p className='exp-title'>{experience.title}</p>
             <p className='exp-type'>{experience.type}</p>
             <p className='exp-company'>{experience.company} <span className='gray-shade'>{experience.employmentType}</span></p>

@@ -50,6 +50,7 @@
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     width: 40vw;
+    margin-bottom: 20px;
 
     img {
         height: 15vh;
@@ -57,7 +58,7 @@
         border-radius: 50%;
         object-fit: cover;
         object-position: top;
-        margin-top: -65px;
+        margin-top: -120px;
         border: 5px solid white;
 
         &:hover {
@@ -168,4 +169,28 @@
           cursor: pointer;
         }
     }
+}
+
+.exp-index {
+    background-color: white;
+    border-radius: 8px;
+
+    p, h1{
+        margin: 5px;
+    }
+
+    margin-bottom: 10px;
+
+}
+
+.edu-index {
+    background-color: white;
+    border-radius: 8px;
+
+    p, h1{
+        margin: 5px;
+    }
+
+    margin-bottom: 100px;
+
 }
