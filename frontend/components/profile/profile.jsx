@@ -21,20 +21,20 @@ class Profile extends React.Component {
 
         return(
             <div className='profile-page-cont'>
-                <div className='user-prof'>
                     <div className='user-section'>
                         <UserDetailContainer lastEducation={educations[0]} lastExperience={experiences[0]} />
-                    </div>
-                    <div> 
-                        <ExperienceIndexContainer experiences={experiences} />
-                    </div>
-                    <div className='edu-section'>
-                        <div>
-                            <EducationIndexContainer educations={educations} />
+                        <div className='exp-edu-sect'>
+                            <div className='exp-section'> 
+                                <ExperienceIndexContainer experiences={experiences} />
+                            </div>
+                            <div className='edu-section'>
+                                <div>
+                                    <EducationIndexContainer educations={educations} />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                </div>
                 <div>
                     <aside className='right-side-bar'>
                         <div >

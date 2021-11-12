@@ -35,7 +35,7 @@ const EducationIndexItem = ({ education, currentUser, match, openModal }) => {
     };
 
     return (
-        <div className='profile-edu'>
+        <div className='edu-item'>
             <img src={window.edu} /> 
             <p className='school'>{education.school}</p>
             <p className='degree'>{education.degree}</p>

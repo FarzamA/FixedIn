@@ -6,6 +6,8 @@
 .user-bg-img {
     display: grid;
     justify-items: end;
+    width: 505px;
+
     img {
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
@@ -171,26 +173,49 @@
     }
 }
 
-.exp-index {
+.exp-index, .edu-index {
     background-color: white;
     border-radius: 8px;
-
-    p, h1{
-        margin: 5px;
-    }
-
     margin-bottom: 10px;
 
-}
-
-.edu-index {
-    background-color: white;
-    border-radius: 8px;
-
     p, h1{
         margin: 5px;
     }
 
-    margin-bottom: 100px;
+    h1 {
+        border-bottom: 1px solid $lightergray;
+        padding: 20px;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
+
+    ul {
+        padding: 20px
+    }
+    
+
+    .exp-item, .edu-item {
+        // width: 55vw;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-bottom: 1px solid $lightergray;
+        display: flex;
+        margin: 15px 0;
+    }
 
 }
+
+.user-section {
+    margin: 3vh 50px;
+}
+
+
+
+
+
