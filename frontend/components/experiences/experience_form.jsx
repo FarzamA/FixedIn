@@ -229,9 +229,12 @@ class ExperienceForm extends React.Component {
                         {companyErr ? <p className='error-msg'>Please enter a company name</p> : null}
                     <label>Location</label>
                         <input type="text" value={location || ''} onChange={this.handleInput('location')}/>
-                    <label className='checkbox'>
-                        <input type="checkbox" checked={present ? true : false} onChange={this.togglePresent}/> I am currently working this role
-                    </label>
+                    
+                    <div className='check'>
+                        <label > I am currently working this role</label>
+                            <input className='checkbox' type="checkbox" checked={present ? true : false} onChange={this.togglePresent}/>
+                    </div>
+                    
 
                     <div className='year-form'>
                         <label>Start Date</label>
