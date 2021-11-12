@@ -52,6 +52,12 @@
     button {
         padding: 5px, 15px;
     }
+
+    .close-modal-button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 

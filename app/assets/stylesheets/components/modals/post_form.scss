@@ -8,6 +8,7 @@
     }
 
     i {
+        font-size: x-large;
         &:hover{
             cursor: pointer;
         }
@@ -22,4 +23,57 @@
             cursor: pointer;
         }
     }
+}
+
+.post-body {
+    display: flex;
+    flex-direction: column;
+
+    .avatar {
+        padding-bottom: 20px;
+        img {
+            margin-right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+
+    textarea {
+        font-size: large;
+        width: 100%;
+        height: 200px;
+        border: none;
+        overflow: auto;
+        outline: none;
+    
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    
+        resize: none;
+    }
+
+    .image-body {
+        display: flex;
+        flex-direction: column;
+        span {
+            // grid-row: 1;
+            // grid-column: 1;
+            background-color: white;
+            padding-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0;
+            // grid-row: 1;
+            // grid-column: 1;
+        }
+
+        
+    }
+
 }
