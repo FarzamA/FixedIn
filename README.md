@@ -25,12 +25,6 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 ## View their own list of linked users
 [connections list](https://cdn.discordapp.com/attachments/896959094034948166/908728871732539392/Screenshot_149.png)
 
-# Code Snippets
-
-```javascript
-
-
-```
 
 # Future Direction 
 - Allow users to message one another 
