@@ -133,7 +133,7 @@ class PostForm extends React.Component {
                     </header>
                     <form onSubmit={this.handleSubmit} className='post-form'>
                         <div className='post-body'>
-                            <div>
+                            <div className='post-header'>
                                 <div className='avatar'>
                                     <img src={this.props.user.avatarUrl || window.defaultUser} alt='profile pic' />
                                 </div>

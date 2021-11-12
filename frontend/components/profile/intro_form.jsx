@@ -92,8 +92,7 @@ class EditIntro extends React.Component {
                                 onBlur={this.checkError('firstNameErr')}
                              />
                              {firstNameErr ? <p className='error-msg'>Please enter your first name</p> : null}
-                        </div>
-                        <div>
+   
                             <label>Last Name*</label>
                             <input type="text" value={lastName || ''} className ={lastNameErr ? 'input-error' : ''}
                                 onChange={this.handleInput('lastName')}

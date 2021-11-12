@@ -7,6 +7,11 @@
     // margin-top: 50vh;
     // margin-left: 20vw;
 
+    input {
+        padding: 0 10px;
+        border-radius: 5px;
+    }
+
     > header {
         display: flex;
         align-items: center;
@@ -28,14 +33,24 @@
         flex-direction: column;
         padding: $modal-padding;
 
+        .intro-name {
+            display: flex;
+        }
+
         div {
             display: flex;
+            flex-direction: column;
       
-            h2 {
-              margin-bottom: 10px;
-              color: $darkgray;
-              font-weight: 600;
-            }
+            // h2 {
+            //   margin-bottom: 10px;
+            //   color: $darkgray;
+            //   font-weight: 600;
+            // }
+        }
+
+        label {
+            color: $gray;
+            padding: 10px 10px 10px 0;
         }
 
         textarea {
@@ -50,7 +65,7 @@
     }
 
     button {
-        padding: 5px, 15px;
+        margin: 10px;
     }
 
     .close-modal-button {

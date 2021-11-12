@@ -37,7 +37,16 @@
             height: 50px;
         }
     }
+    h2 {
+        margin-bottom: 10px;
+        color: $darkgray;
+        font-weight: 600;
+    }
 
+    .post-header {
+        display: flex;
+        flex-direction: row;
+    }
 
     textarea {
         font-size: large;
