@@ -110,6 +110,14 @@ class EditIntro extends React.Component {
                     />
                     {headlineErr ? <p className='error-msg'>Please enter a headline</p> : null}
                     <div className='intro-location'>
+                        <div className='intro city'>
+                            <label>City *</label>
+                            <input type="text" value={city || ''} className={cityErr ? 'input-error' : ''}
+                                    onChange={this.handleInput('city')} 
+                                    onBlur={this.checkError('cityErr')}
+                            />
+                            {cityErr ? <p className='error-msg'>Please enter your city</p> : null}
+                        </div>
                         <div className='intro state'>
                             <label>State *</label>
                             <input type="text" value={state || ''} className={stateErr ? 'input-error' : ''}
@@ -118,14 +126,7 @@ class EditIntro extends React.Component {
                             />
                             {stateErr ? <p className='error-msg'>Please enter your state</p> : null}
                         </div>
-                        <div className='intro city'>
-                        <label>City *</label>
-                            <input type="text" value={city || ''} className={cityErr ? 'input-error' : ''}
-                                    onChange={this.handleInput('city')} 
-                                    onBlur={this.checkError('cityErr')}
-                            />
-                            {cityErr ? <p className='error-msg'>Please enter your city</p> : null}
-                        </div>
+                        
                         <label>Industry *</label>
                         <input type="text" value={industry} className={industryErr ? 'input-error' : ''}
                                 onChange={this.handleInput('industry')} 

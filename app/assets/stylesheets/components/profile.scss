@@ -3,6 +3,26 @@
     flex-direction: row;
     margin-top: 5vh;
 }
+
+.user-details-buttons {
+    button {
+        margin-top: 10px;
+        margin-right: 10px;
+        color: white;
+        border: none;
+        background-color: #0a66c2;
+        grid-column: 1;
+        grid-row: 1;
+        width: auto;
+        height: 25px;
+        border-radius: 8px;
+
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
 .user-bg-img {
     display: grid;
     justify-items: end;
