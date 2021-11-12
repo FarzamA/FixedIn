@@ -19,8 +19,10 @@ class ExperienceIndex extends React.Component {
 
         return (
             <div className='exp-index'>
-                {head}
-                {newExpButton}
+                <div className='head-div'>
+                    {head}
+                    {newExpButton}
+                </div>
                 <ul>
                     {experiences.map(exp => (
                         <ExperienceIndexItemContainer key={exp.id} experience={exp} />

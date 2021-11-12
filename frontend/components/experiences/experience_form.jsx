@@ -169,9 +169,9 @@ class ExperienceForm extends React.Component {
     }
 
     render() {
-        // console.log(this.state)
+        console.log(this.state)
         const { id, title, company, location, description, startDate, endDate, 
-            titleErr, companyErr, yearErr, present, headline, field, employmentType } = this.state;
+            titleErr, companyErr, yearErr, present, industry, field, employmentType } = this.state;
 
         const startDateExp = new Date(`${startDate}`);
         const endDateExp = new Date(`${endDate}`);
@@ -253,8 +253,8 @@ class ExperienceForm extends React.Component {
                     {yearErr ? <p className='error-msg'>{this.yearErrMsg}</p> : null}
                     <label>Field</label>
                         <input type='text' value={field || ''} onChange={this.handleInput('field')} />
-                    <label>Headline</label>
-                        <input type='text' value={headline || ''} onChange={this.handleInput('headline')}/>
+                    <label>Industry</label>
+                        <input type='text' value={industry || ''} onChange={this.handleInput('industry')}/>
                     <label>Description</label>
                         <textarea value={description || ''} onChange={this.handleInput('description')}/>
                 </form>

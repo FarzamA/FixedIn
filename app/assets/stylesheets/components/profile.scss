@@ -182,8 +182,36 @@
         margin: 5px;
     }
 
-    h1 {
+    .head-div {
         border-bottom: 1px solid $lightergray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            height: 40px;
+            width: 40px;
+            border: none;
+            margin: 20px;
+            background-color: white;
+            border-radius: 50%; 
+
+            i {
+                // font-weight: bold;
+                font-size: large;
+            }
+
+            &:hover {
+                background-color: $lightergray;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    h1 {
+        // border-bottom: 1px solid $lightergray;
         padding: 20px;
         font-size: large;
         font-weight: bold;
@@ -206,7 +234,33 @@
         padding-top: 20px;
         border-bottom: 1px solid $lightergray;
         display: flex;
-        margin: 15px 0;
+        align-items: center;
+
+            .exp-title {
+                font-size: larger;
+                font-weight: bold;
+            }
+            
+            .exp-company {
+                font-size: smaller;
+                color: black;
+
+                span {
+                    color: $gray;
+                }
+            }
+
+            .exp-location {
+                
+            }
+
+            .exp-time, .edu-time {
+                font-size: smaller;
+                color: $gray;
+            }
+        // margin: 15px 0;
+
+        
     }
 
 }

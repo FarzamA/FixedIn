@@ -20,8 +20,11 @@ class EducationIndex extends React.Component {
 
         return (
             <div className='edu-index'>
-              {head}
-              {newEduButton}
+            <div className='head-div'>
+                {head}
+                {newEduButton}
+            </div>
+                
               <ul>
                 {educations.map(edu => (
                   <EducationIndexItemContainer key={edu.id} education={edu}/>
