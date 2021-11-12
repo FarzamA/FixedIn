@@ -76,6 +76,8 @@ class ExperienceForm extends React.Component {
             let end_date;   
             if (!present) {
                 end_date = `${endYear}-${months.indexOf(endMonth) + 2}-01`
+            } else {
+                end_date = '';
             };
 
             this.props.processForm({
