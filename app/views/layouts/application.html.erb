@@ -8,6 +8,16 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
+    <meta property="og:title" content="FixedIn" />
+     <meta property='og:image' content="<%= image_url('project_pic.png') %>"/>
+     <meta property="og:description"
+       content="A LinkedIn clone utilizing Ruby on Rails, React/Redux and PostgreSQL."
+     />
+    <meta property="og:url"
+      content="http://fixedin.herokuapp.com/"
+    />
+
+
      <% if current_user %>
       <script>
         window.currentUser = <%= render(
