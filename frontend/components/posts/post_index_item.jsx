@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 import { deletePost } from '../../actions/post_actions';
+import { deleteLike, receiveLike } from '../../actions/like';
+import { createLike, fetchUserLiked } from '../../util/like_api';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -13,7 +15,9 @@ class PostIndexItem extends React.Component {
             timeAgo: Date.now() - Date.parse(this.props.post.createdAt),
             commentCount: this.props.post.comments,
             likeCount: this.props.post.likes,
-        }
+            liked: false,
+            like: null,
+        };
 
         if (this.state.timeAgo < 3600000) {
             setInterval(() => this.setState({ timeAgo: Date.now() - Date.parse(this.props.post.createdAt)}), 60000);
@@ -131,6 +135,10 @@ const mSTP = ({ entities: { users }, session: { currentUser }}) => ({
 const mDTP = dispatch => ({
     deletePost: postId => dispatch(deletePost(postId)),
     openModal: (modal, id) => dispatch(openModal(modal, id)),
+    fetchUserLiked: like => fetchUserLiked(like),
+    createLikeAPI: like => createLike(like),
+    receiveLike: like => receiveLike(like),
+    deleteLike: likeId => dispatch(deleteLike(likeId)),
     dispatch
 });
 
