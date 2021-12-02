@@ -4,13 +4,15 @@ import experiencesReducer from './experiences_reducer';
 import educationsReducer from "./educations_reducer";
 import connectionsReducer from "./connection_reducer";
 import postsReducer from "./post_reducer";
+import likesReducer from "./like_reducer";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
     posts: postsReducer,
     experiences: experiencesReducer,
     educations: educationsReducer,
-    connections: connectionsReducer
+    connections: connectionsReducer,
+    likes: likesReducer,
 });
 
 export default entitiesReducer;

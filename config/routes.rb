@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
   get '/api/users/email', to: 'api/users#email'
   get '/api/connections/connected', to: 'api/connections#connected'
+  get '/api/likes/user_liked', to: 'api/likes#user_liked'
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :create, :show, :update]
