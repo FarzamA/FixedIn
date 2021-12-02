@@ -22,7 +22,7 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 ![edit post screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908727950101319700/Screenshot_147.png)\
 ## Search and connect with other users
 ![search bar screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908728335511744542/Screenshot_148.png)
-## View their own list of linked users
+## View list of linked users
 ![connections list](https://cdn.discordapp.com/attachments/896959094034948166/908728871732539392/Screenshot_149.png)
 
 
