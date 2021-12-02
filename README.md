@@ -25,6 +25,35 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 ## View list of linked users
 ![connections list](https://cdn.discordapp.com/attachments/896959094034948166/908728871732539392/Screenshot_149.png)
 
+# Code Snippets
+## Infinite Scroll 
+```javascript
+    this.observer = React.createRef();
+    this.lastPostRef = node => {
+        // intersection observer lets us register a callback whenever the node is in our viewport
+        this.observer.current = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && this.state.morePosts) {
+                // deal w loading bar later
+                this.setState({ loading: true }, () => {
+
+                    this.incrementOffset();
+                        props.fetchPostsAPI(this.state.offset + 1).then(posts => {
+                            props.dispatch(receivePosts(posts));
+
+                            if (Object.values(posts.posts).length < 10) {
+                                 this.setState({ morePosts: false })
+                            };
+
+                            this.setState({ loading: false });
+                        });
+                });
+            };
+        });
+        
+        if (node) this.observer.current.observe(node);
+    }
+```
+
 
 # Future Direction 
 - Likes as well as comments for posts

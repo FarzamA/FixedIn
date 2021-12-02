@@ -18,9 +18,7 @@ class PostIndex extends React.Component {
         this.lastPostRef = node => {
             // intersection observer lets us register a callback whenever the node is in our viewport
             this.observer.current = new IntersectionObserver(entries => {
-                console.log(entries, 'entries');
                 if (entries[0].isIntersecting && this.state.morePosts) {
-                    console.log(this.state.morePosts, 'morePosts');
                     // deal w loading bar later
                     this.setState({ loading: true }, () => {
 
@@ -28,8 +26,6 @@ class PostIndex extends React.Component {
                         props.fetchPostsAPI(this.state.offset + 1).then(posts => {
                             props.dispatch(receivePosts(posts));
 
-                            console.log(posts.posts);
-                            // magic number here pay attention
                             if (Object.values(posts.posts).length < 10) {
                                  this.setState({ morePosts: false })
                             };
