@@ -49,9 +49,30 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
                 });
             };
         });
-        
+
         if (node) this.observer.current.observe(node);
     }
+```
+## Search Results 
+```ruby
+def index 
+    #what goes in the feed
+    user_id = current_user.id
+    rec_connections = Connection.where(connectee_id: user_id, accepted: true)
+                                .pluck(:connector_id)
+    
+    sent_connections = Connection.where(connector_id: user_id, accepted: true)
+                                    .pluck(:connectee_id)
+
+    connected_users = rec_connections | sent_connections
+    connected_users.push(user_id)
+
+    @posts = Post.includes(:user)
+                    .where(user_id: connected_users)
+                    .order(created_at: :desc)
+                    .offset(params[:offset].to_i * 10)
+                    .limit(10)
+end
 ```
 
 

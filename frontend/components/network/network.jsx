@@ -29,12 +29,12 @@ const mSTP = ({ entities: { users, connections }, session: { currentUser }}) => 
     const requests = Object.values(connections).filter(
         con => con.accepted === false && con.connecteeId !== currentUser
     );
-    console.log('requests', requests);
+    // console.log('requests', requests);
 
     const connected = Object.values(connections).filter(
         con => con.accepted === true
     );
-    console.log('connected', connected);
+    // console.log('connected', connected);
 
     const requestingUsers = requests.map(req => {
         // debugger
@@ -48,7 +48,7 @@ const mSTP = ({ entities: { users, connections }, session: { currentUser }}) => 
         return con.connectorId === currentUser ? users[con.connecteeId] : users[con.connectorId]
     });
 
-    console.log('connected users', connectedUsers)
+    // console.log('connected users', connectedUsers)
 
     return {
         requests, 
