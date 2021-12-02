@@ -75,10 +75,13 @@
 
 .requesting {
     display: flex;
+    align-items: center;
+    width: 50vw;
+    justify-content: space-between;
 
     .connections-btn {
         display: flex;
-        position: absolute;
+        // position: absolute;
         right: 20px;
         // z-index: 998;
     
@@ -94,6 +97,7 @@
     color: $LIblue;
     background-color: white;
     border: 1px solid $LIblue;
+    z-index: -1;
   
     &:hover {
         background: transparent;
@@ -107,6 +111,7 @@
     color: $gray;
     margin-right: 10px;
     border: none;
+    z-index: -1;
 
     &:hover {
         // background: transparent;
@@ -120,12 +125,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: -1;
 
     .connections:first-child{
         margin: 8vh 0 10px 0;
+        z-index: inherit;
     }
     .connections:last-child {
         margin-bottom: 5vh;
+        z-index: inherit;
     }
     
 }
