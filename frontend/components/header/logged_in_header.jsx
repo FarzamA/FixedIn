@@ -17,7 +17,8 @@ class LoggedIn extends React.Component {
     }
 
     handleClick() {
-        this.setState({ drop: true });
+        this.state.drop === false ? 
+            this.setState({ drop: true }) : this.setState({ drop: false });
     }
 
     leave() {
@@ -49,7 +50,7 @@ class LoggedIn extends React.Component {
                         <p>My Network</p>
                     </div>
                 </Link>
-                    <button className='user-sess-btn' onFocus={this.handleClick} onBlur={this.leave}>
+                    <button className='user-sess-btn' onClick={this.handleClick} onBlur={this.leave}>
                         <div className='header-avatar'>
                             <div className='avatar-small'>
                                 <img src={user.avatarUrl || window.defaultUser} alt='pfp-small' />
