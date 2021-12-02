@@ -25,11 +25,24 @@ class PostIndexItem extends React.Component {
 
         this.clicked = this.clicked.bind(this);
         this.leave = this.leave.bind(this);
+        this.toggleLike = this.toggleLike.bind(this);
     }
 
-    // componentDidMount() {
-    //     const { post, currentUser } = this.props;
-    // };
+    componentDidMount() {
+        const { fetchUserLiked, post, currentUser } = this.props;
+
+        fetchUserLiked({
+            user_id: currentUser,
+            likeable_id: post.id,
+            likeable_type: 'Post'
+        }).then(like => {
+            if (like) {
+                this.setState({ liked: true });
+                this.setState({ like });
+                document.getElementsByClassName(`post like-btn ${post.id}`)[0].classList.add('liked');
+            }
+        })
+    };
 
     timeFromNow() {
         const { timeAgo } = this.state; 
@@ -57,6 +70,32 @@ class PostIndexItem extends React.Component {
         // const ele = document.getElementById('post-dropdown');
         // ele.style.display = 'none';
     };
+
+    toggleLike() {
+        const { post: { id }, currentUser, createLikeAPI, deleteLike, dispatch } = this.props;
+
+        if (this.state.liked) {
+            deleteLike(this.state.like.id);
+            this.setState({ liked: false });
+            this.setState({ likeCount: this.state.likeCount - 1 });
+            document.getElementsByClassName(`post like-btn ${id}`)[0].classList.remove('liked');
+        } else {
+            const newLike = {
+                user_id: currentUser,
+                likeable_id: id,
+                likeable_type: 'Post'
+            };
+
+            createLikeAPI(newLike).then(like => {
+                this.setState({ like });
+                dispatch(receiveLike(like));
+            });
+
+            this.setState({ liked: true });
+            this.setState({ likeCount: this.state.likeCount + 1 });
+            document.getElementsByClassName(`post like-btn ${id}`)[0].classList.add('liked');
+        }
+    }
 
     render() {
         const {
@@ -121,6 +160,14 @@ class PostIndexItem extends React.Component {
                 {mediaUrl ? <div className='post-img-cont'><img src={mediaUrl} alr='' className='post-img' /></div> : null}
                 <div className='num-lc'>
                     {numLikes} {numComments}
+                </div>
+                <div className='like-comment'>
+                    <button onClick={this.toggleLike} className={'post like-btn ' + id}>
+                        <i className="far fa-thumbs-up"></i>Like
+                    </button>
+                    <button onClick={this.openComments}>
+                        <i className="far fa-comment-dots"></i>Comment
+                    </button>
                 </div>
             </div>
         )
