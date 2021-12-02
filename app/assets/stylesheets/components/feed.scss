@@ -306,7 +306,11 @@
     border: 1px solid $lightgray;
     border-radius: 8px;
     overflow: hidden;
-    width: 15vw;
+    width: fit-content;
+
+    p {
+        padding: 0px;
+    }
 
     div {
         padding: 10px;

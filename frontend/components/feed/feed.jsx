@@ -65,6 +65,12 @@ class Feed extends React.Component {
                         </div>
                         <h1>Farzam Ahmad</h1>
                         <div className='links'>
+                            <a href='https://farzama.github.io/'>
+                                <div className='nav-icon'>
+                                    <i className="fab fa-product-hunt"></i>
+                                    <p>Portfolio</p>
+                                </div>
+                            </a>
                             <a href='https://github.com/FarzamA'>
                                 <div className='nav-icon'>
                                     <i className="fab fa-github"></i>
@@ -75,6 +81,12 @@ class Feed extends React.Component {
                                 <div className='nav-icon'>
                                     <i className="fab fa-linkedin"></i>
                                     <p>LinkedIn</p>
+                                </div>
+                            </a>
+                            <a href='https://angel.co/u/farzam-ahmad'>
+                                <div className='nav-icon'>
+                                    <i className="fab fa-angellist"></i>
+                                    <p>Angel List</p>
                                 </div>
                             </a>
                         </div>
