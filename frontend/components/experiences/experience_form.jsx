@@ -171,7 +171,7 @@ class ExperienceForm extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         const { id, title, company, location, description, startDate, endDate, 
             titleErr, companyErr, yearErr, present, industry, field, employmentType } = this.state;
 

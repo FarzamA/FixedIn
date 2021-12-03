@@ -58,7 +58,7 @@ class EditIntro extends React.Component {
         const { state, city } = this.state;
         
         if (!this.handleErrors()) {
-            console.log(this.state)
+            // console.log(this.state)
             this.props.updateUser({
                 ...this.state,
                 first_name: this.state.firstName,

@@ -18,7 +18,7 @@ const months = [
 class EducationForm extends React.Component {
     constructor(props) {
         super(props);
-        console.log('education constructor props', props);
+        // console.log('education constructor props', props);
 
         const startDateEdu = new Date(`${props.education.startDate}`);
 
@@ -78,7 +78,7 @@ class EducationForm extends React.Component {
         const { startYear, endYear, startMonth, endMonth, school, gpa } = this.state;
         let errorSwitch = false;
         // debugger
-        console.log('start month', startMonth);
+        // console.log('start month', startMonth);
         if ((!startYear.length && !startMonth.length)) {
             this.setState({ yearErr: true });
             this.yearErrMsg = 'Please enter a start date';
@@ -110,7 +110,7 @@ class EducationForm extends React.Component {
         // }
 
         const parsed = parseInt(gpa);
-        console.log(gpa);
+        // console.log(gpa);
 
         if ((parsed <= 0.0 || parsed > 4.0) || (parsed <= 0 || parsed > 4 )) {
             this.setState({ gpaErr: true });

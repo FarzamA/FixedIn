@@ -42,7 +42,7 @@ const mSTP = ({ entities: { users, connections }, session: { currentUser }}) => 
         return users[req.connecteeId]
     });
 
-    console.log('requesting users', requestingUsers);
+    // console.log('requesting users', requestingUsers);
 
     const connectedUsers = connected.map(con => {
         return con.connectorId === currentUser ? users[con.connecteeId] : users[con.connectorId]
