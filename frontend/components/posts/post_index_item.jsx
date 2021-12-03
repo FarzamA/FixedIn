@@ -5,6 +5,8 @@ import { openModal } from '../../actions/modal_actions';
 import { deletePost } from '../../actions/post_actions';
 import { deleteLike, receiveLike } from '../../actions/like';
 import { createLike, fetchUserLiked } from '../../util/like_api';
+import CreateCommentForm from '../comments/create_comment_form';
+import CommentIndexContainer from '../comments/comment_index';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -12,6 +14,7 @@ class PostIndexItem extends React.Component {
 
         this.state = {
             drop: false,
+            comment: false,
             timeAgo: Date.now() - Date.parse(this.props.post.createdAt),
             commentCount: this.props.post.comments,
             likeCount: this.props.post.likes,
@@ -26,6 +29,8 @@ class PostIndexItem extends React.Component {
         this.clicked = this.clicked.bind(this);
         this.leave = this.leave.bind(this);
         this.toggleLike = this.toggleLike.bind(this);
+        this.incrementCommentCount = this.incrementCommentCount.bind(this);
+        this.openComments = this.openComments.bind(this);
     }
 
     componentDidMount() {
@@ -71,6 +76,10 @@ class PostIndexItem extends React.Component {
         // ele.style.display = 'none';
     };
 
+    openComments() {
+        this.setState({ comment: true });
+    };
+
     toggleLike() {
         const { post: { id }, currentUser, createLikeAPI, deleteLike, dispatch } = this.props;
 
@@ -97,12 +106,16 @@ class PostIndexItem extends React.Component {
         }
     }
 
+    incrementCommentCount() {
+        this.setState({ commentCount: this.state.commentCount + 1 });
+    }
+
     render() {
         const {
             currentUser, openModal, deletePost, users, post: { id, body, mediaUrl, userId }  
         } = this.props
         
-        const { likeCount, commentCount, drop } = this.state;
+        const { likeCount, commentCount, drop, comment } = this.state;
         let postUser;
         let name;
         let dropdown;
@@ -128,6 +141,17 @@ class PostIndexItem extends React.Component {
         }
 
         const profile = postUser.avatarUrl || window.defaultUser;
+
+        const commentSection = comment ? (
+            <div className='comment-section'>
+              <div>
+                <CreateCommentForm postId={id} incrComCount={this.incrementCommentCount}/>
+              </div>
+              <div>
+                <CommentIndexContainer postId={id} incrComCount={this.incrementCommentCount}/>
+              </div>
+            </div>
+        ) : null;
 
         const numComments = commentCount ? `${commentCount} comment${commentCount > 1 ? 's' : ''}` : null;
         const numLikes = likeCount ? (
@@ -169,6 +193,7 @@ class PostIndexItem extends React.Component {
                         <i className="far fa-comment-dots"></i>Comment
                     </button>
                 </div>
+                {commentSection}
             </div>
         )
     }

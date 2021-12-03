@@ -169,7 +169,7 @@ class CommentIndexItem extends React.Component {
                         {mediaUrl ? <img src={mediaUrl} alt="comment-image"/> : null}
                         {edit ? null : ( 
                             <div className='like'>
-                                <button onClick={toggleLike} className={'cmt like-btn ' + id}>Like</button>{numLikes}
+                                <button onClick={this.toggleLike} className={'cmt like-btn ' + id}>Like</button>{numLikes}
                                 <div></div>
                             </div>
                         )}

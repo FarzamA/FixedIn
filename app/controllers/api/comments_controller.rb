@@ -20,7 +20,7 @@ class Api::CommentsController < ApplicationController
         if @comment.save 
             render :show
         else 
-            render json: @comment.errors.full_messages, status 400
+            render json: @comment.errors.full_messages, status: 400
         end
     end
 
