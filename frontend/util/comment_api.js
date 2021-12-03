@@ -45,3 +45,10 @@ export const deleteComment = commentId => (
         url: `/api/comments/${commentId}`
     })
 );
+
+export const fetchCommentCount = post_id => (
+    $.ajax({
+        url: '/api/comments/comment_count',
+        data: { post_id }
+    })
+)
