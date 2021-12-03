@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'static_pages#root'
   get '/api/users/email', to: 'api/users#email'
+  get '/api/comments/comment_count', to: 'api/comments#comment_count'
   get '/api/connections/connected', to: 'api/connections#connected'
   get '/api/likes/user_liked', to: 'api/likes#user_liked'
 
