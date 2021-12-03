@@ -144,7 +144,39 @@ class CommentIndexItem extends React.Component {
             </>
         ) : null;
 
-        
+        return (
+            <div className='comment=item'>
+                <Link to={`/users/${commenter.id}`}>
+                    <div className='avatar small'>
+                        <img src={avatar} alt="Profile Pic" className={'pfp small'}/>
+                    </div>
+                </Link>
+                <div>
+                    <div className='comment-body'>
+                        <header>
+                            <Link to={`/users/${commenter.id}`}>
+                                <div className='cmt-user-info'>
+                                <p className='cmt-user-name gray-shade'>{name}</p>
+                                <p className='cmt-user-headline gray-shade'>{headline}</p>
+                                </div>
+                            </Link>
+                            <div id='cmt-time-edit'>
+                                <span>{this.timeFromNow()}</span>
+                                {dropdown}
+                            </div>
+                        </header>
+                        {editForm}
+                        {mediaUrl ? <img src={mediaUrl} alt="comment-image"/> : null}
+                        {edit ? null : ( 
+                            <div className='like'>
+                                <button onClick={toggleLike} className={'cmt like-btn ' + id}>Like</button>{numLikes}
+                                <div></div>
+                            </div>
+                        )}
+                    </ div>
+                </div>
+            </div>
+        )
     }
 }
 
