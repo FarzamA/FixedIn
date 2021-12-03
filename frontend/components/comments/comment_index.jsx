@@ -63,7 +63,7 @@ class CommentIndex extends React.Component {
 const mapSTP = ({ entities: { comments } }, ownProps) => {
     const commentsArr = Object.values(comments)
                                 .filter(comment => (comment.postId == ownProps.postId))
-                                .sort((a, b) => a.createdAt > b.createdAt ? 1 : -1)
+                                .sort((a, b) => a.createdAt > b.createdAt ? -1 : 1)
 
     return {
         comments: commentsArr
