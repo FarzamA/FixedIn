@@ -5,6 +5,7 @@ import educationsReducer from "./educations_reducer";
 import connectionsReducer from "./connection_reducer";
 import postsReducer from "./post_reducer";
 import likesReducer from "./like_reducer";
+import commentsReducer from "./comment_reducer";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -12,6 +13,7 @@ const entitiesReducer = combineReducers({
     experiences: experiencesReducer,
     educations: educationsReducer,
     connections: connectionsReducer,
+    comments: commentsReducer,
     likes: likesReducer,
 });
 
