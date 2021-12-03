@@ -39,6 +39,12 @@
     .cmt-form-section {
       display: flex;
       align-items: center;
+
+      img {
+          height: 40px;
+          width: 40px;
+
+      }
     }
   
     .cmt-form-ctnr {
@@ -49,7 +55,7 @@
       .comment-form {
         position: relative;
         border: 1px solid $lightgray;
-        border-radius: 24px;
+        border-radius: 12px;
         font-size: 14px;
   
         input {
@@ -119,7 +125,7 @@
       }
     }
   
-    .more-cmts.replies {
+    .more-cmts{
       font-size: 12px;
     }
     
