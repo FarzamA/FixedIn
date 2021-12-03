@@ -47,9 +47,9 @@ class PostIndex extends React.Component {
     }
 
     incrementOffset() {
-        console.log('incremented');
+        // console.log('incremented');
         this.setState({ offset: (this.state.offset + 1) });
-        console.log(this.state.offset, 'offset');
+        // console.log(this.state.offset, 'offset');
 
     }
 
