@@ -9,6 +9,9 @@
 
     .num-lc {
         padding: 10px;
+        margin: 10px;
+        color: rgba(0, 0, 0, 0.6);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.6);
     }
 
     p {
@@ -366,5 +369,22 @@
     p {
         line-height: 1.5;
     }
+    
+    button {
+        border: none;
+        background: none;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $lightergray;
+            transition: 0.5s;
+        }
+    }
 }
+
+
 

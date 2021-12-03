@@ -1,0 +1,136 @@
+// .cmt-form-section {
+//     display: flex;
+//     align-items: center;
+
+//     .comment-form {
+//         position: relative;
+//         border: 1px solid #d8d8d8;
+//         border-radius: 24px;
+//         font-size: 14px;
+//         width: 90%;
+
+//         input {
+//             border: none;
+//         }
+//     }
+
+//     img {
+//         padding: 15px;
+//     }
+
+//     input[type='file'] {
+//         display: none;
+//     }
+// }
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+
+    img {
+        padding: 15px;
+    }
+
+    input[type='file'] {
+        display: none;
+    }
+  
+    .cmt-form-section {
+      display: flex;
+      align-items: center;
+    }
+  
+    .cmt-form-ctnr {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+  
+      .comment-form {
+        position: relative;
+        border: 1px solid $lightgray;
+        border-radius: 24px;
+        font-size: 14px;
+  
+        input {
+          padding: 8px 12px;
+          width: 90%;
+          border: none;
+          outline: none;
+          //border: 1px solid $lightgray;
+          border-radius: 24px;
+        }
+        
+        .far.fa-image {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 11px;
+          border-radius: 24px;
+          font-size: 13px;
+  
+          &:hover {
+            // color: $lightgray;
+            cursor: pointer;
+          }
+        }
+  
+        .cmt-img-preview {
+          background: #f9fafb;
+          border-radius: 0 0 24px 24px;
+          
+          > div:first-child {
+            position: relative;
+          }
+  
+          .rm-cmt-img {
+            background: $LIblue;
+            border-radius: 16px;
+            padding: 5px 9px;
+            cursor: pointer;
+            color: white;
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+          }
+  
+          img {
+            height: 200px;
+            width: auto;
+          }
+        }
+      }
+    }
+  
+    .edit input {
+      width: 100%;
+    }
+  
+    .more-cmts {
+      font-weight: 600;
+      font-size: 14px;
+      padding: 3px 8px;
+      border-radius: 5px;
+      color: $gray;
+  
+      &:hover {
+        background: $lightergray;
+        transition: 0.3s;
+      }
+    }
+  
+    .more-cmts.replies {
+      font-size: 12px;
+    }
+    
+    .post-cmt-btn {
+      //@include modal-button(white, $LIblue);
+      font-size: 14px;
+      padding: 3px 12px;
+      margin-top: 8px;
+  
+      &:hover {
+        //@include hover($darkblue);
+      }
+    }
+  }
