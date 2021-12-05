@@ -27,6 +27,10 @@
         border-radius: 12px;
         font-size: 14px;
         // max-width: 25vw;
+
+        .cmt-input-div {
+          display: flex;
+        }
   
         input {
           padding: 8px 12px;
@@ -38,7 +42,7 @@
         }
         
         .far.fa-image {
-          position: absolute;
+          position: relative;
           right: 0;
           top: 0;
           padding: 11px;
@@ -60,19 +64,23 @@
 
             span {
               margin-top: 5px;
-              margin-right: 5px
+              margin-right: 15px
             }
           }
   
           .rm-cmt-img {
-            background: $LIblue;
-            border-radius: 16px;
-            padding: 5px 9px;
-            cursor: pointer;
-            color: white;
+            // background: $LIblue;
+            // border-radius: 16px;
+            // padding: 5px 9px;
+            // cursor: pointer;
+            // color: white;
             font-weight: 900;
             position: absolute;
             right: 0;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
   
           img {
@@ -99,10 +107,6 @@
         background: $lightergray;
         transition: 0.3s;
       }
-    }
-  
-    .more-cmts{
-      font-size: 12px;
     }
     
     .post-cmt-btn {
@@ -139,7 +143,7 @@
     border-bottom-left-radius: 8px;
     // position: relative;
     margin-bottom: 24px;
-    max-width: 25vw;
+    max-width: 30vw;
 
     img {
       max-width: 15vw;
@@ -183,7 +187,7 @@
     .cmt-dropdown {
       background: white;
       border: 1px solid $lightgray;
-      position: absolute;
+      // position: absolute;
       right: 5px;
       top: 15px;
       z-index: 10;
@@ -224,6 +228,12 @@
   display: flex;
   align-items: center;
   height: 20px;
+
+  button {
+    background-color: alpha($color: #000000);
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .edit-cmt-btns {
@@ -251,5 +261,17 @@
     &:hover {
       // @include btn-hover-border($darkgray, $lightergray)
     }
+  }
+}
+
+.liked {
+  color: $LIblue;
+
+  i {
+    color: $LIblue;
+  }
+
+  & + i {
+    color: $LIblue;
   }
 }

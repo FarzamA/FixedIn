@@ -71,6 +71,10 @@
             // grid-column: 1;
             background-color: white;
             padding-bottom: 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         img {
