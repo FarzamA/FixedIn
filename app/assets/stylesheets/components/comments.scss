@@ -22,11 +22,9 @@
       flex-grow: 1;
   
       .comment-form {
-        // position: relative;
         border: 1px solid $lightgray;
         border-radius: 12px;
         font-size: 14px;
-        // max-width: 25vw;
 
         .cmt-input-div {
           display: flex;
@@ -37,7 +35,6 @@
           width: 90%;
           border: none;
           outline: none;
-          //border: 1px solid $lightgray;
           border-radius: 24px;
         }
         
@@ -50,7 +47,6 @@
           font-size: 13px;
   
           &:hover {
-            // color: $lightgray;
             cursor: pointer;
           }
         }
@@ -116,7 +112,7 @@
       border: 1px solid white;
       font-weight: 600;
       font-size: 14px;
-      padding: 3px 12px;
+      // padding: 3px 12px;
       margin-top: 8px;
   
       &:hover {
@@ -151,7 +147,6 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
-    // position: relative;
     margin-bottom: 10px;
     max-width: 30vw;
 
@@ -183,7 +178,6 @@
   header {
     display: flex;
     justify-content: space-between;
-    // position: relative;
     color: $gray;
 
     span {
@@ -197,15 +191,12 @@
       filter: opacity(75%);
       padding: 5px;
       padding-bottom: 10px;
-      // max-width: 300px;
     }
 
     .cmt-dropdown {
       background: white;
       border: 1px solid $lightgray;
       position: absolute;
-      // right: 5px;
-      // top: 15px;
       z-index: 10;
       margin-top: -6px;
       margin-left: -50px;
@@ -308,8 +299,3 @@
 .hide {
   display: none;
 }
-
-// .reveal {
-//   display: block;
-//   flex-direction: column;
-// }
