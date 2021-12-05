@@ -93,7 +93,11 @@
     }
   
     .edit input {
-      width: 100%;
+      padding: 8px 12px;
+      width: 90%;
+      border: none;
+      outline: none;
+      border-radius: 24px;
     }
   
     .more-cmts {
@@ -135,6 +139,22 @@
     width: 100%;
   }
 
+  .like {
+    display: flex; 
+    justify-content: space-between;
+
+    button {
+      padding: 0;
+      margin: 0;
+    }
+    // color: white;
+    // border: 1px solid #0a66c2;
+    // border-radius: 24px;
+    // padding: 8px 20px;
+    // text-decoration: none;
+    // background: #0a66c2;
+  }
+
   .comment-body {
     background: $lightergray;
     padding: 10px;
@@ -142,8 +162,12 @@
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     // position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     max-width: 30vw;
+
+    a {
+      text-decoration: none;
+    }
 
     img {
       max-width: 15vw;
@@ -162,6 +186,8 @@
         font-size: 16px;
       }
     }
+
+
   }
 
   header {
@@ -187,10 +213,12 @@
     .cmt-dropdown {
       background: white;
       border: 1px solid $lightgray;
-      // position: absolute;
-      right: 5px;
-      top: 15px;
+      position: absolute;
+      // right: 5px;
+      // top: 15px;
       z-index: 10;
+      margin-top: -6px;
+      margin-left: -50px;
 
       li {
         padding: 10px;
@@ -215,6 +243,8 @@
 
     > p {
       font-size: 12px;
+      color: #383838;
+      padding: 2px;
     }
 
     .cmt-user-name {
@@ -230,7 +260,7 @@
   height: 20px;
 
   button {
-    background-color: alpha($color: #000000);
+    background-color: transparent;
     margin: 0;
     padding: 0;
   }
@@ -275,3 +305,12 @@
     color: $LIblue;
   }
 }
+
+.hide {
+  display: none;
+}
+
+// .reveal {
+//   display: block;
+//   flex-direction: column;
+// }

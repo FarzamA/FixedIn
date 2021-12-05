@@ -45,6 +45,7 @@ class CommentIndexItem extends React.Component {
                 this.setState({ liked: true });
                 this.setState({ like });
                 document.getElementsByClassName(`cmt like-btn ${comment.id}`)[0].classList.add('liked');
+                document.getElementsByClassName(`like-container`)[0].classList.add('liked');
             }
         })
     };
@@ -103,6 +104,7 @@ class CommentIndexItem extends React.Component {
           this.setState({ liked: true });
           this.setState({ likeCount: this.state.likeCount + 1 });
           document.getElementsByClassName(`cmt like-btn ${id}`)[0].classList.add('liked');
+          document.getElementsByClassName(`like-container`)[0].classList.add('liked');
         }
     };
 
@@ -120,14 +122,16 @@ class CommentIndexItem extends React.Component {
             headline = commenter.headline;
 
             if (commenter.id == currentUser) {
-                dropdown = (
-                    <button onFocus={this.clicked} onBlur={this.leave}>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Simple_icon_ellipsis.svg" alt="ellipsis"/>
-                        <ul className={'cmt-dropdown ' + (drop ? 'reveal' : 'hide')}>
-                            <li onClick={this.openEdit}><i className="far fa-edit"></i>Edit</li>
-                            <li onClick={() => deleteComment(id)}><i className="far fa-trash-alt"></i>Delete</li>
-                        </ul>
-                    </button>
+                dropdown = (<div>
+                        <button onFocus={this.clicked} onBlur={this.leave}>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Simple_icon_ellipsis.svg" alt="ellipsis"/>
+                            <ul className={'cmt-dropdown ' + (drop ? 'reveal' : 'hide')}>
+                            {/* <ul className={'cmt-dropdown ' + 'reveal'}> */}
+                                <li onClick={this.openEdit}><i className="far fa-edit"></i>Edit</li>
+                                <li onClick={() => deleteComment(id)}><i className="far fa-trash-alt"></i>Delete</li>
+                            </ul>
+                        </button>
+                        </div>
                 );
             };
         };
@@ -167,13 +171,13 @@ class CommentIndexItem extends React.Component {
                         </header>
                         {editForm}
                         {mediaUrl ? <img src={mediaUrl} alt="comment-image"/> : null}
+                    </ div>
                         {edit ? null : ( 
                             <div className='like'>
-                                <button onClick={this.toggleLike} className={'cmt like-btn ' + id}>Like</button>{numLikes}
-                                <div></div>
+                                <button onClick={this.toggleLike} className={'cmt like-btn ' + id}>Like</button>
+                                <div className='like-container'>{numLikes}</div>
                             </div>
                         )}
-                    </ div>
                 </div>
             </div>
         )
