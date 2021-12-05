@@ -57,6 +57,7 @@
         border: 1px solid $lightgray;
         border-radius: 12px;
         font-size: 14px;
+        max-width: 25vw;
   
         input {
           padding: 8px 12px;
@@ -87,6 +88,11 @@
           
           > div:first-child {
             position: relative;
+
+            span {
+              margin-top: 5px;
+              margin-right: 5px
+            }
           }
   
           .rm-cmt-img {
@@ -146,4 +152,5 @@
 
       }
     }
-  }
+}
+
