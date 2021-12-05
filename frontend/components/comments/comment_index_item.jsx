@@ -45,7 +45,7 @@ class CommentIndexItem extends React.Component {
                 this.setState({ liked: true });
                 this.setState({ like });
                 document.getElementsByClassName(`cmt like-btn ${comment.id}`)[0].classList.add('liked');
-                document.getElementsByClassName(`like-container`)[0].classList.add('liked');
+                document.getElementsByClassName(`like-container ${comment.id}`)[0].classList.add('liked');
             }
         })
     };
@@ -76,6 +76,7 @@ class CommentIndexItem extends React.Component {
 
     openEdit() {
         this.setState({ edit: true });
+        this.setState({ drop: false });
     };
 
     cancelEdit() {
@@ -90,6 +91,7 @@ class CommentIndexItem extends React.Component {
           this.setState({ liked: false });
           this.setState({ likeCount: this.state.likeCount - 1 });
           document.getElementsByClassName(`cmt like-btn ${id}`)[0].classList.remove('liked');
+          document.getElementsByClassName(`like-container ${id}`)[0].classList.remove('liked');
         } else {
           const newLike = {
             user_id: currentUser,
@@ -104,7 +106,7 @@ class CommentIndexItem extends React.Component {
           this.setState({ liked: true });
           this.setState({ likeCount: this.state.likeCount + 1 });
           document.getElementsByClassName(`cmt like-btn ${id}`)[0].classList.add('liked');
-          document.getElementsByClassName(`like-container`)[0].classList.add('liked');
+          document.getElementsByClassName(`like-container ${id}`)[0].classList.add('liked');
         }
     };
 
@@ -175,7 +177,7 @@ class CommentIndexItem extends React.Component {
                         {edit ? null : ( 
                             <div className='like'>
                                 <button onClick={this.toggleLike} className={'cmt like-btn ' + id}>Like</button>
-                                <div className='like-container'>{numLikes}</div>
+                                <div className={'like-container ' + id}>{numLikes}</div>
                             </div>
                         )}
                 </div>

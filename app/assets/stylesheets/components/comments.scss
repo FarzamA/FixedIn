@@ -69,11 +69,6 @@
           }
   
           .rm-cmt-img {
-            // background: $LIblue;
-            // border-radius: 16px;
-            // padding: 5px 9px;
-            // cursor: pointer;
-            // color: white;
             font-weight: 900;
             position: absolute;
             right: 0;
@@ -142,17 +137,12 @@
   .like {
     display: flex; 
     justify-content: space-between;
+    margin-bottom: 15px;
 
     button {
-      padding: 0;
+      padding: 5px;
       margin: 0;
     }
-    // color: white;
-    // border: 1px solid #0a66c2;
-    // border-radius: 24px;
-    // padding: 8px 20px;
-    // text-decoration: none;
-    // background: #0a66c2;
   }
 
   .comment-body {
@@ -266,33 +256,41 @@
   }
 }
 
-.edit-cmt-btns {
-  margin-top: 10px;
+.save-cmt-edit {
+  color: white;
+  border: 1px solid #0a66c2;
+  border-radius: 24px;
+  // padding: 8px 20px;
+  text-decoration: none;
+  background: #0a66c2;
+  padding: 3px 12px;
+  // margin-right: 8px;
+  margin: 0;
 
-  .save-cmt-edit {
-    // @include modal-button(white, $LIblue);
-    padding: 3px 12px;
-    margin-right: 8px;
-
-    &:enabled:hover {
-      // @include hover($darkblue);
-    }
-    
-    &:disabled {
-      // @include btn-disabled;
-      border: none;
-    }
+  &:hover {
+    background: #08437e;
+    transition: 0.3s;
+    cursor: pointer;
   }
 
-  .cancel-cmt-edit {
-    // @include modal-button($darkgray, $lightergray);
-    padding: 3px 12px;
+}
 
-    &:hover {
-      // @include btn-hover-border($darkgray, $lightergray)
-    }
+.cancel-cmt-edit {
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+  // padding: 8px 20px;
+  padding: 3px 12px;
+  text-decoration: none;
+  background: white;
+
+  &:hover {
+    background: #d8d8d8;
+    transition: 0.3s;
+    cursor: pointer;
   }
 }
+
 
 .liked {
   color: $LIblue;
