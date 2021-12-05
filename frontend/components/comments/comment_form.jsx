@@ -29,7 +29,8 @@ class CommentForm extends React.Component {
 
     fileReader.onloadend = () => {
       this.setState({ media: file, mediaUrl: fileReader.result });
-      document.getElementById(`${formType}-cmt-img-${postId}`).style.display = 'inline-block';
+      document.getElementById(`${formType}-cmt-img-${postId}`).style.display = 'flex';
+      document.getElementById(`${formType}-cmt-img-${postId}`).style.justifyContent = 'center';
     }
 
     if (file) fileReader.readAsDataURL(file); 

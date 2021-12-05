@@ -103,6 +103,7 @@
           img {
             height: 200px;
             width: auto;
+            max-width: 300px;
           }
         }
       }
@@ -130,13 +131,19 @@
     }
     
     .post-cmt-btn {
-      //@include modal-button(white, $LIblue);
+      color: white;
+      background: $LIblue;
+      padding: 5px 15px;
+      border-radius: 30px;
+      border: 1px solid white;
+      font-weight: 600;
       font-size: 14px;
       padding: 3px 12px;
       margin-top: 8px;
   
       &:hover {
-        //@include hover($darkblue);
+        background: #09437c;
+
       }
     }
   }
