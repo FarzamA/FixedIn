@@ -255,39 +255,40 @@
     padding: 0;
   }
 }
+.edit-cmt-btns {
+  .save-cmt-edit {
+    color: white;
+    border: 1px solid #0a66c2;
+    border-radius: 24px;
+    // padding: 8px 20px;
+    text-decoration: none;
+    background: #0a66c2;
+    padding: 3px 12px;
+    // margin-right: 8px;
+    margin: 0;
 
-.save-cmt-edit {
-  color: white;
-  border: 1px solid #0a66c2;
-  border-radius: 24px;
-  // padding: 8px 20px;
-  text-decoration: none;
-  background: #0a66c2;
-  padding: 3px 12px;
-  // margin-right: 8px;
-  margin: 0;
+    &:hover {
+      background: #08437e;
+      transition: 0.3s;
+      cursor: pointer;
+    }
 
-  &:hover {
-    background: #08437e;
-    transition: 0.3s;
-    cursor: pointer;
   }
 
-}
+  .cancel-cmt-edit {
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 24px;
+    // padding: 8px 20px;
+    padding: 3px 12px;
+    text-decoration: none;
+    background: white;
 
-.cancel-cmt-edit {
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.6);
-  border-radius: 24px;
-  // padding: 8px 20px;
-  padding: 3px 12px;
-  text-decoration: none;
-  background: white;
-
-  &:hover {
-    background: #d8d8d8;
-    transition: 0.3s;
-    cursor: pointer;
+    &:hover {
+      background: #d8d8d8;
+      transition: 0.3s;
+      cursor: pointer;
+    }
   }
 }
 
