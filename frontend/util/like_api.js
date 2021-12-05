@@ -1,9 +1,10 @@
-export const fetchUserLiked = like => (
-    $.ajax({
+export const fetchUserLiked = like => {
+    // debugger
+    return $.ajax({
       url: '/api/likes/user_liked',
       data: { like }
     })
-  )
+};
   
 export const createLike = like => (
     $.ajax({
