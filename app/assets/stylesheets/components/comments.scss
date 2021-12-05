@@ -1,35 +1,10 @@
-// .cmt-form-section {
-//     display: flex;
-//     align-items: center;
-
-//     .comment-form {
-//         position: relative;
-//         border: 1px solid #d8d8d8;
-//         border-radius: 24px;
-//         font-size: 14px;
-//         width: 90%;
-
-//         input {
-//             border: none;
-//         }
-//     }
-
-//     img {
-//         padding: 15px;
-//     }
-
-//     input[type='file'] {
-//         display: none;
-//     }
-// }
-
 .comment-section {
     display: flex;
     flex-direction: column;
     padding: 12px;
 
     img {
-        padding: 15px;
+      padding: 15px;
     }
 
     input[type='file'] {
@@ -39,12 +14,6 @@
     .cmt-form-section {
       display: flex;
       align-items: center;
-
-      img {
-          height: 40px;
-          width: 40px;
-
-      }
     }
   
     .cmt-form-ctnr {
@@ -53,11 +22,11 @@
       flex-grow: 1;
   
       .comment-form {
-        position: relative;
+        // position: relative;
         border: 1px solid $lightgray;
         border-radius: 12px;
         font-size: 14px;
-        max-width: 25vw;
+        // max-width: 25vw;
   
         input {
           padding: 8px 12px;
@@ -154,3 +123,133 @@
     }
 }
 
+.comment-item {
+  margin-top: 10px;
+  display: flex;
+
+  > div {
+    width: 100%;
+  }
+
+  .comment-body {
+    background: $lightergray;
+    padding: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    // position: relative;
+    margin-bottom: 24px;
+    max-width: 25vw;
+
+    img {
+      max-width: 15vw;
+    }
+
+    > p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .gray-shade.edit {
+      margin-top: 5px;
+      font-size: 14px;
+
+      input {
+        font-size: 16px;
+      }
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    // position: relative;
+    color: $gray;
+
+    span {
+      font-size: 12px;
+    }
+
+    img {
+      border-radius: 20px;
+      height: 16px;
+      width: auto;
+      filter: opacity(75%);
+      padding: 5px;
+      padding-bottom: 10px;
+      // max-width: 300px;
+    }
+
+    .cmt-dropdown {
+      background: white;
+      border: 1px solid $lightgray;
+      position: absolute;
+      right: 5px;
+      top: 15px;
+      z-index: 10;
+
+      li {
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 600;
+
+        i {
+          margin-right: 5px;
+        }
+
+        &:hover {
+          background: $lightgray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .cmt-user-info {
+    display: flex;
+    flex-direction: column;
+
+    > p {
+      font-size: 12px;
+    }
+
+    .cmt-user-name {
+      color: $darkgray;
+      font-weight: 600;
+    }
+  }
+}
+
+#cmt-time-edit {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.edit-cmt-btns {
+  margin-top: 10px;
+
+  .save-cmt-edit {
+    // @include modal-button(white, $LIblue);
+    padding: 3px 12px;
+    margin-right: 8px;
+
+    &:enabled:hover {
+      // @include hover($darkblue);
+    }
+    
+    &:disabled {
+      // @include btn-disabled;
+      border: none;
+    }
+  }
+
+  .cancel-cmt-edit {
+    // @include modal-button($darkgray, $lightergray);
+    padding: 3px 12px;
+
+    &:hover {
+      // @include btn-hover-border($darkgray, $lightergray)
+    }
+  }
+}

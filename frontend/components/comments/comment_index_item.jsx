@@ -145,7 +145,7 @@ class CommentIndexItem extends React.Component {
         ) : null;
 
         return (
-            <div className='comment=item'>
+            <div className='comment-item'>
                 <Link to={`/users/${commenter.id}`}>
                     <div className='avatar small'>
                         <img src={avatar} alt="Profile Pic" className={'pfp small'}/>
