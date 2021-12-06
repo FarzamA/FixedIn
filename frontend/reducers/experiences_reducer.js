@@ -1,5 +1,6 @@
 import { RECEIVE_EXPERIENCES, RECEIVE_EXPERIENCE, REMOVE_EXPERIENCE } from "../actions/experience_actions";
 import { RECEIVE_CURRENT_USER, RECEIVE_USER } from "../actions/session_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const experiencesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -18,6 +19,8 @@ const experiencesReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_USER:
             return { ...state, ...action.experiences };
+        case LOGOUT_CURRENT_USER:
+            return {};
         default: 
             return state; 
     }

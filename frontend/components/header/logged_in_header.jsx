@@ -13,13 +13,20 @@ class LoggedIn extends React.Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleClick2 = this.handleClick.bind(this);
         this.leave = this.leave.bind(this);
     }
 
     handleClick() {
         this.state.drop === false ? 
             this.setState({ drop: true }) : this.setState({ drop: false });
-    }
+    };
+
+    // handleClick2() {
+    //     this.props.logoutUser();
+    //     // window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+    //     location.reload();
+    // }
 
     leave() {
         this.setState({ drop: false });

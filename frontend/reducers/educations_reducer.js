@@ -1,5 +1,7 @@
 import { RECEIVE_EDUCATIONS, RECEIVE_EDUCATION, REMOVE_EDUCATION } from "../actions/education_actions";
 import { RECEIVE_CURRENT_USER, RECEIVE_USER } from '../actions/session_actions';
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
+
 
 const educationsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -18,6 +20,8 @@ const educationsReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_USER:
             return { ...state, ...action.educations };
+        case LOGOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }
