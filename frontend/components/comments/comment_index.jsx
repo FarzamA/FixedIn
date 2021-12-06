@@ -24,7 +24,7 @@ class CommentIndex extends React.Component {
   
       fetchCommentCount(postId).then(count => { 
         this.setState({ commentNum: count });
-        if (count > 2) this.setState({ allComments: false })
+        if (count > 2) this.setState({ allComments: false });
       });
     }
   

@@ -12,18 +12,24 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 - Gems: better_errors, binding_of_caller, pry-rails, annotate
 
 # Features 
-## Update profile with an avatar, background image and personal information
-![user info screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908726971545055232/Screenshot_144.png)
-## Update education & experience information
-![user experience screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908727072971685968/Screenshot_144.png)
-## Make and edit posts to FixedIn
-![user post screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908727425163223080/Screenshot_145.png)\
-![edit post screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908727764297875506/Screenshot_146.png)\
-![edit post screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908727950101319700/Screenshot_147.png)\
-## Search and connect with other users
-![search bar screenshot](https://cdn.discordapp.com/attachments/896959094034948166/908728335511744542/Screenshot_148.png)
-## View list of linked users
-![connections list](https://cdn.discordapp.com/attachments/896959094034948166/908728871732539392/Screenshot_149.png)
+## Profile
+![user info gif](https://fixedin-seeds.s3.amazonaws.com/ChangeProfileImgs.gif)
+- Edit profile picture
+- Edit header image
+![user profile gif](https://fixedin-seeds.s3.amazonaws.com/ChangeUserDetails.gif)
+- Update user details
+![user experience gif](https://fixedin-seeds.s3.amazonaws.com/ChangeExp.gif)
+- Update and create educations/experiences
+## Feed
+![user post gif](https://fixedin-seeds.s3.amazonaws.com/ChangePosts.gif)
+- Create, edit and delete posts
+![search bar gif](https://fixedin-seeds.s3.amazonaws.com/SearchAndConnect.gif)
+- Search for users and form connections
+![comments gif](https://fixedin-seeds.s3.amazonaws.com/Comments.gif)
+- Create, edit and delete comments
+## Connections
+![connections list](https://fixedin-seeds.s3.amazonaws.com/Connections.gif)
+- Ignore or accept connections from users
 
 # Code Snippets
 ## Infinite Scroll 

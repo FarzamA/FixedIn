@@ -5,6 +5,7 @@ const commentsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_COMMENTS:
+      // console.log({ ...state, ...action.comments, ...action.users }, 'TESTTTT');
       return { ...state, ...action.comments };
     case RECEIVE_COMMENT:
       return { ...state, ...action.comment };

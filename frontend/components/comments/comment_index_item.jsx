@@ -114,6 +114,7 @@ class CommentIndexItem extends React.Component {
         const { commenter, currentUser, deleteComment, comment, postId, comment: { id, body, mediaUrl }, incrComCount } = this.props;
         const { drop, edit, likeCount } = this.state;
         const avatar = commenter.avatarUrl || window.defaultUser;
+        
 
         let dropdown;
         let name;
@@ -186,10 +187,12 @@ class CommentIndexItem extends React.Component {
     }
 }
 
-const mSTP = ({ entities: { users }, session: { currentUser } }, ownProps) => ({
-    commenter: users[ownProps.comment.userId],
-    currentUser
-});
+const mSTP = ({ entities: { users }, session: { currentUser } }, ownProps) => {
+    console.log(ownProps);
+    return {
+        commenter: users[ownProps.comment.userId],
+        currentUser
+}};
 
 const mDTP = dispatch => ({
     deleteComment: commentId => dispatch(deleteComment(commentId)),
