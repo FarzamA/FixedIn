@@ -12,34 +12,28 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 - Gems: better_errors, binding_of_caller, pry-rails, annotate
 
 # Features 
-## Profile
+## Edit profile picture and header images
 ![user info gif](https://fixedin-seeds.s3.amazonaws.com/ChangeProfileImgs.gif)
-- Edit profile picture
-- Edit header image
+## Update user details and add new information
 ![user profile gif](https://fixedin-seeds.s3.amazonaws.com/ChangeUserDetails.gif)
-- Update user details
+## Update and create educations/experiences
 ![user experience gif](https://fixedin-seeds.s3.amazonaws.com/ChangeExp.gif)
-- Update and create educations/experiences
-## Feed
+## Create, edit and delete posts
 ![user post gif](https://fixedin-seeds.s3.amazonaws.com/ChangePosts.gif)
-- Create, edit and delete posts
+## Search for users and form connections
 ![search bar gif](https://fixedin-seeds.s3.amazonaws.com/SearchAndConnect.gif)
-- Search for users and form connections
+## Create, edit and delete comments
 ![comments gif](https://fixedin-seeds.s3.amazonaws.com/Comments.gif)
-- Create, edit and delete comments
-## Connections
+## View network to ignore or accept connection requests
 ![connections list](https://fixedin-seeds.s3.amazonaws.com/Connections.gif)
-- Ignore or accept connections from users
 
 # Code Snippets
 ## Infinite Scroll 
 ```javascript
     this.observer = React.createRef();
     this.lastPostRef = node => {
-        // intersection observer lets us register a callback whenever the node is in our viewport
         this.observer.current = new IntersectionObserver(entries => {
             if (entries[0].isIntersecting && this.state.morePosts) {
-                // deal w loading bar later
                 this.setState({ loading: true }, () => {
 
                     this.incrementOffset();
@@ -62,7 +56,6 @@ Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server
 ## Search Results 
 ```ruby
 def index 
-    #what goes in the feed
     user_id = current_user.id
     rec_connections = Connection.where(connectee_id: user_id, accepted: true)
                                 .pluck(:connector_id)
@@ -83,7 +76,6 @@ end
 
 
 # Future Direction 
-- Likes as well as comments for posts
 - Messaging other users
 - Receive notifications from linked user's activities
 
