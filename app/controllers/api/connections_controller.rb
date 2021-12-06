@@ -6,16 +6,17 @@ class Api::ConnectionsController < ApplicationController
     end  
 
     def connected 
+        # debugger
         @sent_connection = Connection.find_by(
             connector_id: params[:connector_id],
             connectee_id: params[:connectee_id]
         )
 
         @rec_connection = Connection.find_by(
-            connectee_id: params[:connectee_id],
-            connector_id: params[:connector_id]
+            connectee_id: params[:connector_id],
+            connector_id: params[:connectee_id]
         )
-
+        # debugger
         if @sent_connection || @rec_connection 
             @connection = @sent_connection || @rec_connection 
             render :show 

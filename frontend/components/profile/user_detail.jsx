@@ -25,6 +25,7 @@ class UserDetail extends React.Component {
 
         fetchConnectionAPI(currentUser, user.id).then(
             payload => {
+                // console.log(payload, 'PAYLOADDD');
                 if (payload.connection) {
                     dispatch(receiveConnection(payload));
                     this.setState({ accepted: Object.values(payload.connection)[0].accepted });
