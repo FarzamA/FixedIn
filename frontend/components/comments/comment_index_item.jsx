@@ -188,7 +188,7 @@ class CommentIndexItem extends React.Component {
 }
 
 const mSTP = ({ entities, session: { currentUser } }, ownProps) => {
-    console.log(ownProps);
+    // console.log(ownProps);
     return {
         commenter: entities.comments.users[ownProps.comment.userId],
         currentUser
