@@ -187,10 +187,10 @@ class CommentIndexItem extends React.Component {
     }
 }
 
-const mSTP = ({ entities: { users }, session: { currentUser } }, ownProps) => {
+const mSTP = ({ entities, session: { currentUser } }, ownProps) => {
     console.log(ownProps);
     return {
-        commenter: users[ownProps.comment.userId],
+        commenter: entities.comments.users[ownProps.comment.userId],
         currentUser
 }};
 
