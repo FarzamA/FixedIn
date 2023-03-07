@@ -78,4 +78,4 @@ end
 # Future Direction 
 - Messaging other users
 - Receive notifications from linked user's activities
-
+- Implement ML features
