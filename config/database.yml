@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: FixedIn_production
-  username: FixedIn
-  password: <%= ENV['FIXEDIN_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
