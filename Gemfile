@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'faker'
 gem 'down'
+gem 'openssl'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

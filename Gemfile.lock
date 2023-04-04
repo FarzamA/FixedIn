@@ -154,6 +154,7 @@ GEM
     nokogiri (1.14.2)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    openssl (3.1.0)
     pg (1.4.6)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -263,6 +264,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  openssl
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
