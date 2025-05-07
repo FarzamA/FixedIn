@@ -1,6 +1,6 @@
 # README
 
-# ![FixedIn Logo]((https://fixedin-seeds.s3.amazonaws.com/)
+# ![FixedIn Logo](https://fixedin-seeds.s3.amazonaws.com/)
 
 Welcome to my LinkedIn clone! I used Ruby on Rails to build a RESTful API server for data transfer between a normalized PostgresSQL database and the frontend. This is a single page application built with React in order to utilize DOM manipulation and Redux for application state management. The images used within the app are stored in an AWS S3 bucket. The images are retrieved using ActiveStorage. Here's the [live site](https://fixedin.onrender.com/#/).
 
